@@ -1,0 +1,51 @@
+\documentclass[]{article}
+
+\usepackage{fancyhdr}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+
+\begin{document}
+
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{3I013 - Projet }
+\fancyhead[R]{Sorbonne Université}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{Licence Informatique}
+\fancyfoot[R]{Jeudi 24 Janvier 2019}
+
+\begin{center}
+\large{\textbf{Compte Rendu de la Première Réunion \\ Jeudi 24 Janvier 2019 \bigbreak}}
+\end{center}
+	
+Nous sommes sollicités par un client qui nous demande de créer une application permettant d'organiser une ronde avec son drone sans directement le piloter, tout en observant la scène en immersion. \\
+L'objectif de ce projet est donc de réaliser une application \textit{iOS} et \textit{linux} capable de faire suivre un parcours prédéfini par l'utilisateur à un drone \textit{Bebop 2}, avec un retour vidéo en \textit{FPV (First Person View)} sur un casque de réalité virtuelle.\\ \\
+
+D'un point de vue technique, le drone est une borne Wifi capable de servir un outil de télécommande, pilotable par un seul appareil à la fois. \\
+Le flux vidéo sortant est encodé en H.264, avec une résolution Full HD 1080p, et devra être redirigé vers l'appareil \textit{iOS} via une application sur ordinateur servant de relai.
+\\La caméra possède un résolution photo de 14 mégapixels (4096x3072 pixels) et une ouverture de f/2,2.
+De plus, le drone possède un système Linux (que l'on ne modifiera absolument pas) qu'il faudra faire communiquer avec les différentes applications à développer.\\ 
+\\
+
+La première étape consiste à étudier les problématiques afin de se mettre d'accord avec le client et lui proposer des solutions applicables dans les délais impartis, nous aurons donc à fournir un document attestant cela au mois de mars. \\
+Afin d'être efficaces, nous diviserons le travail en plusieurs étapes distinctes et travaillerons en parallèle.\\
+Nous allons dès à présents effectuer des petits tests comme la compilation des exemples de code fournis par Parrot sur \textit{iOS} et \textit{Linux}.\\
+Il est impératif de prendre en main le drone pour voir comment il se comporte dans des conditions réelles de vol. 
+\\
+\\
+
+Durant son parcours, le drone n'aura pas à gérer la détection d'obstacles car il ne possède aucun capteur permettant une implémentation facile et viable. \\
+Également, le drone ne volera  qu'à l'extérieur car le GPS n'est pas conçu pour fonctionner en intérieur.\\
+Il existe un format de fichier sous forme de suite de points qui ressemble au \textit{json} que nous pourrons envoyer au drone afin qu'il puisse les suivre sous forme de coordonnées GPS.\\
+Le développement sous \textit{iOS} se fera avec \textit{Xcode} et nous aurons la possibilité d'utiliser des Macs en salle info du Master SAR.\\
+\\
+
+Un exposé de 15 minutes (accompagné de slides) sera présenté à chaque début de réunion, afin d'expliquer ce que l'on a compris et à quelle étape nous nous trouvons dans le projet.\\
+Celles-ci se déroulerons le vendredi à 18h.
+
+
+
+
+
+
+
+\end{document}
