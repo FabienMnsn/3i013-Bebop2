@@ -1,0 +1,45 @@
+\documentclass[]{article}
+\usepackage{fancyhdr}
+\begin{document}
+
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{3I013 - Projet }
+\fancyhead[R]{Sorbonne Université}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{Licence Informatique}
+\fancyfoot[R]{Jeudi 24 Janvier 2019}
+
+\begin{center}
+\textbf{Compte Rendu de la Première Réunion \\ Jeudi 24 Janvier 2019 \bigbreak}
+\end{center}
+	Nous sommes sollicités par un client qui nous demande de créer une application permettant d'organiser une ronde avec son drone sans directement le piloter, tout en observant la scène de manière immersive. \\
+L'objectif de ce projet est donc de réaliser une application \textit{iOS} capable de faire suivre un parcours prédéfini par l'utilisateur à un drone \textit{Bebop 2}, avec un retour vidéo en \textit{FPV (First Person View)} sur un casque à réalité virtuelle. \\ \\
+
+D'un point de vue technique, le drone est une borne Wifi capable de servir un outil de télécommande, pilotable par un seul appareil à la fois. \\
+Le flux vidéo sortant est en H.264, avec une résolution Full HD 1080p, et devra être redirigé vers l'appareil \textit{iOS}.
+\\La caméra est de 14 mégapixels et possède trois axes, avec  une ouverture de f/2,2.
+De plus, le drone possède un système Linux qu'il faudra faire communiquer avec \textit{iOS 12.0}.\\ 
+\\
+
+La première étape consiste à étudier les problématiques afin de se mettre d'accord avec le client, nous aurons donc à fournir un document attestant cela au mois de mars. \\
+Afin d'être efficaces, nous diviserons le travail en plusieurs étapes distinctes et travaillerons en parallèle.\\
+Nous allons dès à présents effectuer des petits tests comme la compilation des bibliothèques Parrot sur \textit{iOS} ainsi que le pilotage du drone. \\
+En effet, il est indispensable d'observer le comportement du drone dans des conditions réelles afin d'adapter ce que nous souhaitons implémenter, nous allons particulièrement être attentifs sur les paramètres qui modifient sa trajectoire. 
+\\
+\\
+Durant son parcours, le drone n'aura pas à gérer la détection d'obstacles car il ne possède aucun capteur permettant une implémentation viable. \\
+Également, le drone ne volera  qu'à l'extérieur car le GPS n'est pas conçu pour fonctionner en intérieur.\\
+Il existe un format sous forme de suite de points que nous pourrons envoyer au drone afin qu'il puisse les suivre sous forme de coordonnées GPS.\\
+L'environnement de développement se déroulera avec \textit{Xcode}, et il y'a la possibilité d'utiliser des Macs en tour 14/15 salle 409.\\
+\\
+Un exposé de 15 minutes sera réalisé à chaque réunion, afin d'expliquer ce que l'on a compris et à quelle étape nous nous trouvons.\\
+Celles-ci se déroulerons le vendredi à 18h.
+
+
+
+
+
+
+
+\end{document}
