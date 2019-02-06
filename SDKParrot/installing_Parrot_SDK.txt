@@ -1,0 +1,96 @@
+/*
+ *		_______________________________
+ *		Parrot's SDK installation guide
+ *		
+ */
+
+
+
+
+This tutorial is made to help you install the SDK on linux only
+
+[Usefull Links]:
+-Parrot's official doc : https://developer.parrot.com/docs/bebop/
+-Repo tool doc : https://source.android.com/setup/build/downloading#installing-repo
+
+_____________________________________________________
+First make sure you've installed the following tools:
+
+-git
+-build-essential
+-autoconf
+-libtool
+-libavahi-client-dev
+-libavcode-dev
+-libavformat-dev
+-libswscale-dev
+-libncurses5-dev
+-mplayer
+-xterm
+
+-curl (a tool needed to install 'repo')
+
+(If you get stuck installing these tools you can google 'install name_of_the_package linux')
+
+____________________________________________
+Then you'll need to install the 'repo' tool:
+
+-create a new directory (in your home/dir): mkdir ~/bin
+-add this directory to the PATH EnvVariable: PATH=~/bin:$PATH
+
+-now you can start download the tool using curl: curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+-make sure it's executable: chmod a+x ~/bin/repo
+
+________________________________________________________________
+Now it's time to create another new directory to install the SDK:
+
+-create the directory(name doesn't matter): mkdir ~ParrotSDK
+-go into this directory: cd ParrotSDK/
+
+_______________________________________________________________________
+You might need to configure git with your name/email before using repo:
+-to configure git user.name: git --global user.name "Youre_name"
+-to configure git user.email; git --global user.email "your.email@something.com"
+
+_________________________________________________________
+Now you can initialize the directory using the repo tool:
+-use this command while beeing in the ParrotSDK dir.: repo init -u https://github.com/Parrot-Developers/arsdk_manifests.git
+-and then download all the sources with: repo sync
+
+_____________________________________
+When it's done you can build the SDK:
+-if you want some help you can use: ./build.sh --help
+-you have to be in the ParrotSDK folder and the use: ./build.sh -p arsdk-native -t build-sdk -j
+(variant of build-sdk is: build-sample)
+
+_________________________________________________________________
+Now you have built the SDK, let's build all the samples by using: ./buildsh -p arsdk-native -t build-sample
+
+____________________________________
+Final step: run the selected sample:
+-you need to add the ParrotSDK/out/arsdk-native/staging/usr/lib folder to the PATH && LD_LIBRARY_PATH variables
+-you can follow what Parrot says using source cmd but you'll have to reexecute this command after every reboot: source <SDKFolder>/out/arsdk-native/staging/native-wrapper.sh
+
+-so this is my way of dooing it, simply add (at the head or the tail of the file it doesn't matter) the same cmd line to your .bashrc file which is located in /home/user_name/.bashrc
+-now everytime you'll restart your computer $PATH and $LD_LIBRARY_PATH will be set to the correct value
+
+_____________________________________________
+It's finally done you can now run the sample:
+-in this project we're using a Bebop2 drone
+-before running the sample you have to be connected to the drone Wifi
+-you just need to open a terminal and type: BebopSample
+-then press enter and it will asks you which version of the Bebop you have 1 or 2
+-here you enter: '2'
+-then the sample run, an mplayer window opens and display the drone's camera footage
+-to stop the running sample use 'ctr+C' in the xterm window
+
+
+
+
+
+
+
+
+
+
+@author shx
