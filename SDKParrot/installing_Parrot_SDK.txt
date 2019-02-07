@@ -29,6 +29,7 @@ First make sure you've installed the following tools:
 -xterm
 
 -curl (a tool needed to install 'repo')
+-zlib1g-dev (needed if you have an error such has "zlib unknown module")
 
 (If you get stuck installing these tools you can google 'install name_of_the_package linux')
 
