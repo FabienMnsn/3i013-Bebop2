@@ -13,6 +13,7 @@
 \institute{Sorbonne Université} 
 \date{Lundi 25 Février 2019} 
 %\subject{} 
+\usepackage{pifont}% http://ctan.org/pkg/pifont
 \begin{document}
 
 \begin{frame}
@@ -22,22 +23,116 @@
 %\section{Sommaire}
 \begin{frame}
 \frametitle{Sommaire}
-\tableofcontents[sections={1-4}]
+\tableofcontents[sections={1-8}]
+\end{frame}
+
+\section{Problématique et Objectifs}
+\begin{frame}
+\frametitle{Problématique et Objectifs}
+\begin{center}
+\includegraphics[height=4cm]{bebop_face.jpg}
+\end{center}
+\end{frame}
+
+\subsection{La demande du client}
+\begin{frame}
+\frametitle{La demande du client}
+\begin{center}
+\includegraphics[height=5cm]{point.png}
+\end{center}
+
+\end{frame}
+
+\subsection{Le matériel}
+\begin{frame}
+\frametitle{Le matériel}
+\begin{center}
+\includegraphics[height=13cm]{acteurs.png}
+\end{center}
 \end{frame}
 
 \section{Drone + PC + iPod}
 \begin{frame}
 \frametitle{Drone + PC + iPod}
+\includegraphics[height=7cm]{schemaPC.png}
+\end{frame}
+
+\subsection{Avantages}
+\begin{frame}
+\frametitle{Avantages}
+
+\begin{itemize}
+\item Puissance de calcul \ding{52}
+    
+\item Split screen de l'iPod pour le FPV \ding{52}
+\end{itemize}
+\end{frame}
+
+\subsection{Inconvénients}
+\begin{frame}
+\frametitle{Inconvénients}
+\begin{itemize}
+
+\item Établir un protocole réseau entre le PC et l'iPod \ding{54}
+    
+\item Rediriger le flux vidéo sur l'iPod \ding{54}
+
+\item Communication Linux/IOS \ding{54}
+
+\item Deux applications à développer \ding{54}
+
+\item Ergonomie d'utilisation \ding{54}
+
+\item Beaucoup de bibliothèques à assimiler \ding{54}
+\end{itemize}
+
 \end{frame}
 
 \section{Drone + iPod}
 \begin{frame}
 \frametitle{Drone + iPod}
+\begin{center}
+\includegraphics[height=13cm]{drone+ipod.png}
+\end{center}
+\end{frame}
+
+\subsection{Avantages}
+\begin{frame}
+\frametitle{Avantages}
+\begin{itemize}
+    \item Un seul langage de programmation : Objective-C \ding{52}
+    
+    \item Une seule application à implémenter \ding{52}
+     
+    \item Un seul flux vidéo à manipuler \ding{52}
+    
+    \item Meilleure ergonomie pour l'utilisateur \ding{52}
+  \end{itemize}
+\end{frame}
+
+\subsection{Inconvénients}
+\begin{frame}
+\frametitle{Inconvénients}
+
+\begin{itemize}
+    \item Pas de contrôle sur le drone en cas d'urgence \ding{54}
+    
+    \item Un seul flux vidéo à manipuler \ding{54}
+    
+    \item Split de l'écran de l'iPod pour le FPV \ding{54}
+    
+  \end{itemize}
+
 \end{frame}
 
 \section{Conclusion}
 \begin{frame}
 \frametitle{Conclusion}
+
+\begin{center}
+\includegraphics[height=5cm]{tableau.png}
+\end{center}
+
 \end{frame}
 
 \end{document}

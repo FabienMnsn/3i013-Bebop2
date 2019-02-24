@@ -1,3 +1,10 @@
-\beamer@sectionintoc {1}{Drone + PC + iPod}{3}{0}{1}
-\beamer@sectionintoc {2}{Drone + iPod}{4}{0}{2}
-\beamer@sectionintoc {3}{Conclusion}{5}{0}{3}
+\beamer@sectionintoc {1}{Probl\IeC {\'e}matique et Objectifs}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{La demande du client}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Le mat\IeC {\'e}riel}{5}{0}{1}
+\beamer@sectionintoc {2}{Drone + PC + iPod}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Avantages}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Inconv\IeC {\'e}nients}{8}{0}{2}
+\beamer@sectionintoc {3}{Drone + iPod}{9}{0}{3}
+\beamer@subsectionintoc {3}{1}{Avantages}{10}{0}{3}
+\beamer@subsectionintoc {3}{2}{Inconv\IeC {\'e}nients}{11}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{12}{0}{4}
