@@ -17,14 +17,21 @@
 	\subsection{Contexte et définition du problème}
 		Le client désire pouvoir faire effectuer des vols autonomes à un drone Bebop 2, avec un retour vidéo en temps réel sur un iPod touch qui pourra être placé dans un masque de vue à la première personne.\\
 		La solution devra permettre à l'utilisateur de saisir un plan de vol sur une carte et de le faire exécuter par le drone tout en ayant un retour vidéo sur l'iPod.\\
-		\bigbreak
-	    Cas d'utilisation :\\
+		\medbreak
+        \begin{flushleft}
+	        \textbf{Cas d'utilisation :} \\
+	    \end{flushleft}
+	    \begin{flushleft}
+	    1) Un utilisateur souhaite effectuer une ronde avec un drone pour surveiller sa propriété au moindre effort.\\
+	    Voici un exemple des étapes qu'il va suivre chronologiquement :\\
+	     \end{flushleft}
 	    \begin{center}
+	    \renewcommand{\arraystretch}{2}
         \begin{tabularx}{15cm}{|c|X|}
             \hline
             1 & L'utilisateur lance l'application de saisie du plan de vol sur une machine connectée au réseau local.\\
             \hline
-            2 & L'utilisateur saisit le plan de vol sur une carte en spécifiant les points de passage du drone ainsi que les altitudes que le drone doit adopter au cours du vol. \\
+            2 & L'utilisateur saisit le plan de vol sur la carte en spécifiant les points de passage du drone ainsi que les altitudes que le drone doit adopter au cours du vol. \\
             \hline
             3 & L'utilisateur valide la saisie de son plan de vol, ce dernier est enregistré. \\
             \hline
@@ -44,12 +51,47 @@
             \hline
         \end{tabularx}
         \end{center}
+        
+        \newpage
+         \begin{flushleft}
+        2) En hiver, un utilisateur souhaite faire effectuer au drone le tour de son jardin pour contrôler le niveau d'enneigement de celui-ci sans risquer de glisser.\\
+        Voici un exemple des étapes qu'il va suivre chronologiquement : \\
+         \end{flushleft}
+	    \begin{center}
+	    \renewcommand{\arraystretch}{2}
+        \begin{tabularx}{15cm}{|c|X|}
+            \hline
+            1 & L'utilisateur lance l'application de saisie du plan de vol sur une machine connectée au réseau local.\\
+            \hline
+            2 & L'utilisateur saisit le plan de vol sur la carte en spécifiant les points de passage du drone tout autour de son jardin et spécifie une altitude de quelques mètres. Le tracé est fait de manière à faire revenir le drone à son point de départ après avoir fait le tour du jardin. \\
+            \hline
+            3 & L'utilisateur valide la saisie de son plan de vol, ce dernier est enregistré. \\
+            \hline
+            4 & L'utilisateur allume le drone et y connecte sa machine en wifi. \\
+            \hline
+            5 & L'utilisateur lance l'application d'exécution du plan de vol. \\
+            \hline
+            6 &  L'utilisateur démarre l'iPod touch, le connecte au réseau local et lance l'application de réception vidéo. La réception vidéo en temps réel sur l'iPod commence.\\
+            \hline
+            7 & L'utilisateur sélectionne parmi les plans de vols présents sur le drone celui qu'il vient de réaliser. \\
+            \hline
+            8 & L'utilisateur place l'iPod dans le masque FPV, le met sur sa tête, puis lance l'exécution du plan de vol. Le drone décolle. \\
+            \hline
+            9 & Le drone effectue le plan de vol choisi, l'utilisateur voit en temps réel ce que le drone filme et peut constater l'état d'enneigement de son jardin. \\
+            \hline
+            10 & L'utilisateur attend la fin de l'exécution du plan de vol pour retirer le masque et aller récupérer le drone une fois qu'il aura attéri à son point de départ, comme prévu.\\
+            \hline
+        \end{tabularx}
+        \end{center}
+        
 	\subsection{Objectifs}
-		1) Permettre à l'utilisateur de saisir un plan de vol sur une carte et de spécifier les altitudes du drone.\\
-		2) Permettre à l'utilisateur de lancer l'exécution du plan de vol réalisé au préalable.\\
-		3) Rediriger le flux vidéo du drone vers l'iPod touch. \\
-		4) Minimiser les latences vidéo (de l'ordre de la seconde).\\
-		5) Permettre d'arrêter le vol en cours en cas d'urgence.\\
+		\begin{enumerate}
+        \item Permettre à l'utilisateur de saisir un plan de vol sur une carte et de spécifier les altitudes du drone.
+		 \item Permettre à l'utilisateur de lancer l'exécution du plan de vol réalisé au préalable.
+		 \item Rediriger le flux vidéo du drone vers l'iPod touch. 
+		 \item Minimiser les latences vidéo (de l'ordre de la seconde).
+		 \item Permettre d'arrêter le vol en cours en cas d'urgence.
+		\end{enumerate}
 \section{Expression des besoins}
 	\subsection{Besoins fonctionnels}
 	    \begin{center}
@@ -70,18 +112,41 @@
         \end{tabularx}
         \end{center}
 	\subsection{Besoins non fonctionnels}
-		Le retour vidéo envoyé sur l'iPod doit être fluide et d'une qualité convenable (HD).\\
+	(à compléter)\\
 \section{Contraintes}
 	\subsection{Matériel}
-		Moyen matériels et logiciel mis a disposition.\\
-		On ne parle pas de budget car il n'y en a pas c'est un projet universitaire.\\
+		\begin{flushleft}
+	        \textbf{Ont été mis à disposition :}
+	    \end{flushleft}
+		\begin{enumerate}
+        \item un drone Bebop 2;
+        \item un iPod Touch (préciser version);
+        \item un accès aux salles machines SAR équipées de machines sous OSX.
+        \item un accès aux salles informatiques équipées de machines sous Linux.
+        \end{enumerate}
 	\subsection{Délais}
 		Date de livraison du produit.\\
 		Autres Échéances du projet par exemple le rendu du cahier des charges.
 		Contrainte de temps : contrainte la plus importante.\\
 		(Lister les contraintes par ordre d'importance)
 	\subsection{Autres contraintes}
-		Autres contraintes a prendre en compte s'il y en a sinon on supprime cette partie.
+	    \begin{flushleft}
+	        \textbf{Concernant le plan de vol :} 
+	    \end{flushleft}
+	    \begin{enumerate}
+            \item  L'application de saisie du plan de vol doit intégrer une carte interactive permettant de tracer ce dernier.
+    		 \item On devra pouvoir spécifier l'altitude à laquelle le drone doit se trouver aux différents points du parcours.
+		 \end{enumerate}
+		
+	    \begin{flushleft}
+	        \textbf{Concernant le retour vidéo :}
+	    \end{flushleft}
+	     \begin{enumerate}
+	     \item	Le retour vidéo du drone doit être envoyé à un iPod Touch en temps réel.
+	     \item	Sa qualité doit être convenable (HD).
+		 \item La latence du retour vidéo sur l'iPod doit être minimale (de l'ordre de la seconde), et la vidéo doit être fluide.
+		 \end{enumerate}
+		
 
 
 \end{document}
