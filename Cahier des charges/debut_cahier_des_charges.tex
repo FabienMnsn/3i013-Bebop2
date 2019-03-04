@@ -5,6 +5,7 @@
 \usepackage{fancyhdr}
 \usepackage[top=1.25cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage{tabularx,tabulary}
+\usepackage{graphicx}
 
 \title{Cahier des charges}
 \begin{document}
@@ -15,8 +16,8 @@
 \maketitle
 \section{Présentation du Projet}
 	\subsection{Contexte et définition du problème}
-		Le client désire pouvoir faire effectuer des vols autonomes à un drone Bebop 2, avec un retour vidéo en temps réel sur un iPod touch qui pourra être placé dans un masque de vue à la première personne.\\
-		La solution devra permettre à l'utilisateur de saisir un plan de vol sur une carte et de le faire exécuter par le drone tout en ayant un retour vidéo sur l'iPod.\\
+		Le client souhaite faire effectuer des vols autonomes à un drone Bebop 2, avec un retour vidéo en temps réel sur un iPod Touch. Ce dernier pourra être placé dans un masque de vue à la première personne.\\
+		La solution devra permettre à l'utilisateur de saisir un plan de vol sur une carte interactive et de le faire exécuter par le drone tout en ayant un retour vidéo sur l'iPod.\\
 		\medbreak
         \begin{flushleft}
 	        \textbf{Cas d'utilisation :} \\
@@ -29,25 +30,27 @@
 	    \renewcommand{\arraystretch}{2}
         \begin{tabularx}{15cm}{|c|X|}
             \hline
-            1 & L'utilisateur lance l'application de saisie du plan de vol sur une machine connectée au réseau local.\\
+            1 & L'utilisateur lance l'application et arrive sur la page d'accueil.\\
             \hline
-            2 & L'utilisateur saisit le plan de vol sur la carte en spécifiant les points de passage du drone ainsi que les altitudes que le drone doit adopter au cours du vol. \\
+            2 & L'utilisateur lance la fonctionnalité de saisie du plan de vol sur une machine connectée au réseau local.\\
             \hline
-            3 & L'utilisateur valide la saisie de son plan de vol, ce dernier est enregistré. \\
+            3 & L'utilisateur saisit le plan de vol sur la carte en spécifiant les points de passage du drone ainsi que les altitudes que le drone doit adopter au cours du vol. \\
             \hline
-            4 & L'utilisateur allume le drone et y connecte sa machine en wifi. \\
+            4 & L'utilisateur valide la saisie de son plan de vol, ce dernier est enregistré. \\
             \hline
-            5 & L'utilisateur lance l'application d'exécution du plan de vol. \\
+            5 & L'utilisateur allume le drone et y connecte sa machine en wifi. \\
             \hline
-            6 &  L'utilisateur démarre l'iPod touch, le connecte au réseau local et lance l'application de réception vidéo. La réception vidéo en temps réel sur l'iPod commence.\\
+            6 & L'utilisateur lance la fonctionnalité d'exécution du plan de vol. \\
             \hline
-            7 & L'utilisateur sélectionne parmi les plans de vols présents sur le drone celui qu'il vient de réaliser. \\
+            7 &  L'utilisateur démarre l'iPod touch, le connecte au réseau local et lance l'application de réception vidéo. La réception vidéo en temps réel sur l'iPod commence.\\
             \hline
-            8 & L'utilisateur place l'iPod dans le masque FPV, le met sur sa tête, puis lance l'exécution du plan de vol. Le drone décolle. \\
+            8 & L'utilisateur sélectionne parmi les plans de vols présents sur le drone celui qu'il vient de réaliser. \\
             \hline
-            9 & Le drone effectue le plan de vol choisi, l'utilisateur voit en temps réel ce que le drone filme. \\
+            9 & L'utilisateur place l'iPod dans le masque FPV, le met sur sa tête, puis lance l'exécution du plan de vol. Le drone décolle. \\
             \hline
-            10 & L'utilisateur souhaite stopper l'exécution de plan de vol : par exemple, il a repéré quelque chose d'anormal sur la zone de vol et souhaite s'y rendre au plus vite. Il active alors la procédure d'arrêt d'urgence sur sa machine et retire le masque FPV. Le drone stoppe l'exécution du plan de vol et attérit sur place si les conditions le permettent. \\
+            10 & Le drone effectue le plan de vol choisi, l'utilisateur voit en temps réel ce que le drone filme. \\
+            \hline
+            11 & L'utilisateur souhaite stopper l'exécution de plan de vol : par exemple, il a repéré quelque chose d'anormal sur la zone de vol et souhaite s'y rendre au plus vite. Il active alors la procédure d'arrêt d'urgence sur sa machine et retire le masque FPV. Le drone stoppe l'exécution du plan de vol et attérit sur place si les conditions le permettent. \\
             \hline
         \end{tabularx}
         \end{center}
@@ -61,25 +64,27 @@
 	    \renewcommand{\arraystretch}{2}
         \begin{tabularx}{15cm}{|c|X|}
             \hline
-            1 & L'utilisateur lance l'application de saisie du plan de vol sur une machine connectée au réseau local.\\
+            1 & L'utilisateur lance l'application et arrive sur la page d'accueil.\\
             \hline
-            2 & L'utilisateur saisit le plan de vol sur la carte en spécifiant les points de passage du drone tout autour de son jardin et spécifie une altitude de quelques mètres. Le tracé est fait de manière à faire revenir le drone à son point de départ après avoir fait le tour du jardin. \\
+            2 & L'utilisateur lance la fonctionnalité de saisie du plan de vol sur une machine connectée au réseau local.\\
             \hline
-            3 & L'utilisateur valide la saisie de son plan de vol, ce dernier est enregistré. \\
+            3 & L'utilisateur saisit le plan de vol sur la carte en spécifiant les points de passage du drone tout autour de son jardin et spécifie une altitude de quelques mètres. Le tracé est fait de manière à faire revenir le drone à son point de départ après avoir fait le tour du jardin. \\
             \hline
-            4 & L'utilisateur allume le drone et y connecte sa machine en wifi. \\
+            4 & L'utilisateur valide la saisie de son plan de vol, ce dernier est enregistré. \\
             \hline
-            5 & L'utilisateur lance l'application d'exécution du plan de vol. \\
+            5 & L'utilisateur allume le drone et y connecte sa machine en wifi. \\
             \hline
-            6 &  L'utilisateur démarre l'iPod touch, le connecte au réseau local et lance l'application de réception vidéo. La réception vidéo en temps réel sur l'iPod commence.\\
+            6 & L'utilisateur lance la fonctionnalité d'exécution du plan de vol. \\
             \hline
-            7 & L'utilisateur sélectionne parmi les plans de vols présents sur le drone celui qu'il vient de réaliser. \\
+            7 &  L'utilisateur démarre l'iPod touch, le connecte au réseau local et lance l'application de réception vidéo. La réception vidéo en temps réel sur l'iPod commence.\\
             \hline
-            8 & L'utilisateur place l'iPod dans le masque FPV, le met sur sa tête, puis lance l'exécution du plan de vol. Le drone décolle. \\
+            8 & L'utilisateur sélectionne parmi les plans de vols présents sur le drone celui qu'il vient de réaliser. \\
             \hline
-            9 & Le drone effectue le plan de vol choisi, l'utilisateur voit en temps réel ce que le drone filme et peut constater l'état d'enneigement de son jardin. \\
+            9 & L'utilisateur place l'iPod dans le masque FPV, le met sur sa tête, puis lance l'exécution du plan de vol. Le drone décolle. \\
             \hline
-            10 & L'utilisateur attend la fin de l'exécution du plan de vol pour retirer le masque et aller récupérer le drone une fois qu'il aura attéri à son point de départ, comme prévu.\\
+            10 & Le drone effectue le plan de vol choisi, l'utilisateur voit en temps réel ce que le drone filme et peut constater l'état d'enneigement de son jardin. \\
+            \hline
+            11 & L'utilisateur attend la fin de l'exécution du plan de vol pour retirer le masque et aller récupérer le drone une fois qu'il aura attéri à son point de départ, comme prévu.\\
             \hline
         \end{tabularx}
         \end{center}
@@ -146,7 +151,34 @@
 	     \item	Sa qualité doit être convenable (HD).
 		 \item La latence du retour vidéo sur l'iPod doit être minimale (de l'ordre de la seconde), et la vidéo doit être fluide.
 		 \end{enumerate}
-		
+		 
+\section{Cinématique des écrans :}
 
+ \begin{enumerate}
+ \item Lors de l'ouverture de la page, la carte est vierge:\\
+ \includegraphics[scale=0.42]{capt1.PNG}\\
+ La carte est interractive et on peut la déplacer avec la souris.
+  Les boutons situés en haut à gauche permettent de zoomer et dézoomer sur la carte.\\
+ Le cadre situé en bas à gauche contient un switch (interrupteur) et un bouton : le switch permet de changer le mode d'interraction, et le bouton permet de finaliser le plan de vol en l'exportant dans un fichier.
+ Il existe deux modes d'interraction :  le mode d'ajout et le mode de suppression. Le mode dans lequel on se situe est indiqué à coté du switch ("adding" / "removing").\\
+  En cliquant sur la carte, un marqueur est placé à l'endroit du clic. Chaque marqueur représente un point de passage du drone dans son itinéraire de vol. Les marqueurs peuvent être déplacés à la souris (drag and drop). Lors du survol de la souris sur un marqueur, une bulle indique son numéro d'ordre (0 pour le point de départ).
+  \begin{itemize}
+ \item En mode d'ajout, en cliquant sur un marqueur, on peut spécifier dans une boite de dialogue l'altitude à laquelle doit se situer le drone à ce point lors du vol.
+ \item En mode de suppression, en cliquant sur un marqueur, on supprime ce dernier. Les marqueurs sont alors automatiquement remis dans le bon ordre et le trajet est retracé.
+ \end{itemize}
+    \medbreak
+   
+   \item On place des marqueurs en cliquant aux endroits voulus sur la carte. Au survol d'un marqueur, la bulle comportant son numéro d'ordre apparait :\\
+ \includegraphics[scale=0.42]{capt3.PNG}
+  \item On souhaite retirer des marqueurs, on active le mode de suppression en cliquant sur le switch et on clique ensuite sur les marqueurs à supprimer. L'ordre des marqueurs et le tracé du trajet d'adaptent :\\
+ \includegraphics[scale=0.42]{capt5.PNG}
+  \item On clique sur un marqueur pour spécifier l'altitude voulue à ce point :\\
+ \includegraphics[scale=0.42]{capt6.PNG}
+ \item On peut déplacer les marqueurs avec un cliquer-glisser (drag and drop) sur ces derniers :\\
+ \includegraphics[scale=0.42]{capt7.PNG}
+  \item Une fois le plan de vol terminé, on clique sur le bouton pour obtenir le fichier correspondant au trajet défini :\\
+ \includegraphics[scale=0.42]{capt8.PNG}
+
+ \end{enumerate}
 
 \end{document}
