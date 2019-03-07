@@ -84,14 +84,15 @@
             \hline
             10 & Le drone effectue le plan de vol choisi, l'utilisateur voit en temps réel ce que le drone filme et peut constater l'état d'enneigement de son jardin. \\
             \hline
-            11 & L'utilisateur attend la fin de l'exécution du plan de vol pour retirer le masque et aller récupérer le drone une fois qu'il aura attéri à son point de départ, comme prévu.\\
+            11 & L'utilisateur attend la fin de l'exécution du plan de vol pour retirer le masque et aller récupérer le drone une fois qu'il aura atterri à son point de départ, comme prévu.\\
             \hline
         \end{tabularx}
         \end{center}
         
 	\subsection{Objectifs}
 		\begin{enumerate}
-        \item Permettre à l'utilisateur de saisir un plan de vol sur une carte et de spécifier les altitudes du drone.
+        \item Permettre à l'utilisateur de saisir un plan de vol étape par étape sur une carte interactive et de spécifier les altitudes du drone à chaque point de passage.
+        \item Permettre à l'utilisateur de sauvegarder son plan de vol pour le réutiliser plus tard.
 		 \item Permettre à l'utilisateur de lancer l'exécution du plan de vol réalisé au préalable.
 		 \item Rediriger le flux vidéo du drone vers l'iPod touch. 
 		 \item Minimiser les latences vidéo (de l'ordre de la seconde).
@@ -102,17 +103,19 @@
 	    \begin{center}
         \begin{tabularx}{15cm}{|c|p{4cm}|X|}
             \hline
-            1 & Saisie du plan de vol & L'utilisateur doit pouvoir saisir un plan de vol sur une carte à travers une interface intuitive. L'utilisateur doit pouvoir spécifier l'altitude du drone.\\
+            1 & Saisie du plan de vol & L'utilisateur doit pouvoir saisir un plan de vol sur une carte à travers une interface intuitive. L'utilisateur doit pouvoir spécifier l'altitude du drone à chaque waypoint (point de passage).\\
             \hline
-            2 & Envoi du plan de vol au drone & La solution doit prendre en charge la récupération du plan de vol réalisé au préalable et son envoi au drone. \\
+            2 & Traduction du plan de vol au format Mavlink & Le plan de vol saisi graphiquement par l'utilisateur doit être converti au format Mavlink pour être ensuite envoyé au drone.\\
             \hline
-            3 & Choix du plan de vol  & L'utilisateur doit pouvoir choisir le plan de vol enregistré sur le drone qu'il souhaite exécuter. \\
+            3 & Envoi du plan de vol au drone & La solution doit prendre en charge la récupération du plan de vol réalisé au préalable et son envoi au drone. \\
             \hline
-            4 & Exécution du plan de vol  & Une fois le plan de vol souhaité choisi, l'utilisateur doit pouvoir en lancer l'exécution. \\
+            4 & Choix du plan de vol  & L'utilisateur doit pouvoir choisir le plan de vol enregistré sur le drone qu'il souhaite exécuter. \\
             \hline
-            5 & Retour vidéo  & Tout au long du vol du drone, le retour vidéo de ce dernier doit être envoyé sur un iPod touch en temps réel et avec une latence minimale. \\
+            5 & Exécution du plan de vol  & Une fois le plan de vol choisi, l'utilisateur doit pouvoir en lancer l'exécution. \\
             \hline
-            6 & Arrêt d'urgence  & A tout moment lors du vol, l'utilisateur doit pouvoir déclencher un arrêt d'urgence pour stopper l'exécution du plan de vol et faire attérire le drone. \\
+            6 & Retour vidéo  & Tout au long du vol du drone, le retour vidéo de ce dernier doit être envoyé sur un iPod touch en temps réel et avec une latence minimale. \\
+            \hline
+            7 & Arrêt d'urgence  & A tout moment lors du vol, l'utilisateur doit pouvoir déclencher un arrêt d'urgence pour stopper l'exécution du plan de vol et faire atterrir le drone. \\
             \hline
         \end{tabularx}
         \end{center}
@@ -157,9 +160,9 @@
  \begin{enumerate}
  \item Lors de l'ouverture de la page, la carte est vierge:\\
  \includegraphics[scale=0.42]{capt1.PNG}\\
- La carte est interractive et on peut la déplacer avec la souris.
+ La carte est interactive et on peut la déplacer avec la souris.
   Les boutons situés en haut à gauche permettent de zoomer et dézoomer sur la carte.\\
- Le cadre situé en bas à gauche contient un switch (interrupteur) et un bouton : le switch permet de changer le mode d'interraction, et le bouton permet de finaliser le plan de vol en l'exportant dans un fichier.
+ Le cadre situé en bas à gauche contient un switch (interrupteur) et un bouton : le switch permet de changer le mode d'interaction, et le bouton permet de finaliser le plan de vol en l'exportant dans un fichier.
  Il existe deux modes d'interraction :  le mode d'ajout et le mode de suppression. Le mode dans lequel on se situe est indiqué à coté du switch ("adding" / "removing").\\
   En cliquant sur la carte, un marqueur est placé à l'endroit du clic. Chaque marqueur représente un point de passage du drone dans son itinéraire de vol. Les marqueurs peuvent être déplacés à la souris (drag and drop). Lors du survol de la souris sur un marqueur, une bulle indique son numéro d'ordre (0 pour le point de départ).
   \begin{itemize}
