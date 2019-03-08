@@ -11,17 +11,14 @@
 \usepackage{geometry}
 \usepackage{tabularx,tabulary}
 %________________________________________________________________________________________________
-\title{3I013 Réunion du 8 Mars 2019}
-\author{Daoud KADOCH\\Fabien MANSON\\Maël FRANCESCHETTI\\Nicolas CASTANET\\}
+\title{3I013 Reunion du 8 Mars 2019}
+\author{Daoud KADOCH\\Fabien MANSON\\Maël FRANCESCHETTI\\Nicolas CASTANET}
 %________________________________________________________________________________________________
 %ce theme est le plus clean de Beamer le truc a ne pas utiliser c'est 'Warsaw'
 \usetheme{default}
 %suppression de la barre de navigation inutile
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{frametitle}[default][center]
-
-%\logo{\includegraphics[height=0.5cm]{logo_sorbonne.png}}
-
 %________________________________________________________________________________________________
 \addtobeamertemplate{footline}{
 	\begin{flushright}
@@ -34,7 +31,6 @@
 	\begin{frame}
 		\begin{center}
 		\maketitle
-		\includegraphics[height=0.7cm]{logo_sorbonne.png}
 		\end{center}
 	\end{frame}
 	%____________________________________________________________________________________________
@@ -46,53 +42,61 @@
 	\end{frame}
 	%____________________________________________________________________________________________
 	\begin{frame}
-	\section{L'Objectif du Projet}
+	\section{L'objectif du projet}
 		\begin{center}
-		\frametitle{L'Objectif du Projet}
+		\frametitle{L'objectif du projet}
 		%\subsection{Objectif}
         %\framesubtitle{L'expression des besoins}
-		   Faire effectuer une ronde à un drone Bebop 2 en suivant un itinéraire prédéfini, tout en récupérant le retour vidéo en temps réel sur un iPod (qui pourra être placé dans un masque FPV).
+		   Faire effectuer à un drone Bebop 2 une ronde en suivant un itinéraire prédéfini, et récupérer le retour vidéo en temps réel sur un iPod (qui pourra être placé dans un masque FPV).
 		\end{center}
 	\end{frame}
 	%____________________________________________________________________________________________
 	\begin{frame}
-	\section{Use Case}
+	\section{Use case}
 		\begin{center}
 		\frametitle{Use case}
 		%\subsection{Use Case}
         %\framesubtitle{L'expression des besoins}
-        \includegraphics[scale=0.52]{Use_Case.PNG}
+        \includegraphics[scale=0.5]{Use_Case.PNG}
        \end{center}
 	\end{frame}
 	%____________________________________________________________________________________________
 	\begin{frame}
-	\section{Les Besoins Fonctionnels}
+	\section{Les besoins fonctionnels}
 		\begin{center}
-		\frametitle{Les Besoins Fonctionnels}
-		\end{center}		
-        \includegraphics[scale=0.42]{tableau_des_fonctionnalites.png}
-		%\includegraphics[scale=0.65]{use_charges.png}
+		\frametitle{les besoins fonctionnels}
+		%\subsection{Besoins fonctionnels}
+        %\framesubtitle{L'expression des besoins}
+        \textbf{<ICI il faut intégrer le tableau des fonctionnalité détaillées>}
+		\begin{itemize}
+		    \item Créer un plan de vol sur une carte, en spécifiant des points de passage pour former l'itinéraire ainsi que l'altitude du drone à ces points.
+		    \item Communiquer le plan de vol au drone
+		    \item Sélectionner le plan de vol à exécuter
+		    \item Lancer l'exécution du plan de vol
+		    \item Bénéficier du retour vidéo dans l'iPod
+		\end{itemize}
+		\end{center}
 	\end{frame}
 
 	%____________________________________________________________________________________________
 	\begin{frame}
-	\section{Les Solutions Étudiées}
+	\section{Les solutions étudiées}
 		\begin{center}
-		\frametitle{Les Solutions Étudiées}
-		%\subsection{Les Solutions étudiées}
+		\frametitle{Solutions étudiées}
+		%\subsection{Solutions étudiées}
         %\framesubtitle{Les solutions}
-        \includegraphics[scale=0.45]{comparatif_v2.PNG}
+            \includegraphics[scale=0.9]{comparatif.PNG}
 		\end{center}
 	\end{frame}
 	%____________________________________________________________________________________________
 	\begin{frame}
-	\section{Les Contraintes}
+	\section{Les contraintes}
 		\begin{center}
-		\frametitle{Les Contraintes}
+		\frametitle{Les contraintes}
 		%\subsection{Contraintes}
         %\framesubtitle{Les solutions}
            	\begin{itemize}
-                \item Matériel : Bebop2, PC Linux, iPod
+                \item Matériel : Bebop2, PC, iPod
                 \item Un réseau local connecté au PC et à l'iPod, et bénéficiant d'un accès internet (API carte)
                 \item Saisie du plan de vol ergonomique, simple, intuitive
                 \item Arrêt d'urgence depuis le PC
@@ -101,12 +105,12 @@
 	\end{frame}
 	%____________________________________________________________________________________________		
 	\begin{frame}
-	\section{La Solution Retenue}
+	\section{La solution retenue}
 		\begin{center}
-		\frametitle{La Solution Retenue}
+		\frametitle{La solution retenue}
 		%\subsection{Solution retenue}
         %\framesubtitle{Les solutions}
-            \includegraphics[scale=0.45]{schemaPC.png}
+            \includegraphics[scale=0.65]{shcema_archi.png}
 		\end{center}
 	\end{frame}
 	%____________________________________________________________________________________________
