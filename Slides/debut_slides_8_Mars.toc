@@ -1,0 +1,7 @@
+\babel@toc {french}{}
+\beamer@sectionintoc {1}{L'Objectif du Projet}{3}{0}{1}
+\beamer@sectionintoc {2}{Use Case}{4}{0}{2}
+\beamer@sectionintoc {3}{Les Besoins Fonctionnels}{5}{0}{3}
+\beamer@sectionintoc {4}{Les Solutions \IeC {\'E}tudi\IeC {\'e}es}{6}{0}{4}
+\beamer@sectionintoc {5}{Les Contraintes}{7}{0}{5}
+\beamer@sectionintoc {6}{La Solution Retenue}{8}{0}{6}
