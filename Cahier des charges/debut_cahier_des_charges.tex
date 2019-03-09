@@ -121,6 +121,17 @@
         \end{center}
 	\subsection{Besoins non fonctionnels}
 	(à compléter)\\
+\section{Solutions étudiées}
+	\subsection{Comparatif des solutions}
+	  \includegraphics{comparatif.PNG}\\
+	  Les architectures étudiées sont les suivantes, de gauche à droite dans le tableau : 
+	  \begin{enumerate}
+        \item une architecture utilisant un PC sous linux pour la saisie du plan de vol et qui commande le drone, ainsi qu'un iPod Touch sur lequel on redirige le flux vidéo.
+        \item une architecture utilisant un iPad pour la saisie du plan de vol, ainsi qu'un iPod Touch qui commande le drone et récupère le flux vidéo.
+         \item une architecture utilisant un iPod Touch pour la saisie du plan de vol, qui commande le drone et récupère le flux vidéo.
+        \end{enumerate}
+        Comme on peut le constater, la solution utilisant le PC et l'iPod Touch est plus avantageuse.\\
+        C'est donc cette solution qui sera préférée.
 \section{Contraintes}
 	\subsection{Matériel}
 		\begin{flushleft}
@@ -131,6 +142,14 @@
         \item un iPod Touch (préciser version);
         \item un accès aux salles machines SAR équipées de machines sous OSX.
         \item un accès aux salles informatiques équipées de machines sous Linux.
+        \end{enumerate}
+        \begin{flushleft}
+	        \textbf{Les contraintes techniques se la solution préférée sont :}
+	    \end{flushleft}
+		\begin{enumerate}
+        \item Le PC sous Linux doit avoir deux cartes réseau : une pour pouvoir se connecter au drone en wifi, l'autre pour se connecter au réseau local pour rediriger le flux vidéo.
+        \item Il faut un réseau local sur lequel sont connectés le PC et l'iPod Touch.
+        \item Le réseau local doit avoir un accès internet.
         \end{enumerate}
 	\subsection{Délais}
 		Date de livraison du produit.\\
