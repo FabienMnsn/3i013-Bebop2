@@ -6,16 +6,88 @@
 \usepackage[top=1.25cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage{tabularx,tabulary}
 \usepackage{graphicx}
+\date{Lundi 11 Mars 2019}
+\author{FRANCESCHETTI Maël\\KADOCH Daoud\\MANSON Fabien\\CASTANET Nicolas}
+\title{\LARGE{Projet 3i013\\}Cahier des Charges}
 
-\title{Cahier des charges}
+\usepackage[french]{babel}
+%\usepackage[utf8x]{inputenc}
+%\usepackage{amsmath}
+%\usepackage[colorinlistoftodos]{todonotes}
 \begin{document}
 
-%permet de souligner un certain type de partie
-\sectionfont{\underline}
+\begin{titlepage}
 
-\maketitle
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Université Pierre-et-Marie-Curie}\\[3cm] % Name of your university/college
+\textsc{\Large Licence Informatique 3\up{ème} Année}\\[0.5cm] % Major heading such as course name
+\textsc{\large Projet 3i013}\\[2cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Cahier des Charges}\\[0.4cm] % Title of your document
+\HRule \\[2cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Auteurs:}\\[0.2cm]
+Maël \textsc{FRANCESCHETTI}\\ % Your name
+Daoud \textsc{KADOCH}\\ % Your name
+Fabien \textsc{MANSON}\\ % Your name
+Nicolas \textsc{CASTANET} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Enseignant:} \\[0.2cm]
+Fabrice \textsc{KORDON}
+\end{flushright}
+\end{minipage}\\[4cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large Lundi 11 Mars 2019}\\[3cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[scale=0.15]{logo_sorbonne.png} % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+
+% -----------------------------------------------------
+
+\newpage
 \section{Présentation du Projet}
-	\subsection{Contexte et définition du problème}
+	\subsection{Contexte et définition du problème}		
 		Le client souhaite faire effectuer des vols autonomes à un drone Bebop 2, avec un retour vidéo en temps réel sur un iPod Touch. Ce dernier pourra être placé dans un masque de vue à la première personne.\\
 		La solution devra permettre à l'utilisateur de saisir un plan de vol sur une carte interactive et de le faire exécuter par le drone tout en ayant un retour vidéo sur l'iPod.\\
 		\medbreak
@@ -25,6 +97,7 @@
 	    \begin{flushleft}
 	    1) Un utilisateur souhaite effectuer une ronde avec un drone pour surveiller sa propriété au moindre effort.\\
 	    Voici un exemple des étapes qu'il va suivre chronologiquement :\\
+		[1cm]	     
 	     \end{flushleft}
 	    \begin{center}
 	    \renewcommand{\arraystretch}{2}
@@ -58,7 +131,7 @@
         \newpage
          \begin{flushleft}
         2) En hiver, un utilisateur souhaite faire effectuer au drone le tour de son jardin pour contrôler le niveau d'enneigement de celui-ci sans risquer de glisser.\\
-        Voici un exemple des étapes qu'il va suivre chronologiquement : \\
+        Voici un exemple des étapes qu'il va suivre chronologiquement : \\ [1cm]
          \end{flushleft}
 	    \begin{center}
 	    \renewcommand{\arraystretch}{2}
@@ -86,10 +159,12 @@
             \hline
             11 & L'utilisateur attend la fin de l'exécution du plan de vol pour retirer le masque et aller récupérer le drone une fois qu'il aura atterri à son point de départ, comme prévu.\\
             \hline
+            
         \end{tabularx}
         \end{center}
-        
+        \vspace*{1cm}
 	\subsection{Objectifs}
+	\vspace*{0.3cm}
 		\begin{enumerate}
         \item Permettre à l'utilisateur de saisir un plan de vol étape par étape sur une carte interactive et de spécifier les altitudes du drone à chaque point de passage.
         \item Permettre à l'utilisateur de sauvegarder son plan de vol pour le réutiliser plus tard.
@@ -99,8 +174,9 @@
 		 \item Permettre d'arrêter le vol en cours en cas d'urgence.
 		\end{enumerate}
 \section{Expression des besoins}
-	\subsection{Besoins fonctionnels}
+	\subsection{Besoins fonctionnels} 
 	    \begin{center}
+	    \vspace*{0.7cm}
         \begin{tabularx}{15cm}{|c|p{4cm}|X|}
             \hline
             1 & Saisie du plan de vol & L'utilisateur doit pouvoir saisir un plan de vol sur une carte à travers une interface intuitive. L'utilisateur doit pouvoir spécifier l'altitude du drone à chaque waypoint (point de passage).\\
@@ -115,42 +191,83 @@
             \hline
             6 & Retour vidéo  & Tout au long du vol du drone, le retour vidéo de ce dernier doit être envoyé sur un iPod touch en temps réel et avec une latence minimale. \\
             \hline
-            7 & Arrêt d'urgence  & A tout moment lors du vol, l'utilisateur doit pouvoir déclencher un arrêt d'urgence pour stopper l'exécution du plan de vol et faire atterrir le drone. \\
+            7 & Arrêt d'urgence  & À tout moment un deuxième utilisateur doit pouvoir enclencher un arrêt d'urgence depuis le PC. \\
             \hline
         \end{tabularx}
         \end{center}
 	\subsection{Besoins non fonctionnels}
-	(à compléter)\\
-\section{Solutions étudiées}
-	\subsection{Comparatif des solutions}
-	  \includegraphics{comparatif.PNG}\\
-	  Les architectures étudiées sont les suivantes, de gauche à droite dans le tableau : 
-	  \begin{enumerate}
-        \item une architecture utilisant un PC sous linux pour la saisie du plan de vol et qui commande le drone, ainsi qu'un iPod Touch sur lequel on redirige le flux vidéo.
-        \item une architecture utilisant un iPad pour la saisie du plan de vol, ainsi qu'un iPod Touch qui commande le drone et récupère le flux vidéo.
-         \item une architecture utilisant un iPod Touch pour la saisie du plan de vol, qui commande le drone et récupère le flux vidéo.
-        \end{enumerate}
-        Comme on peut le constater, la solution utilisant le PC et l'iPod Touch est plus avantageuse.\\
-        C'est donc cette solution qui sera préférée.
-\section{Contraintes}
+		\begin{center}
+		 \vspace*{0.7cm}
+		\begin{tabularx}{15cm}{|c|p{4cm}|X|}
+	
+			\hline
+		1 & Démarrage de la ronde à l'aide de gestes & L'utilisateur pourra éventuellement engager le démarrage du vol en effectuant un certain mouvement de la tête. 	\\
+			\hline
+		2 & Arrêt d'urgence à l'aide de gestes & L'utilisateur pourra éventuellement engager un arrêt d'urgence en effectuant un certain mouvement de la tête. 	\\
+			\hline
+	
+		\end{tabularx}	
+		\end{center}
+		
+\section{Périmètre}
+	\subsection{À qui s'adresse le produit ?}
+	Ce projet est destiné à un public désirant effectuer une ronde d'une durée de 20 à 25 minutes maximum avec son drone.\\
+	La portée maximale du drone est de 200 mètres pour une altitude de 100 mètres tout au plus.
+	
+	\subsection{Les Limites}
+	Le drone ne sera pas capable d'éviter les obstacles durant sa ronde, c'est à l'utilisateur d'établir un trajet cohérent avec son environnement.\\
+	De plus, dans le cas où le trajet proposé est trop long par rapport à l'autonomie du drone, un simple message d'avertissement sera lancé à l'encontre de l'utilisateur, l'application ne sera pas en mesure d'empêcher cette ronde.
+	
+	
+
+	
+\section{Ressources}
 	\subsection{Matériel}
 		\begin{flushleft}
 	        \textbf{Pour réaliser ce projet nous disposons du matériel suivant :}
 	    \end{flushleft}
 		\begin{enumerate}
-        \item un drone Bebop 2;
-        \item un iPod Touch (préciser version);
-        \item un accès aux salles machines SAR équipées de machines sous OSX.
+        \item Un drone Bebop 2.
+        \item Un iPod Touch de 6ème génération sous iOS 12.
+        \item Un accès aux salles machines SAR équipées de machines sous OSX.
         \item un accès aux salles informatiques équipées de machines sous Linux.
         \end{enumerate}
-        \begin{flushleft}
-	        \textbf{Les contraintes techniques se la solution préférée sont :}
+        
+	\subsection{L'équipe}
+
+	L'équipe est composée de quatre étudiants en troisième année de licence d'informatique.\\
+        Nos connaissances en programmation sous Linux sont bonnes mais le langage Objective-C et l'univers iOS nous sont pour le moment encore inconnus.
+
+\section{Solutions étudiées}
+	\subsection{Comparatif des solutions}
+	\begin{center}
+	 \vspace*{0.7cm}
+	  \includegraphics{comparatif.PNG}\\
+	\end{center}	  
+	  Les architectures étudiées sont les suivantes, de gauche à droite dans le tableau : 
+	  \begin{enumerate}
+        \item Une architecture utilisant un PC sous linux pour la saisie du plan de vol et qui commande le drone, ainsi qu'un iPod Touch sur lequel on redirige le flux vidéo.
+        \item Une architecture utilisant un iPad pour la saisie du plan de vol, ainsi qu'un iPod Touch qui commande le drone et récupère le flux vidéo.
+         \item Une architecture utilisant un iPod Touch pour la saisie du plan de vol, qui commande le drone tout en récupérant le flux vidéo.
+        \end{enumerate}
+        Comme nous pouvons le constater, la solution utilisant le PC et l'iPod Touch est plus avantageuse.\\
+        C'est donc cette solution qui sera préférée.
+
+        
+	
+
+
+\section{Contraintes}
+
+	\begin{flushleft}
+	        \textbf{Les contraintes techniques de la solution préférée sont :}
 	    \end{flushleft}
 		\begin{enumerate}
         \item Le PC sous Linux doit avoir deux cartes réseau : une pour pouvoir se connecter au drone en wifi, l'autre pour se connecter au réseau local pour rediriger le flux vidéo.
         \item Il faut un réseau local sur lequel sont connectés le PC et l'iPod Touch.
         \item Le réseau local doit avoir un accès internet.
         \end{enumerate}
+	
 	\subsection{Délais}
 		Le cahier des charges doit être envoyé au client pour le lundi 11 mars.\\
 		En ce qui concerne le produit, il devra être prêt et livré début mai, et un rapport devra être rendu le jeudi 2 mai avant minuit.\\
@@ -179,28 +296,36 @@
 \section{Cinématique des écrans :}
 
  \begin{enumerate}
- \item Lors de l'ouverture de la page, la carte est vierge:\\
+ \item Lors de l'ouverture de la page, la carte est vierge: \\ \\
  \includegraphics[scale=0.42]{capt1.PNG}\\
  \\La carte est interactive et on peut la déplacer avec la souris.
-  Les boutons situés en haut à gauche permettent de zoomer et dézoomer sur la carte.\\
+  Les boutons situés en haut à gauche permettent de zoomer et dézoomer sur la carte.\\ \\
  Le cadre situé en bas à gauche contient un switch (interrupteur) et un bouton : le switch permet de changer le mode d'interaction, et le bouton permet de finaliser le plan de vol en l'exportant dans un fichier.
- Il existe deux modes d'interraction :  le mode d'ajout et le mode de suppression. Le mode dans lequel on se situe est indiqué à coté du switch ("adding" / "removing").\\
-  En cliquant sur la carte, un marqueur est placé à l'endroit du clic. Chaque marqueur représente un point de passage du drone dans son itinéraire de vol. Les marqueurs peuvent être déplacés à la souris (drag and drop). Lors du survol de la souris sur un marqueur, une bulle indique son numéro d'ordre (0 pour le point de départ).
+ Il existe deux modes d'interraction :  le mode d'ajout et le mode de suppression. Le mode dans lequel on se situe est indiqué à coté du switch ("adding" / "removing").\\ \\
+  En cliquant sur la carte, un marqueur est placé à l'endroit du clic. Chaque marqueur représente un point de passage du drone dans son itinéraire de vol. Les marqueurs peuvent être déplacés à la souris (drag and drop). Lors du survol de la souris sur un marqueur, une bulle indique son numéro d'ordre (0 pour le point de départ).\\
   \begin{itemize}
- \item En mode d'ajout, en cliquant sur un marqueur, on peut spécifier dans une boite de dialogue l'altitude à laquelle doit se situer le drone à ce point lors du vol.
+ \item En mode d'ajout, en cliquant sur un marqueur, on peut spécifier dans une boite de dialogue l'altitude à laquelle doit se situer le drone à ce point lors du vol.\\
  \item En mode de suppression, en cliquant sur un marqueur, on supprime ce dernier. Les marqueurs sont alors automatiquement remis dans le bon ordre et le trajet est retracé.
  \end{itemize}
     \medbreak
    
-   \item On place des marqueurs en cliquant aux endroits voulus sur la carte. Au survol d'un marqueur, la bulle comportant son numéro d'ordre apparait :\\
+   \newpage
+   \vspace*{1cm}
+   \item On place des marqueurs en cliquant aux endroits voulus sur la carte. Au survol d'un marqueur, la bulle comportant son numéro d'ordre apparait :\\ \\
  \includegraphics[scale=0.42]{capt3.PNG} \\
+ \vspace*{1.5cm}
   \item On souhaite retirer des marqueurs, on active le mode de suppression en cliquant sur le switch et on clique ensuite sur les marqueurs à supprimer. L'ordre des marqueurs et le tracé du trajet d'adaptent :\\ \\
  \includegraphics[scale=0.42]{capt5.PNG}
-  \item On clique sur un marqueur pour spécifier l'altitude voulue à ce point :\\
+	\newpage  
+	 \vspace*{0.5cm}
+  \item On clique sur un marqueur pour spécifier l'altitude voulue à ce point :\\ \\
+   \vspace*{1cm}
  \includegraphics[scale=0.42]{capt6.PNG}
+  \vspace*{1cm}
  \item On peut déplacer les marqueurs avec un cliquer-glisser (drag and drop) sur ces derniers :\\ \\
  \includegraphics[scale=0.42]{capt7.PNG}
-  \item Une fois le plan de vol terminé, on clique sur le bouton pour obtenir le fichier correspondant au trajet défini :\\
+ \newpage
+  \item Une fois le plan de vol terminé, on clique sur le bouton pour obtenir le fichier correspondant au trajet défini :\\ \\
  \includegraphics[scale=0.42]{capt8.PNG}
 
  \end{enumerate}

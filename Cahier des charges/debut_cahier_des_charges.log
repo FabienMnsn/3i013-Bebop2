@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.17)  10 MAR 2019 00:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.17)  10 MAR 2019 14:42
 entering extended mode
 **./debut_cahier_des_charges.tex
 (debut_cahier_des_charges.tex
@@ -134,21 +134,72 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen122
 \Gin@req@width=\dimen123
-) (debut_cahier_des_charges.aux)
+)
+("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty"
+Package: babel 2018/11/13 3.27 The Babel package
+("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.def
+"
+File: switch.def 2018/11/13 3.27 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel-french\fre
+nch.ldf"
+Language: french 2018/09/14 v3.5c French support from the babel system
+
+("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
+File: babel.def 2018/11/13 3.27 Babel common definitions
+\babel@savecnt=\count93
+\U@D=\dimen124
+
+("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.d
+ef")
+\bbl@dirlevel=\count94
+)
+\l@acadian = a dialect from \language\l@french 
+\FB@nonchar=\count95
+Package babel Info: Making : an active character on input line 414.
+Package babel Info: Making ; an active character on input line 415.
+Package babel Info: Making ! an active character on input line 416.
+Package babel Info: Making ? an active character on input line 417.
+\FBguill@level=\count96
+\FBold@everypar=\toks20
+\FB@Mht=\dimen125
+\mc@charclass=\count97
+\mc@charfam=\count98
+\mc@charslot=\count99
+\std@mcc=\count100
+\dec@mcc=\count101
+\c@FBcaption@count=\count102
+\listindentFB=\dimen126
+\descindentFB=\dimen127
+\labelindentFB=\dimen128
+\labelwidthFB=\dimen129
+\leftmarginFB=\dimen130
+\parindentFFN=\dimen131
+\FBfnindent=\dimen132
+))
+("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/latex/carlisle\scalefnt.
+sty") (debut_cahier_des_charges.aux)
 \openout1 = `debut_cahier_des_charges.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -188,17 +239,17 @@ LaTeX Font Info:    ... okay on input line 11.
 ("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count93
-\scratchdimen=\dimen124
+\scratchcounter=\count103
+\scratchdimen=\dimen133
 \scratchbox=\box29
-\nofMPsegments=\count94
-\nofMParguments=\count95
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count96
-\MPscratchDim=\dimen125
-\MPnumerator=\count97
-\makeMPintoPDFobject=\count98
-\everyMPtoPDFconversion=\toks21
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen134
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks22
 )
 ("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
 base.sty"
@@ -253,152 +304,182 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
+LaTeX Info: Redefining \degres on input line 17.
+LaTeX Info: Redefining \dots on input line 17.
+LaTeX Info: Redefining \up on input line 17.
+
+
+Package french.ldf Warning: OT1 encoding should not be used for French.
+(french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
+(french.ldf)                of your document; reported on input line 17.
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 16.
+(Font)              <7> on input line 53.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 16.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 16.
-
-
-LaTeX Warning: No \author given.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 17.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 17.
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--21
-
- []
-
+(Font)              <5> on input line 53.
+<logo_sorbonne.png, id=1, 1284.8pt x 520.94624pt>
+File: logo_sorbonne.png Graphic file (type png)
+<use logo_sorbonne.png>
+Package pdftex.def Info: logo_sorbonne.png  used on input line 76.
+(pdftex.def)             Requested size: 192.71169pt x 78.13857pt.
 [1
 
-{C:/Users/Daoud/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+{C:/Users/Daoud/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./logo_sorb
+onne.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
 
  []
 
-<comparatif.PNG, id=13, 370.38374pt x 99.9735pt>
+[1] [2] [3]
+<comparatif.PNG, id=23, 370.38374pt x 99.9735pt>
 File: comparatif.PNG Graphic file (type png)
 <use comparatif.PNG>
-Package pdftex.def Info: comparatif.PNG  used on input line 126.
+Package pdftex.def Info: comparatif.PNG  used on input line 245.
 (pdftex.def)             Requested size: 370.38283pt x 99.97324pt.
-[3 <./comparatif.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 155--158
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--275
 
  []
 
-<capt1.PNG, id=19, 1141.26375pt x 564.30824pt>
+[4 <./comparatif.PNG>]
+<capt1.PNG, id=28, 1141.26375pt x 564.30824pt>
 File: capt1.PNG Graphic file (type png)
 <use capt1.PNG>
-Package pdftex.def Info: capt1.PNG  used on input line 183.
+Package pdftex.def Info: capt1.PNG  used on input line 300.
 (pdftex.def)             Requested size: 479.32751pt x 237.00784pt.
 
-Overfull \hbox (3.84355pt too wide) in paragraph at lines 182--189
+Underfull \hbox (badness 10000) in paragraph at lines 299--306
+
+ []
+
+
+Overfull \hbox (8.84354pt too wide) in paragraph at lines 299--306
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--189
+Underfull \hbox (badness 10000) in paragraph at lines 299--306
 
  []
 
-[4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 190.
 
- ("C:\Users\Daoud\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 190.
-<capt3.PNG, id=23, 1141.26375pt x 562.5015pt>
-File: capt3.PNG Graphic file (type png)
-<use capt3.PNG>
-Package pdftex.def Info: capt3.PNG  used on input line 196.
-(pdftex.def)             Requested size: 479.32751pt x 236.24901pt.
+Underfull \hbox (badness 10000) in paragraph at lines 299--306
 
-Overfull \hbox (3.84355pt too wide) in paragraph at lines 195--197
-[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--197
+Underfull \hbox (badness 10000) in paragraph at lines 299--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
 [5 <./capt1.PNG>]
-<capt5.PNG, id=29, 1140.05925pt x 561.297pt>
-File: capt5.PNG Graphic file (type png)
-<use capt5.PNG>
-Package pdftex.def Info: capt5.PNG  used on input line 198.
-(pdftex.def)             Requested size: 478.82162pt x 235.74313pt.
+<capt3.PNG, id=33, 1141.26375pt x 562.5015pt>
+File: capt3.PNG Graphic file (type png)
+<use capt3.PNG>
+Package pdftex.def Info: capt3.PNG  used on input line 315.
+(pdftex.def)             Requested size: 479.32751pt x 236.24901pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
+Underfull \hbox (badness 10000) in paragraph at lines 314--317
 
  []
 
 
-Overfull \hbox (3.33766pt too wide) in paragraph at lines 197--199
+Overfull \hbox (8.84354pt too wide) in paragraph at lines 314--317
 [] 
  []
 
-<capt6.PNG, id=30, 1141.26375pt x 564.9105pt>
-File: capt6.PNG Graphic file (type png)
-<use capt6.PNG>
-Package pdftex.def Info: capt6.PNG  used on input line 200.
-(pdftex.def)             Requested size: 479.32751pt x 237.26079pt.
+<capt5.PNG, id=34, 1140.05925pt x 561.297pt>
+File: capt5.PNG Graphic file (type png)
+<use capt5.PNG>
+Package pdftex.def Info: capt5.PNG  used on input line 318.
+(pdftex.def)             Requested size: 478.82162pt x 235.74313pt.
 
-Overfull \hbox (3.84355pt too wide) in paragraph at lines 199--201
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
+
+ []
+
+
+Overfull \hbox (8.33765pt too wide) in paragraph at lines 317--319
 [] 
  []
 
 [6 <./capt3.PNG> <./capt5.PNG>]
-<capt7.PNG, id=36, 1141.866pt x 560.0925pt>
+<capt6.PNG, id=41, 1141.26375pt x 564.9105pt>
+File: capt6.PNG Graphic file (type png)
+<use capt6.PNG>
+Package pdftex.def Info: capt6.PNG  used on input line 323.
+(pdftex.def)             Requested size: 479.32751pt x 237.26079pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--325
+
+ []
+
+
+Overfull \hbox (11.06575pt too wide) in paragraph at lines 321--325
+ []
+ []
+
+<capt7.PNG, id=42, 1141.866pt x 560.0925pt>
 File: capt7.PNG Graphic file (type png)
 <use capt7.PNG>
-Package pdftex.def Info: capt7.PNG  used on input line 202.
+Package pdftex.def Info: capt7.PNG  used on input line 326.
 (pdftex.def)             Requested size: 479.58044pt x 235.23724pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
+Underfull \hbox (badness 10000) in paragraph at lines 325--327
 
  []
 
 
-Overfull \hbox (4.09648pt too wide) in paragraph at lines 201--203
+Overfull \hbox (9.09647pt too wide) in paragraph at lines 325--327
 [] 
  []
 
-<capt8.PNG, id=37, 1138.85475pt x 563.706pt>
+[7 <./capt6.PNG> <./capt7.PNG>]
+<capt8.PNG, id=48, 1138.85475pt x 563.706pt>
 File: capt8.PNG Graphic file (type png)
 <use capt8.PNG>
-Package pdftex.def Info: capt8.PNG  used on input line 204.
+Package pdftex.def Info: capt8.PNG  used on input line 329.
 (pdftex.def)             Requested size: 478.31573pt x 236.7549pt.
 
-Overfull \hbox (2.83177pt too wide) in paragraph at lines 203--205
+Underfull \hbox (badness 10000) in paragraph at lines 328--330
+
+ []
+
+
+Overfull \hbox (7.83176pt too wide) in paragraph at lines 328--330
 [] 
  []
 
-[7 <./capt6.PNG> <./capt7.PNG>] [8 <./capt8.PNG>] (debut_cahier_des_charges.aux
-) ) 
+[8 <./capt8.PNG>] (debut_cahier_des_charges.aux) ) 
 Here is how much of TeX's memory you used:
- 2386 strings out of 492946
- 35526 string characters out of 3126266
- 116042 words of memory out of 3000000
- 6250 multiletter control sequences out of 15000+200000
- 8510 words of font info for 30 fonts, out of 3000000 for 9000
+ 3639 strings out of 492946
+ 54023 string characters out of 3126266
+ 145212 words of memory out of 3000000
+ 7485 multiletter control sequences out of 15000+200000
+ 7616 words of font info for 27 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,43p,409b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Daoud/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb><C:/Users/Daoud/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb><C:/Users/Daoud/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Daoud/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Daoud/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Daou
-d/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on debut_cahier_des_charges.pdf (8 pages, 5170787 bytes).
+ 41i,9n,43p,409b,423s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Daoud/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Daoud/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
+/Users/Daoud/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mcsc10.pfb><C:/Users/Daoud/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><C:/Users/Daoud/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Daoud/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on debut_cahier_des_charges.pdf (9 pages, 5232943 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
