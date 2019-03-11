@@ -45,10 +45,10 @@
 \begin{minipage}{0.4\textwidth}
 	\begin{flushleft} \large
 	\emph{Auteurs:}\\[0.2cm]
+	Nicolas \textsc{CASTANET}\\ % Your name
 	Maël \textsc{FRANCESCHETTI}\\ % Your name
 	Daoud \textsc{KADOCH}\\ % Your name
-	Fabien \textsc{MANSON}\\ % Your name
-	Nicolas \textsc{CASTANET} % Your name
+	Fabien \textsc{MANSON} % Your name
 	\end{flushleft}
 \end{minipage}
 ~
@@ -88,7 +88,7 @@
 \newpage
 \section{Présentation du Projet}
 	\subsection{Contexte et définition du problème}
-		Un client nous contacte dans le but de réaliser une application lui permettant d'effectuer un vol autonome avec un drone Bebop 2 tout en visualisant sur un iPod le retour vidéo de la caméra embarquée sur le drone. L'iPod sera placé dans un masque de vue à la première personne. \\	
+		Un client nous contacte dans le but de réaliser une application lui permettant d'effectuer un vol autonome avec un drone Bebop 2 tout en visualisant sur un iPod Touc le retour vidéo de la caméra embarquée sur le drone. L'iPod sera placé dans un masque de vue à la première personne. \\	
 		%Le client souhaite faire effectuer des vols autonomes à un drone Bebop 2, avec un retour vidéo en temps réel sur un iPod Touch. Ce dernier pourra être placé dans un masque de vue à la première personne.\\
 		La solution devra permettre à l'utilisateur de saisir un plan de vol sur une carte interactive et de le faire exécuter par le drone tout en ayant un retour vidéo sur l'iPod.\\
 		\medbreak
@@ -174,8 +174,7 @@
 		 	\item Permettre d'arrêter le vol en cours en cas d'urgence.
 		\end{enumerate}
 		
-\section{Expression des besoins}
-	\subsection{Besoins fonctionnels} 
+\section{Besoins fonctionnels}
 	    \begin{center}
 	    \vspace*{0.7cm}
         \begin{tabularx}{15cm}{|c|p{4cm}|X|}
@@ -209,7 +208,7 @@
 	
 	\subsection{Les Limites}
 		Le drone ne sera pas capable d'éviter les obstacles durant sa ronde, c'est à l'utilisateur d'établir un trajet cohérent avec son environnement.\\
-		De plus, dans le cas où le trajet proposé est trop long par rapport à l'autonomie du drone, un simple message d'avertissement sera lancé à l'encontre de l'utilisateur, l'application ne sera pas en mesure d'empêcher cette ronde.
+		De plus, dans le cas où le trajet proposé est trop long par rapport à l'autonomie du drone, un simple message d'avertissement sera affiché pour prévenir l'utilisateur, l'application ne sera pas en mesure d'empêcher cette ronde.
 	
 	
 
@@ -245,7 +244,7 @@
 		\begin{center}
 		%\vspace*{0.7cm}
 		\includegraphics{comparatif_v3.PNG}\\
-		\caption{tableau de comparaison des solutions}
+		\caption{tableau comparatif des solutions}
 		\end{center}
 		\end{figure}
 		%________________
@@ -253,13 +252,17 @@
 
 		%description précise du tableau        
 
-		\indent Concernant le confort d'utilisation l'avantage est à la deuxième solution car l'iPad possède un grand écran ainsi qu'une saisie tactile. La première solution est moins confortable principalement à cause de l'absence de saisie tactile sur le PC. La dernière solution n'est pas très pratique de fait de la petite taille de l'écran de l'iPod.\\
+		\indent Concernant le confort d'utilisation l'avantage est à la seconde solution car l'iPad possède un grand écran ainsi qu'une saisie tactile. La première solution est moins confortable principalement à cause de l'absence de saisie tactile sur le PC. La dernière solution n'est pas très pratique de fait de la petite taille de l'écran de l'iPod.\\
 		
-        \indent Concernant l'arrêt d'urgence c'est la première solution qui à l'avantage car elle permet d'implémenter cette fonction sur le PC ou sur l'iPod (via un mouvement de tête quand l'utilisateur porte le masque ou la pression d'une touche du clavier). L'arrêt d'urgence sur la troisième solution nous force à implémenter la fonctionnalité via un geste car l'iPod est, rappelons-le, attaché dans le masque donc difficile d'accès. La troisième solution ne pourra pas utiliser l'ipad pour lancer un arrêt d'urgence car l'iPod sera le seul appareil connecté au drone.\\
-        \indent Les solutions 2 et 3 proposent une latence vidéo réduite car il n'y a pas de redirection possible du flux vidéo. Ce dernier est directement reçu par l'iPod. La première solution du fait de la redirection du flux vidéo depuis le PC vers l'iPod induit une latence plus importante.\\
-        \indent Et finalement en ce qui concerne les traitements réalisés par l'application dans la première solution la majorité des calculs (saisie du plan de vol, envoie du plan de vol et traitement du flux vidéo reçu) seront fait sur le PC. L'iPod ne fera que recevoir le flux vidéo déjà traité. La seconde solution suit le même principe : la saisie du plan et le lancement ce font depuis l'iPad mais le traitement du flux vidéo ce fera sur l'iPod. Enfin la dernière solution traitera tout sur l'iPod ce qui peut causer des probleme d'autonomie de batterie pour l'iPod. L'avantage est donc à la première solution.\\ \\
+        \indent Concernant l'arrêt d'urgence c'est la première solution qui a l'avantage car elle permet d'implémenter cette fonction sur le PC ou sur l'iPod (via un mouvement de tête quand l'utilisateur porte le masque ou la pression d'une touche du clavier). L'arrêt d'urgence sur la troisième solution nous force à implémenter la fonctionnalité via un geste car l'iPod est, rappelons-le, attaché dans le masque donc difficile d'accès. La seconde solution ne pourra pas utiliser l'ipad pour lancer un arrêt d'urgence car l'iPod sera le seul appareil connecté au drone.\\
+        
+        \indent Les solutions 2 et 3 proposent une latence vidéo réduite car il n'y a pas à rediriger le flux vidéo. Ce dernier est directement reçu et lu par l'iPod. La première solution, en raison de la redirection du flux vidéo depuis le PC vers l'iPod, induit une latence légèrement plus importante (la différence reste assez imperceptible à l'utilisateur).\\
+        
+        \indent Et finalement en ce qui concerne les traitements réalisés par l'application, dans la première solution la majorité des calculs (saisie du plan de vol, envoie du plan de vol et traitement du flux vidéo reçu) seront fait sur le PC. L'iPod ne fera que recevoir le flux vidéo déjà traité. La seconde solution suit le même principe : la saisie du plan de vol se fait depuis l'iPad mais le traitement du flux vidéo ce fera sur l'iPod. Enfin la dernière solution traitera tout sur l'iPod ce qui peut causer des probleme d'autonomie de batterie pour l'iPod. L'avantage est donc à la première solution.\\ \\
+        
         \indent Comme nous pouvons le constater, la solution utilisant le PC et l'iPod Touch est plus avantageuse dans la majorité des cas. C'est donc cette solution qui sera préférée.\\
-        \indent Voici un schéma de l'architecture générale de la solution que nous avons choisi (figure 2).   
+        
+        \indent Voici un schéma de l'architecture générale de la solution que nous avons choisie (figure 2).   
         %________________
  		\begin{figure}[!ht]
  		\begin{center}
