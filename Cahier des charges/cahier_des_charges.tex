@@ -95,11 +95,9 @@
         \begin{flushleft}
 	    \textbf{Cas d'utilisation :} \\
 	    \end{flushleft}
-	    \begin{flushleft}
 	    1) Un utilisateur souhaite effectuer une ronde avec un drone pour surveiller sa propriété (qui possède un très grand jardin) au prix d'un moindre effort.\\
 	    Voici un exemple des étapes qu'il va suivre chronologiquement :\\
 		[1cm]	     
-	    \end{flushleft}
 	    \begin{center}
 	    \renewcommand{\arraystretch}{2}
         \begin{tabularx}{15cm}{|c|X|}
@@ -130,10 +128,8 @@
         \end{center}
         
         \newpage
-        \begin{flushleft}
         2) En hiver, un utilisateur souhaite faire effectuer au drone le tour de son jardin pour contrôler le niveau d'enneigement de celui-ci sans risquer de glisser.\\
         Voici un exemple des étapes qu'il va suivre chronologiquement : \\ [1cm]
-        \end{flushleft}
 	    \begin{center}
 	    \renewcommand{\arraystretch}{2}
         \begin{tabularx}{15cm}{|c|X|}
@@ -205,14 +201,13 @@
 	 \subsection{Diagramme des fonctionnalités}
 	    Voici le diagramme des fonctionnalités (Figure 1) composé de l'utilisateur, du PC et du drone. L'iPod est ici considéré comme une extension de l'utilisateur, étant placé dans un masque FPV.\\
 	    
-	    
 		\begin{center}
-		%\begin{figure}
+		\begin{figure}[!h]
 		\includegraphics[scale=0.7]{corrige_diagramme_services.PNG}\\
 		 \vspace*{0.3cm}
-		Figure 1 - Diagramme des fonctionnalités
-		%\caption{Diagramme des fonctionnalités}
-		%\end{figure}
+	%	Figure 1 - Diagramme des fonctionnalités
+		\caption{Diagramme des fonctionnalités}
+		\end{figure}
 		\end{center}
 		
 			
@@ -230,14 +225,14 @@
 	
 \section{Ressources}
 	\subsection{Matériel}
-		\begin{flushleft}
+
 	    \textbf{Pour réaliser ce projet nous disposons du matériel suivant :}
-	    \end{flushleft}
+
 		\begin{enumerate}
         \item Un drone Bebop 2.
         \item Un iPod Touch de 6ème génération sous iOS 12.
         \item Un accès aux salles machines SAR équipées de machines sous OSX.
-        \item un accès aux salles informatiques équipées de machines sous Linux.
+        \item Un accès aux salles informatiques équipées de machines sous Linux.
         \end{enumerate}
         
 	\subsection{L'équipe}
@@ -322,23 +317,23 @@
 	     	\item Sa qualité doit être convenable (HD).
 		 	\item La latence du retour vidéo sur l'iPod doit être minimale (de l'ordre de la seconde), et la vidéo doit être fluide.
 		 	\end{enumerate}
-
+\newpage
 \section{Cinématique des écrans}
 	
  	\begin{enumerate}
  	\item Lorsque l'utilisateur lance l'application, il arrive sur la page d'accueil (Figure 4). Il y a alors deux sections sur l'écran, l'une proposant d'ajouter un nouveau plan de vol et l'autre proposant d'exécuter un plan de vol parmi ceux existants.\\
- 	Le bouton "créer un plan de vol" de la première section lance l'application de saisie du plan de vol. La sélection d'un plan de vol dans la seconde section et le clic sur le bouton "exécuter" lancent l'exécution par le drone du plan de vol choisi, le retour vidéo sur l'iPod peut alors commencer.
+ 	Le bouton "créer un plan de vol" de la première section lance l'application de saisie du plan de vol. La sélection d'un plan de vol dans la seconde section et le clic sur le bouton "exécuter" lancent l'exécution par le drone du plan de vol choisi, le retour vidéo sur l'iPod peut alors commencer.\\
  	
- 	 \begin{figure}[!ht]
+ 	 \begin{figure}[!h]
  	\begin{center}
  	\includegraphics[scale=0.65]{maquette_appli_PC.PNG}
  	\caption{page d'accueil de l'application PC}
  	\end{center}
 	\end{figure}
  	
- 	\item Lors de l'ouverture de la page, la carte est vierge comme le montre la figure 5:
+ 	\item Lors de l'ouverture de la page, la carte est vierge comme le montre la figure 5:\\
  	%________________
- 	\begin{figure}[!ht]
+ 	\begin{figure}[!h]
  	\begin{center}
  	\includegraphics[scale=0.42]{capt1.PNG}
  	\caption{carte vierge}
@@ -355,13 +350,12 @@
   	\begin{itemize}
  	\item En mode d'ajout, en cliquant sur un marqueur, on peut spécifier dans une boite de dialogue l'altitude à laquelle doit se situer le drone à ce point lors du vol.\\
 
- 	\item En mode de suppression, en cliquant sur un marqueur, on supprime ce dernier. Les marqueurs sont alors automatiquement remis dans le bon ordre et le trajet est retracé.\\ \\ \\
+ 	\item En mode de suppression, en cliquant sur un marqueur, on supprime ce dernier. Les marqueurs sont alors automatiquement remis dans le bon ordre et le trajet est retracé.\\
 	\end{itemize}
     \medbreak
    	%\newpage
    	%\vspace*{1cm}
-   	\newpage
-   	\item On place des marqueurs en cliquant aux endroits voulus sur la carte. Au survol d'un marqueur, la bulle comportant son numéro d'ordre apparait :
+   	\item On place des marqueurs en cliquant aux endroits voulus sur la carte. Au survol d'un marqueur, la bulle comportant son numéro d'ordre apparait :\\
  	%________________
  	\begin{figure}[!h]
  	\begin{center}
@@ -371,7 +365,7 @@
  	\end{figure}
  	%________________
  	%\vspace*{1.5cm}
- 	
+ 	\newpage
   	\item On souhaite retirer des marqueurs, on active le mode de suppression en cliquant sur le switch en bas à gauche (figure 7) et on clique ensuite sur les marqueurs à supprimer. L'ordre des marqueurs et le tracé du trajet s'adaptent :\\
 	%________________	
 	\begin{figure}[!h]
@@ -382,8 +376,8 @@
  	\end{figure}
  	%________________
 	%\vspace*{0.5cm}
-	\newpage
-	\item On clique sur un marqueur pour spécifier l'altitude voulue à ce point (figure 8):
+
+	\item On clique sur un marqueur pour spécifier l'altitude voulue à ce point (figure 8):\\
 	%\vspace*{1cm}
 	%________________
 	\begin{figure}[!h]
@@ -393,8 +387,9 @@
  	\end{center}
  	\end{figure}
  	%________________
+ 	\newpage 
  	
- 	\item On peut déplacer les marqueurs avec un cliquer-glisser (drag and drop) sur ces derniers (figure 9):
+ 	\item On peut déplacer les marqueurs avec un cliquer-glisser (drag and drop) sur ces derniers (figure 9):\\
  	%________________
  	\begin{figure}[!h]
  	\begin{center}
@@ -403,9 +398,9 @@
  	\end{center}
  	\end{figure}
  	%________________ 	
- 	\newpage
+ 	
   	%Une fois le plan de vol terminé, on clique sur le bouton pour obtenir le fichier correspondant au trajet défini :
-  	\item Une fois le plan de vol terminé, on clique sur le bouton pour obtenir le fichier correspondant au trajet défini :
+  	\item Une fois le plan de vol terminé, on clique sur le bouton pour obtenir le fichier correspondant au trajet défini :\\
   	%________________
   	\begin{figure}[!h]
  	\begin{center}
