@@ -1,0 +1,19 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Pr\IeC {\'e}sentation du Projet}{2}% 
+\contentsline {subsection}{\numberline {1.1}Contexte et d\IeC {\'e}finition du probl\IeC {\`e}me}{2}% 
+\contentsline {subsection}{\numberline {1.2}Objectifs}{3}% 
+\contentsline {section}{\numberline {2}Besoins fonctionnels}{4}% 
+\contentsline {subsection}{\numberline {2.1}Fonctionnalit\IeC {\'e}s requises}{4}% 
+\contentsline {subsection}{\numberline {2.2}Diagramme des fonctionnalit\IeC {\'e}s}{5}% 
+\contentsline {section}{\numberline {3}P\IeC {\'e}rim\IeC {\`e}tre}{5}% 
+\contentsline {subsection}{\numberline {3.1}\IeC {\`A} qui s'adresse le produit ?}{5}% 
+\contentsline {subsection}{\numberline {3.2}Les Limites}{5}% 
+\contentsline {section}{\numberline {4}Ressources}{6}% 
+\contentsline {subsection}{\numberline {4.1}Mat\IeC {\'e}riel}{6}% 
+\contentsline {subsection}{\numberline {4.2}L'\IeC {\'e}quipe}{6}% 
+\contentsline {section}{\numberline {5}Solutions \IeC {\'e}tudi\IeC {\'e}es}{6}% 
+\contentsline {subsection}{\numberline {5.1}Comparatif des solutions}{6}% 
+\contentsline {section}{\numberline {6}Contraintes}{8}% 
+\contentsline {subsection}{\numberline {6.1}D\IeC {\'e}lais}{8}% 
+\contentsline {subsection}{\numberline {6.2}Autres contraintes}{8}% 
+\contentsline {section}{\numberline {7}Cin\IeC {\'e}matique des \IeC {\'e}crans}{8}% 
