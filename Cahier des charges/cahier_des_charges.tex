@@ -175,6 +175,7 @@
 		\end{enumerate}
 		
 \section{Besoins fonctionnels}
+    \subsection{Fonctionnalités requises}
 	    \begin{center}
 	    \vspace*{0.7cm}
         \begin{tabularx}{15cm}{|c|p{4cm}|X|}
@@ -195,11 +196,18 @@
             \hline
             8 & Démarrage de la ronde à l'aide de gestes & L'utilisateur pourra éventuellement engager le démarrage du vol en effectuant un certain mouvement de la tête. 	\\
 			\hline
-			9 & Arrêt d'urgence à l'aide de gestes & L'utilisateur pourra éventuellement engager un arrêt d'urgence en effectuant un certain mouvement de la tête. 	\\
+			9 & Arrêt d'urgence & L'utilisateur pourra éventuellement engager un arrêt d'urgence en effectuant par exemple un certain mouvement de la tête. 	\\
 			\hline
         \end{tabularx}
         \end{center}
-	
+	 \subsection{Diagramme des fonctionnalités}
+	    Voici le diagramme des fonctionnalités (Figure 1) composé de l'utilisateur, du PC et du drone. L'iPod est ici considéré comme une extension de l'utilisateur, étant placé dans un masque FPV.\\
+		\begin{figure}[!h]
+		\begin{center}
+		\includegraphics[scale=0.8]{diagramme_services_2.PNG}\\
+		\caption{Diagramme des fonctionnalités}
+		\end{center}
+		\end{figure}
 		
 \section{Périmètre}
 	\subsection{À qui s'adresse le produit ?}
@@ -231,11 +239,11 @@
         Nos connaissances en programmation sous Linux sont bonnes mais le langage Objective-C et l'univers iOS nous sont pour le moment encore inconnus.
 
 \section{Solutions étudiées}
-	Au cours de nos recherches nous avons étudié principalement 3 solutions d'architecture envisageables pour le développement de l'application. Ces architectures sont les suivantes, de gauche à droite dans le tableau ci-après (figure 1): 
+	Au cours de nos recherches nous avons étudié principalement 3 solutions d'architecture envisageables pour le développement de l'application. Ces architectures sont les suivantes, de gauche à droite dans le tableau ci-après (figure 2): 
 	  	\begin{enumerate}
         	\item Une architecture utilisant un PC sous linux pour la saisie du plan de vol et qui commande le drone, ainsi qu'un iPod Touch sur lequel on redirige le flux vidéo.
         	\item Une architecture utilisant un iPad pour la saisie du plan de vol, ainsi qu'un iPod Touch qui commande le drone et récupère le flux vidéo.
-         	\item Une architecture utilisant un iPod Touch pour la saisie du plan de vol, qui commande le drone tout en récupérant le flux vidéo.\\ \\
+         	\item Une architecture utilisant un iPod Touch pour la saisie du plan de vol, qui commande le drone tout en récupérant le flux vidéo.\\
         \end{enumerate}
 	\subsection{Comparatif des solutions}
 	
@@ -262,7 +270,7 @@
         
         \indent Comme nous pouvons le constater, la solution utilisant le PC et l'iPod Touch est plus avantageuse dans la majorité des cas. C'est donc cette solution qui sera préférée.\\
         
-        \indent Voici un schéma de l'architecture générale de la solution que nous avons choisie (figure 2).   
+        \indent Voici un schéma de l'architecture générale de la solution que nous avons choisie (figure 3).   
         %________________
  		\begin{figure}[!ht]
  		\begin{center}
@@ -311,7 +319,7 @@
 \section{Cinématique des écrans}
 	
  	\begin{enumerate}
- 	\item Lorsque l'utilisateur lance l'application, il arrive sur la page d'accueil (Figure 3). Il y a alors deux sections sur l'écran, l'une proposant d'ajouter un nouveau plan de vol et l'autre proposant d'exécuter un plan de vol parmi ceux existants.\\
+ 	\item Lorsque l'utilisateur lance l'application, il arrive sur la page d'accueil (Figure 4). Il y a alors deux sections sur l'écran, l'une proposant d'ajouter un nouveau plan de vol et l'autre proposant d'exécuter un plan de vol parmi ceux existants.\\
  	Le bouton "créer un plan de vol" de la première section lance l'application de saisie du plan de vol. La sélection d'un plan de vol dans la seconde section et le clic sur le bouton "exécuter" lancent l'exécution par le drone du plan de vol choisi, le retour vidéo sur l'iPod peut alors commencer.
  	
  	 \begin{figure}[!ht]
@@ -321,7 +329,7 @@
  	\end{center}
 	\end{figure}
  	
- 	\item Lors de l'ouverture de la page, la carte est vierge comme le montre la figure 4:
+ 	\item Lors de l'ouverture de la page, la carte est vierge comme le montre la figure 5:
  	%________________
  	\begin{figure}[!ht]
  	\begin{center}
@@ -357,7 +365,7 @@
  	%________________
  	%\vspace*{1.5cm}
  	
-  	\item On souhaite retirer des marqueurs, on active le mode de suppression en cliquant sur le switch en bas à gauche (figure 6) et on clique ensuite sur les marqueurs à supprimer. L'ordre des marqueurs et le tracé du trajet s'adaptent :\\
+  	\item On souhaite retirer des marqueurs, on active le mode de suppression en cliquant sur le switch en bas à gauche (figure 7) et on clique ensuite sur les marqueurs à supprimer. L'ordre des marqueurs et le tracé du trajet s'adaptent :\\
 	%________________	
 	\begin{figure}[!h]
  	\begin{center}
@@ -368,7 +376,7 @@
  	%________________
 	%\vspace*{0.5cm}
 	\newpage
-	\item On clique sur un marqueur pour spécifier l'altitude voulue à ce point (figure 7):
+	\item On clique sur un marqueur pour spécifier l'altitude voulue à ce point (figure 8):
 	%\vspace*{1cm}
 	%________________
 	\begin{figure}[!h]
@@ -379,7 +387,7 @@
  	\end{figure}
  	%________________
  	
- 	\item On peut déplacer les marqueurs avec un cliquer-glisser (drag and drop) sur ces derniers (figure 8):
+ 	\item On peut déplacer les marqueurs avec un cliquer-glisser (drag and drop) sur ces derniers (figure 9):
  	%________________
  	\begin{figure}[!h]
  	\begin{center}
