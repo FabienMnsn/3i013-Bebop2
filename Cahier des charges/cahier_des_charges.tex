@@ -88,7 +88,7 @@
 \newpage
 \section{Présentation du Projet}
 	\subsection{Contexte et définition du problème}
-		Un client nous contacte dans le but de réaliser une application lui permettant d'effectuer un vol autonome avec un drone Bebop 2 tout en visualisant sur un iPod Touc le retour vidéo de la caméra embarquée sur le drone. L'iPod sera placé dans un masque de vue à la première personne. \\	
+		Un client nous contacte dans le but de réaliser une application lui permettant d'effectuer un vol autonome avec un drone Bebop 2 tout en visualisant sur un iPod Touch le retour vidéo de la caméra embarquée sur le drone. L'iPod sera placé dans un masque de vue à la première personne. \\	
 		%Le client souhaite faire effectuer des vols autonomes à un drone Bebop 2, avec un retour vidéo en temps réel sur un iPod Touch. Ce dernier pourra être placé dans un masque de vue à la première personne.\\
 		La solution devra permettre à l'utilisateur de saisir un plan de vol sur une carte interactive et de le faire exécuter par le drone tout en ayant un retour vidéo sur l'iPod.\\
 		\medbreak
@@ -165,7 +165,7 @@
         	\item Permettre à l'utilisateur de saisir un plan de vol étape par étape sur une carte interactive et de spécifier les altitudes du drone à chaque point de passage.
         	\item Permettre à l'utilisateur de sauvegarder son plan de vol pour le réutiliser plus tard.
 			\item Permettre à l'utilisateur de lancer l'exécution du plan de vol réalisé au préalable.
-		 	\item Rediriger le flux vidéo du drone vers l'iPod touch. 
+		 	\item Rediriger le flux vidéo du drone vers l'iPod Touch. 
 		 	\item Minimiser les latences vidéo (de l'ordre de la seconde).
 		 	\item Permettre d'arrêter le vol en cours en cas d'urgence.
 		\end{enumerate}
@@ -199,7 +199,7 @@
         
      \newpage
 	 \subsection{Diagramme des fonctionnalités}
-	    Voici le diagramme des fonctionnalités (Figure 1) composé de l'utilisateur, du PC et du drone. L'iPod est ici considéré comme une extension de l'utilisateur, étant placé dans un masque FPV.\\
+	    Voici le diagramme des fonctionnalités (Figure 1) composé de l'utilisateur, du PC et du drone. L'iPod est ici considéré comme une extension de l'utilisateur, étant placé dans un masque FPV. On considère ici que le PC est déjà connecté au drone en Wifi et que l'iPos et le PC sont connecté tous les deux à un même réseau local.\\
 	    
 		\begin{center}
 		\begin{figure}[!h]
@@ -264,7 +264,7 @@
 
 		\indent Concernant le confort d'utilisation l'avantage est à la seconde solution car l'iPad possède un grand écran ainsi qu'une saisie tactile. La première solution est moins confortable principalement à cause de l'absence de saisie tactile sur le PC. La dernière solution n'est pas très pratique de fait de la petite taille de l'écran de l'iPod.\\
 		
-        \indent Concernant l'arrêt d'urgence c'est la première solution qui a l'avantage car elle permet d'implémenter cette fonction sur le PC ou sur l'iPod (via un mouvement de tête quand l'utilisateur porte le masque ou la pression d'une touche du clavier). L'arrêt d'urgence sur la troisième solution nous force à implémenter la fonctionnalité via un geste car l'iPod est, rappelons-le, attaché dans le masque donc difficile d'accès. La seconde solution ne pourra pas utiliser l'ipad pour lancer un arrêt d'urgence car l'iPod sera le seul appareil connecté au drone.\\
+        \indent Concernant l'arrêt d'urgence c'est la première solution qui a l'avantage car elle permet d'implémenter cette fonction sur le PC ou sur l'iPod (via un mouvement de tête quand l'utilisateur porte le masque ou la pression d'une touche du clavier). L'arrêt d'urgence sur la troisième solution nous force à implémenter la fonctionnalité via un geste car l'iPod est, rappelons-le, attaché dans le masque donc difficile d'accès. La seconde solution ne pourra pas utiliser l'iPad pour lancer un arrêt d'urgence car l'iPod sera le seul appareil connecté au drone.\\
         
         \indent Les solutions 2 et 3 proposent une latence vidéo réduite car il n'y a pas à rediriger le flux vidéo. Ce dernier est directement reçu et lu par l'iPod. La première solution, en raison de la redirection du flux vidéo depuis le PC vers l'iPod, induit une latence légèrement plus importante (la différence reste assez imperceptible à l'utilisateur).\\
         
