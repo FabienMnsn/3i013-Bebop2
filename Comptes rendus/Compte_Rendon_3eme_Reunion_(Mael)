@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+
+\title{Compte-rendu de réunion}
+\date{8 Mars 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Contenu de la présentation}
+Il faut éviter de mentionner tous les fragments du use-case dans le plan, étant donné qu'il s'agit d'un seul et même use-case, bien qu'il soit étalé sur plusieurs slides.
+\bigbreak
+En ce qui concerne le comparatif des architectures étudiées, le choix et l'argumentation de la solution choisie son corrects.
+La présentation est plus organisé que la dernière fois.
+\bigbreak
+Pour ce qui est des tests de latence vidéo, il faut apporter des chiffres (des mesures) pour appuyer les propos.
+\bigbreak
+
+\section{Concernant le projet}
+\bigbreak
+A propos de l'arrêt d'urgence, l'arrêt manuel par appui d'une ou plusieurs touches au clavier n'est pas à retenir, sauf s'il y a 2 opérateurs. Dans ce dernier cas, celà devra être spécifié dans le cahier des charges.\\
+Le mouvement de tête semble être la meilleure solution pour un opérateur seul.\\
+Ce problème, ainsi que plusieurs autres, n'avaient pas été soulevés. On peut par exemple citer le centrage de la carte sur l'utilisateur lors du lancement de l'application de saisie du plan de vol, ou encore la limitation de la distance maximale acceptée entre des points de vol.\\
+De manière générale, quand un problème est identifié et qu'il n'a pas été spécifié par le client, on peut proposer une ou plusieurs solutions.
+\bigbreak 
+Le prototype de l'application de saisie du plan de vol est correct.
+\bigbreak
+
+\section{Concernant le cahier des charges}
+Dans le cahier charges, il faut numéroter et légender les images.\\
+On pourra incruster le tableau du comparatif des solutions dans le cahier des charges, ainsi qu'un texte détaillant les arguments mis en avant.\\
+
+
+
+\end{document}
