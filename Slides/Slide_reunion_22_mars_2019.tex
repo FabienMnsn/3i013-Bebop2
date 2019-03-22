@@ -56,7 +56,27 @@
 	\section{Mavlink}
 		\begin{center}
 		\frametitle{Mavlink}
-		Ceci est la troisieme diapo !\\
+		%\subsection{Contraintes}
+        %\framesubtitle{Les solutions}
+        Deux solutions pour la création d'un fichier au format mavlink:
+        
+           	\begin{itemize}
+                \item Création depuis le sdk C de Parrot
+                \item Création depuis l'application de saisie de plan de vol map JavaScript
+            \end{itemize}
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}
+		\begin{center}
+		\frametitle{Mavlink}
+		%\subsection{Contraintes}
+        %\framesubtitle{Les solutions}
+           	\begin{itemize}
+                \item Envoi du fichier mavlink au drone en ftp dans le code C
+                \item Callbacks pour récupération des changements d'état de des erreurs pour les logs
+                \item Envoi de la demande d'éxécution du mavlink au drone
+            \end{itemize}
 		\end{center}
 	\end{frame}
 	
