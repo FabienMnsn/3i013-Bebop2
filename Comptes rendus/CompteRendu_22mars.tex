@@ -1,0 +1,39 @@
+\documentclass[]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+
+\begin{document}
+
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{3I013 - Projet }
+\fancyhead[R]{Sorbonne Université}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{Licence Informatique}
+\fancyfoot[R]{Vendredi 22 Mars 2019}
+
+\begin{center}
+\large{\textbf{Compte Rendu de la Réunion du Vendredi 22 Mars 2019 \bigbreak}}
+\end{center}
+
+\section{Concernant la présentation}
+\indent On ne présente aucune architecture logicielle c'est donc compliqué pour le client de situer chaque partie dans le projet. Cela permettrait au client de savoir ou est-ce que le projet avance.\\
+Il serait bien de donner la répartitions des tâches au sein du groupe. De montrer qui a travaillé sur quelle partie. Il faut être plus carré, se poser les bonnes questions. A-t-on vraiment besoin d'un navigateur de fichier pour chercher les plans de vols? Si l'utilisateur veut supprimer un plan de vol alors la oui, il faut un navigateur de fichier. La mise en place d'un serveur est la solution qui semble résoudre tous nos problèmes de fichier et de flux vidéo(il manque possiblement un truc que j'ai pas noté ici...).\\
+L'ordre des idées est bien on  expose un problème, une solution et ce que l'on prévoit de faire dans un futur proche.\\
+Attention un titre de slide doit correspondre au contenu de la slide notamment la slide "stream flux vidéo sur réseau local" qui présente en fait l'application de scan du réseaux local. \\
+La slide de conclusion vide c'est non.\\
+Il faut faire attention à ne pas se sous-vendre, ni à se sur-vendre.\\
+Il faut sortir du mode 'geek' qui consiste à coder puis réfléchir. Il faut faire exactement l'inverse. Le codage n'en sera que plus facile.\\
+
+
+
+\section{Concernant L'application iPod}
+Le scan des ip doit être 'Apple way'. Pas de boite de dialogue demandant de confirmer chaque action (éviter les clics inutiles). S'il n'y à qu'un seul appareil sur le réseau pas besoin d'ouvrir la liste de sélection des appareils. Par contre s'il y en a 2 ou plus la il faut laisser la possibilité de choisir au client. Il faut aussi un timeout de 30 secondes au cas ou le scan ne donne rien.\\
+L'iPod ne lit pas de fichier, il interagit avec un serveur.\\
+Pour voir un flux vidéo sur une page web on pourra utiliser WKWebView ou AVFoundation qui est plus compliqué.\\
+
+
+
+\end{document}
