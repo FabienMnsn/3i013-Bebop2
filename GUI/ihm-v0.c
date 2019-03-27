@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
 
 
     /* defining gtk variables */   
-    GtkWidget *window, *button1, *button2, *dialog, *vbox, *hbox, *info;
+    GtkWidget *window, *button1, *button2, *dialog, *vbox, *hbox, *info, *image;
     
     gtk_init(&argc, &argv);
     
@@ -54,7 +54,7 @@ int main(int argc, char *argv[]){
     g_signal_connect(G_OBJECT(button1), "clicked", G_CALLBACK(button_clicked), NULL);
 
     /* creation button selection flight plan */
-    button2 = gtk_button_new_with_label("Choisir un plan de vol");
+    button2 = gtk_button_new_with_label("Supprimer un plan de vol");
     gtk_widget_set_size_request(button2, 30, 30);
     g_signal_connect(G_OBJECT(button2), "clicked", G_CALLBACK(open_dialog), window);
 
@@ -62,10 +62,15 @@ int main(int argc, char *argv[]){
     //WIP
     //info = gtk_label_new("");
     
+    /* creation d'un widget image */
+    image = gtk_image_new_from_file("./bebop.jpg"); //	/home/fm/Documents/UPMC/S6/3i013/3i013-Bebop2/GUI/bebop.jpg
+
+
     /* adding the widgets to the main window */
-    gtk_box_pack_start(GTK_BOX(vbox), button1, TRUE, TRUE, 0);
-    gtk_box_pack_start(GTK_BOX(vbox), button2, TRUE, TRUE, 0);
-    gtk_box_pack_start(GTK_BOX(hbox), vbox, FALSE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(hbox), button1, TRUE, TRUE, 0);
+    gtk_box_pack_start(GTK_BOX(hbox), button2, TRUE, TRUE, 0);
+    gtk_container_add(GTK_CONTAINER(window), image);
+    //gtk_box_pack_start(GTK_BOX(vbox), vbox, FALSE, TRUE, 0);
     //gtk_box_pack_start(GTK_BOX(hbox), info, TRUE, TRUE, 0);
     gtk_container_add(GTK_CONTAINER(window), hbox);
 
