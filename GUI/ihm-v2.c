@@ -1,9 +1,33 @@
 #include <stdlib.h>
 #include <gtk/gtk.h>
 
+//USEFULL LINK
+// http://gtk.developpez.com/cours/gtk2/?page=page_22
+
 //_________________________________________________________________________________
 //CALLBACKS
 
+//FONCTION QUI AFFICHE LA SECTION D'AIDE
+void cb_open_help(){
+    GtkWidget   *window_help;
+
+    window_help = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_title(GTK_WINDOW(window_help), "A propos");
+    gtk_window_set_default_size(GTK_WINDOW(window_help), 640, 400);
+
+    gtk_widget_show_all(window_help);
+}
+
+//FONCTION QUI AFFICHE LE A PROPOS DE L'APPLICATION
+void cb_open_about(){
+    GtkWidget   *window_about;
+
+    window_about = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_title(GTK_WINDOW(window_about), "Aide");
+    gtk_window_set_default_size(GTK_WINDOW(window_about), 320, 200);
+
+    gtk_widget_show_all(window_about);
+}
 
 //FONCTION QUI OUVRE L'APPLICATION DE SAISIE DU PLAN DE VOL DANS UN ONGLET DU NAVIGATEUR INTERNET PAR DEFAUT
 void cb_open_plan(){
@@ -57,12 +81,16 @@ int main(int argc, char ** argv){
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window_main"));
     flightplanbutton = GTK_WIDGET(gtk_builder_get_object(builder, "flightplanbutton"));
     openfilebutton = GTK_WIDGET(gtk_builder_get_object(builder, "openfilebutton"));
+    helpbutton = GTK_WIDGET(gtk_builder_get_object(builder, "helpbutton"));
+    infobutton = GTK_WIDGET(gtk_builder_get_object(builder, "infobutton"));    
 
     //___________________________________________________________________
 
     //CONNECTION WITH CALLBACKS
     g_signal_connect(G_OBJECT(flightplanbutton), "clicked",G_CALLBACK(cb_open_plan), NULL);
     g_signal_connect(G_OBJECT(openfilebutton), "clicked",G_CALLBACK(cb_open_file), NULL);
+    g_signal_connect(G_OBJECT(infobutton), "clicked",G_CALLBACK(cb_open_about), NULL);
+    g_signal_connect(G_OBJECT(helpbutton), "clicked",G_CALLBACK(cb_open_help), NULL);
 
     //___________________________________________________________________
 
