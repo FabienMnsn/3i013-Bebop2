@@ -15,7 +15,7 @@
           <object class="GtkImage" id="bebop">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="pixbuf">bebop.jpg</property>
+            <property name="pixbuf">IMG_1156downscale780.JPG</property>
           </object>
           <packing>
             <property name="expand">False</property>
