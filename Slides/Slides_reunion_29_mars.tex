@@ -12,7 +12,7 @@
 \usepackage{movie15}
 %________________________________________________________________________________________________
 \title{3I013 Réunion du 29 Mars 2019}
-\author{Daoud KADOCH\\Fabien MANSON\\Maël FRANCESCHETTI\\Nicolas CASTANET\\}
+\author{Nicolas CASTANET\\Maël FRANCESCHETTI\\Daoud KADOCH\\Fabien MANSON\\}
 %________________________________________________________________________________________________
 %ce theme est le plus clean de Beamer le truc a ne pas utiliser c'est 'Warsaw'
 \usetheme{default}
@@ -32,10 +32,9 @@
 \begin{document}
 
 
-	%premiere diapo
 	\begin{frame}
 		\begin{center}
-		\date{21 mars 2019}
+		\date{}
 		\maketitle
 		\end{center}
 	\end{frame}
@@ -44,107 +43,124 @@
 	
 	\begin{frame}
 		\section{}
-		\begin{flushleft}
+		\begin{center}
 		\frametitle{Sommaire}
 		\tableofcontents{}
-		\end{flushleft}
+		\end{center}
 	\end{frame}
 	
-		\begin{frame}
-	\section{Contexte}
+	
+	
+	\begin{frame}
+		\section{Contexte}
 		\begin{center}
 		\frametitle{L'Objectif du Projet}
-		%\subsection{Objectif}
-        %\framesubtitle{L'expression des besoins}
 		   Faire effectuer une ronde à un drone Bebop 2 en suivant un itinéraire prédéfini, tout en visualisant le retour vidéo en temps réel sur un iPod à travers un masque FPV.
 		\end{center}
 	\end{frame}
 	
+	
+	
 	\begin{frame}
-	\section{Architecture Logicielle}
+		\section{Architecture Logicielle Complète}
 		\begin{center}
 		\frametitle{Architecture Logicielle}
 		%\subsection{Contraintes}
         %\framesubtitle{Les solutions}
        
-        \includegraphics[scale=0.3]{Architecture_logicielle_v2.jpg}
+        \includegraphics[scale=0.3]{Architecture_logicielle_composants/Architecture_logicielle_v2.jpg}
 		\end{center}
 	\end{frame}
 	
+	
+	
 	\begin{frame}
-	\section{SDK Parrot}
+		\section{SDK Parrot}
 		\begin{center}
 		\frametitle{SDK Parrot}
-		\includegraphics[scale=0.4]{SDK.jpg}
+		\includegraphics[scale=0.4]{Architecture_logicielle_composants/SDK.jpg}
 		\end{center}	
 	\end{frame}
 	
+	
+	
 	\begin{frame}
-	\section{Serveur local}
+		\section{Serveur local}
 		\begin{center}
 		\frametitle{Serveur local}
 		%\subsection{Contraintes}
         %\framesubtitle{Les solutions}
-        \includegraphics[scale=0.4]{Serveur.jpg}
+        \includegraphics[scale=0.4]{Architecture_logicielle_composants/Serveur.jpg}
 		\end{center}
 	\end{frame}
+	
 	
 	
 	\begin{frame}
-	\section{App Ios}
+		\section{Application iOS}
 		\begin{center}
-		\frametitle{App Ios}
-		%\subsection{Contraintes}
-        %\framesubtitle{Les solutions}
-        \includegraphics[scale=0.5]{ios_app.jpg}
+		\frametitle{Application iOS}
+        \includegraphics[scale=0.5]{Architecture_logicielle_composants/ios_app.jpg}
 		\end{center}
 	\end{frame}
+	
+	
 	
 	\begin{frame}
-	\section{App Ios}
+		\section{Application iOS}
 		\begin{center}
-		\frametitle{App Ios}
-		%\subsection{Contraintes}
-        %\framesubtitle{Les solutions}
-        \includegraphics[scale=0.37]{ipod.png}
+		\frametitle{Application iOS}
+        \includegraphics[scale=0.37]{Architecture_logicielle_composants/ipod.png}
 		\end{center}
 	\end{frame}
 	
-		\begin{frame}
-	\section{Interface Utilisateur}
+	
+	
+	\begin{frame}
+		\section{Interface Utilisateur}
 		\begin{center}
 		\frametitle{Interface Utilisateur}
 		%\subsection{Contraintes}
         %\framesubtitle{Les solutions}
-        \includegraphics[scale=0.4]{Interface_utilisateur.jpg}
+        \includegraphics[scale=0.4]{Architecture_logicielle_composants/Interface_utilisateur.jpg}
 		\end{center}
 	\end{frame}
 	
+	
+	
 	\begin{frame}
-	\section{Tests}
+		\frametitle{Interface GTK+}
+		\includegraphics[scale=0.4]{Architecture_logicielle_composants/GUI-v2.png}	
+	
+	\end{frame}
+	
+	
+	\begin{frame}
+		\section{Tests}
 		\begin{center}
 		\frametitle{Tests effectués}
-		%\subsection{Contraintes}
-        %\framesubtitle{Les solutions}
            	\begin{itemize}
-                \item Connection au drone
-                \item Envoi d'un fichier Mavlink
-                \item Execution du plan de vol selon un fichier mavlink enregistré sur le drone
-                \item Retour video avec l'application ios à partir d'une url sur un serveur Linux
+                \item Connexion au drone.
+                \item Envoi d'un fichier Mavlink avec le SDK.
+                \item Exécution du plan de vol enregistré sur le drone (jamais dans sa totalité).
+                \item Retour vidéo avec l'application iOS à partir d'une url sur un serveur local Linux.
             \end{itemize}
 		\end{center}
 	\end{frame}
 	
-		\begin{frame}
+	
+	
+	\begin{frame}
 		\begin{center}
 		\frametitle{Problèmes rencontrés}
              \begin{itemize}
-                \item Calibration du drone après chaque trajet effectué
-                \item direction du drone durant le trajet
+                \item Calibration du drone après chaque arrêt d'urgence (choc ou inclinaison trop forte du drone).
+                \item Perte du signal GPS (vol stationnaire).
+                \item Direction du drone durant le trajet.
+                \item Lecture d'un double flux vidéo sur. l'iPod.
             \end{itemize}
 		\end{center}
 	\end{frame}
 	
+	
 \end{document}
-
-
