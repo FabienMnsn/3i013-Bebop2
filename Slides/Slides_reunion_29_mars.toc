@@ -1,9 +1,0 @@
-\select@language {french}
-\beamer@sectionintoc {2}{Contexte}{3}{0}{1}
-\beamer@sectionintoc {3}{Architecture Logicielle Compl\IeC {\`e}te}{4}{0}{2}
-\beamer@sectionintoc {4}{SDK Parrot}{5}{0}{3}
-\beamer@sectionintoc {5}{Serveur local}{6}{0}{4}
-\beamer@sectionintoc {6}{Application iOS}{7}{0}{5}
-\beamer@sectionintoc {7}{Application iOS}{8}{0}{6}
-\beamer@sectionintoc {8}{Interface Utilisateur}{9}{0}{7}
-\beamer@sectionintoc {9}{Tests}{11}{0}{8}
