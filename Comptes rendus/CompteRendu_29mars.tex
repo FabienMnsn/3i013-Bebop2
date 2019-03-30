@@ -1,0 +1,38 @@
+\documentclass[]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+
+\begin{document}
+
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{3I013 - Projet }
+\fancyhead[R]{Sorbonne Université}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{Licence Informatique}
+\fancyfoot[R]{Samedi 23 Mars 2019}
+
+\begin{center}
+\large{\textbf{Compte Rendu de la Réunion du Vendredi 22 Mars 2019 \bigbreak}}
+\end{center}
+
+\section{Concernant la présentation}
+La définition du problème, la description du projet n'est pas bien formulée et est compliquée à comprendre pour le client.\\
+Il faut faire attention à son discours, réfléchir à ce que l'on dit.\\
+Rajouter des animations (zoom sur chaque composant) permet de guider le discours principal et de captiver l'audience.\\
+Les titres des diapos sont dans certain cas maladroits. Par exemple "Serveur local" est un titre trop vague alors que "Serveur local pour la saisie du plan" est bien plus précis.\\
+On ne se pose aucune question sur le déploiement de notre application. Comment vas-t-on faire?\\
+Certain problèmes décrits "comme la précision du GPS du drone" sont en fait des contraintes imposées par le matériel.\\
+Pour le problème du retour vidéo sur l'iPod on peut utiliser Opencv ou Ffmpeg.\\Si on présente une démonstration celle-ci doit être testée en conditions réelles, on évite ainsi les erreurs bêtes d'adresse IP dépendante de la borne d'accès Wifi...\\
+Pour le calibrage du drone il existe une fonction Flat Trim dans le SDK qui permet de calibrer rapidement l'horizontalité du drone.
+
+ 
+\section{Concernant le schéma d'architecture logicielle}
+Il faut éviter d'afficher trop d'éléments à l'écran dans la vue globale. Il faut choisir un niveau de détail pas trop fournis pour que le schéma reste compréhensible. c'est uniquement en zoomant sur chaque composant que l'on peut afficher plus de détails.\\
+Lors des zoom sur chaque composant logiciel, il ne faut pas représenter les parties qui n'ont pas d'intérêt pour le composant. Par exemple dans la slide présentant l'interface graphique pour le client (Gtk+) on peut enlever les boites "iPod" et "Accès internet" qui ne servent à rien.
+
+
+
+\end{document}
