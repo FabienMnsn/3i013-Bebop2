@@ -1,4 +1,4 @@
-\documentclass[]{article}
+(\documentclass[]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
@@ -12,10 +12,10 @@
 \fancyhead[R]{Sorbonne Université}
 \renewcommand\footrulewidth{1pt}
 \fancyfoot[L]{Licence Informatique}
-\fancyfoot[R]{Samedi 30 Mars 2019}
+\fancyfoot[R]{Samedi 23 Mars 2019}
 
 \begin{center}
-\large{\textbf{Compte Rendu de la Réunion du Vendredi 29 Mars 2019 \bigbreak}}
+\large{\textbf{Compte Rendu de la Réunion du Vendredi 22 Mars 2019 \bigbreak}}
 \end{center}
 
 \section{Concernant la présentation}
@@ -24,10 +24,10 @@ Il faut faire attention à notre discours et réfléchir à ce que l'on dit.\\
 Nous pourrions proposer un scénario d'utilisation afin que l'auditoire puisse mieux comprendre le sujet.\\
 Rajouter des animations (zoom sur chaque composant) permet de guider le discours principal et de captiver l'audience.\\
 
-Les titres des diapos sont dans certains cas maladroits. Par exemple, "Serveur local" est un titre trop vague alors que "Serveur local pour la saisie du plan" est bien plus précis.\\
+Les titres des diapos sont dans certains cas maladroits. Par exemple, "Serveur local" est un titre trop vague alors que "Serveur local pour la saisie du plan" est lui bien plus précis.\\
 Certain problèmes décrits "comme la précision du GPS du drone" sont en fait des contraintes imposées par le matériel.\\
 Pour le problème du retour vidéo sur l'iPod, nous pouvons utiliser Opencv ou Ffmpeg.\\
-Si nous effectuons une démonstration devant le client, celle-ci doit être testée en conditions réelles, ainsi on évite les erreurs bêtes d'adresse IP dépendante de la borne d'accès Wifi...\\
+Si effectuons une démonstration devant le client, celle-ci doit être testée en conditions réelles, ainsi on évite les erreurs bêtes d'adresse IP dépendante de la borne d'accès Wifi...\\
 Une démonstration en vidéo serait donc plus appropriée afin d'éviter les problèmes lors de la présentation.\\
 Pour le calibrage du drone il existe une fonction Flat Trim dans le SDK qui permet de calibrer rapidement l'horizontalité du drone, ce qui nous permet d'éviter de le tourner dans tous les sens.
 
@@ -40,7 +40,7 @@ Lors des zooms sur chaque composant logiciel, il ne faut pas représenter les pa
 
 \section{Concernant la suite du projet}
 
-Notre application est pour l'instant exclusivement adaptée pour le PC que nous utilisons, et nécessite donc une grande quantité d'installations afin de l'utiliser sur une autre machine.\\
+Notre application n'est pour l'instant exclusivement adaptée que pour le PC que nous utilisons, et nécessite donc une grande quantité d'installations afin de l'utiliser sur une autre machine.\\
 Nous devons donc réfléchir à une stratégie de déploiement afin que l'installation soit la plus simple possible lorsque le client y sera confronté (idéalement du Drag \& Drop).\\
 Le GPS du drone n'est pas très performant, ce qui est sûrement du aux chocs qu'il a subit auparavant, cette contrainte est donc à indiquer au client dans le rapport.\\
 Au niveau du retour vidéo, en plus du split nous pouvons explorer la piste de l'effet binoculaire afin de fournir une meilleure immersion au client.\\
