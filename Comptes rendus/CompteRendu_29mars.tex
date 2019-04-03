@@ -25,24 +25,24 @@ Nous pourrions proposer un scénario d'utilisation afin que l'auditoire puisse m
 Rajouter des animations (zoom sur chaque composant) permet de guider le discours principal et de captiver l'audience.\\
 
 Les titres des diapos sont dans certains cas maladroits. Par exemple, "Serveur local" est un titre trop vague alors que "Serveur local pour la saisie du plan" est bien plus précis.\\
-Certain problèmes décrits "comme la précision du GPS du drone" sont en fait des contraintes imposées par le matériel.\\
-Pour le problème du retour vidéo sur l'iPod, nous pouvons utiliser Opencv ou Ffmpeg.\\
-Si nous effectuons une démonstration devant le client, celle-ci doit être testée en conditions réelles, ainsi on évite les erreurs bêtes d'adresse IP dépendante de la borne d'accès Wifi...\\
+Certain problèmes décrits, comme la précision du GPS du drone par exemple, sont en fait des contraintes imposées par le matériel.\\
+Pour le problème du scindage de l'écran en deux pour le retour vidéo sur l'iPod, nous pouvons utiliser Opencv ou Ffmpeg.\\
+Si nous effectuons une démonstration devant le client, celle-ci doit être testée en conditions réelles. Ainsi on évite les erreurs bêtes tel que l'utilisation d'une adresse IP dépendante de la borne d'accès Wifi...\\
 Une démonstration en vidéo serait donc plus appropriée afin d'éviter les problèmes lors de la présentation.\\
 Pour le calibrage du drone il existe une fonction Flat Trim dans le SDK qui permet de calibrer rapidement l'horizontalité du drone, ce qui nous permet d'éviter de le tourner dans tous les sens.
 
  
 \section{Concernant le schéma d'architecture logicielle}
 Dans un premier temps, nous devons éviter de mélanger le matériel et l'architecture logicielle afin que la lecture du schéma soit claire.
-Il faut également limiter le nombre d'éléments à l'écran dans la vue globale. Il faut choisir un niveau de détail moins fournis pour que le schéma reste compréhensible. \\
+Il faut également limiter le nombre d'éléments à l'écran dans la vue globale. Il faut choisir un niveau de détail moins fourni pour que le schéma reste compréhensible. \\
 C'est uniquement en zoomant sur chaque composant que l'on peut afficher plus de détails.\\
 Lors des zooms sur chaque composant logiciel, il ne faut pas représenter les parties qui n'ont pas d'intérêt pour le composant. Par exemple, dans la slide présentant l'interface graphique pour le client (Gtk+) on peut enlever les boites "iPod" et "Accès internet" qui ne servent à rien.
 
 \section{Concernant la suite du projet}
 
 Notre application est pour l'instant exclusivement adaptée pour le PC que nous utilisons, et nécessite donc une grande quantité d'installations afin de l'utiliser sur une autre machine.\\
-Nous devons donc réfléchir à une stratégie de déploiement afin que l'installation soit la plus simple possible lorsque le client y sera confronté (idéalement du Drag \& Drop).\\
-Le GPS du drone n'est pas très performant, ce qui est sûrement du aux chocs qu'il a subit auparavant, cette contrainte est donc à indiquer au client dans le rapport.\\
+Nous devons donc réfléchir à une stratégie de déploiement afin que l'installation soit la plus simple possible pour le client (idéalement du Drag \& Drop).\\
+Le GPS du drone n'est pas très performant et présente une imprécision pouvant s'élever à 4m en raison du format de coordonnées GPS utilisé, cette contrainte est donc à indiquer au client dans le rapport.\\
 Au niveau du retour vidéo, en plus du split nous pouvons explorer la piste de l'effet binoculaire afin de fournir une meilleure immersion au client.\\
 La prochaine réunion se tiendra le vendredi 12 Avril à 18h.
 
