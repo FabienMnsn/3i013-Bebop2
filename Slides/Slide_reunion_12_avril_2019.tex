@@ -11,7 +11,7 @@
 \usepackage{tabularx,tabulary}
 \usepackage{movie15}
 %________________________________________________________________________________________________
-\title{3I013 Réunion du 29 Mars 2019}
+\title{3I013 Réunion du 12 Avril 2019}
 \author{Nicolas CASTANET\\Maël FRANCESCHETTI\\Daoud KADOCH\\Fabien MANSON\\}
 %________________________________________________________________________________________________
 %ce theme est le plus clean de Beamer le truc a ne pas utiliser c'est 'Warsaw'
@@ -52,7 +52,7 @@
 	%________________________________________________________________________________________________
 	
 	\begin{frame}
-		\section{Problème}
+		\section{La Demande du Client}
 		\begin{center}
 		\frametitle{Objectifs}
 		\begin{itemize}
@@ -65,17 +65,17 @@
 	\end{frame}
 %________________________________________________________________________________________________	
 	\begin{frame}
-		%\section{Problème}
+		\section{Scénario d'Utilisation}
 		\begin{center}
-		\frametitle{Cas d'utilisation}
+		\frametitle{Scénario d'utilisation}
 		\begin{enumerate}
 		    \item Démarrage du drone\\
 		    \item Lancement de l'application PC\\
-		    \item Saisie du plan de vol à l'aide du composant dédié (carte intéractive)\\
+		    \item Saisie du plan de vol à l'aide du composant dédié (carte interactive)\\
 		    \item Connexion du PC au wifi du drone
 		    \item Connexion de l'iPod au réseau local et démarrage de l'application sur l'iPod
 		    \item Mise en place de l'iPod dans le masque FPV
-		    \item Demarrage de la ronde depuis l'iPod ou le PC
+		    \item Démarrage de la ronde depuis l'iPod ou le PC
 		    \item Arrêt d'urgence si besoin
 		\end{enumerate}
 		   
@@ -85,7 +85,7 @@
 %________________________________________________________________________________________________	
 
 	\begin{frame}
-		\section{Solution}
+		\section{Les Différentes Solutions}
 		\begin{center}
 		\frametitle{Comparatif des solutions}
 		%\subsection{Contraintes}
@@ -101,20 +101,20 @@
 %________________________________________________________________________________________________
 
 	\begin{frame}
-		%\section{Solution}
+		\section{Architecture Matérielle}
 		\begin{center}
 		\frametitle{Architecture Matérielle}
 		%\subsection{Contraintes}
         %\framesubtitle{Les solutions}
        
-        \includegraphics[scale=0.6]{shcema_archi.png}
+        \includegraphics[scale=0.6]{schema_archi.png}
 		\end{center}
 	\end{frame}
 	
 %________________________________________________________________________________________________	
 
 	\begin{frame}
-		%\section{Solution}
+		\section{Architecture Logicielle}
 		\begin{center}
 		\frametitle{Architecture Logicielle}
 		%\subsection{Contraintes}
@@ -128,7 +128,7 @@
 	
 	
 	\begin{frame}
-		\section{Avancement}
+		\section{Test Effectués}
 		\begin{center}
 		\frametitle{Tests effectués}
            	\begin{itemize}
@@ -139,6 +139,7 @@
                 \item Exécution du plan de vol enregistré sur le drone en totalité.
                  \item Arrêt d'urgence
                 \item Essais d'émission d'un flux vidéo depuis un serveur vers un iPod
+                \item Traitement d'un flux vidéo en direct (webcam) -> découpe et assemblage des images pour le format VR 
             \end{itemize}
 		\end{center}
 	\end{frame}
@@ -146,7 +147,7 @@
 %________________________________________________________________________________________________
 
 	\begin{frame}
-		%\section{Avancement}
+		\section{État d'Avancement}
 		\begin{center}
 		\frametitle{Etat d'avancement}
          \includegraphics[scale=0.35]{Avancement_projet.PNG}
@@ -171,8 +172,8 @@
                 \item En cours :
             \end{itemize}
             \begin{enumerate}
-           \item Perte du signal GPS à Sorbonne Université
-           \item Retouche des frames du flux vidéo pour le split screen
+           \item Perte du signal GPS sur campus de l'UPMC
+           \item Encodage du fichier video traité en .avi : conversion en mp4 (ffmpeg) trop lente
            \item Ré-émission du flux vidéo par le serveur
            \end{enumerate}
 		\end{center}

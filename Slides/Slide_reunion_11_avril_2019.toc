@@ -1,4 +1,0 @@
-\select@language {french}
-\beamer@sectionintoc {2}{Probl\IeC {\`e}me}{3}{0}{1}
-\beamer@sectionintoc {3}{Solution}{5}{0}{2}
-\beamer@sectionintoc {4}{Avancement}{8}{0}{3}
