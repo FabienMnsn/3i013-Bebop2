@@ -50,7 +50,7 @@ Now it's time to create another new directory to install the SDK:
 
 _______________________________________________________________________
 You might need to configure git with your name/email before using repo:
--to configure git user.name: git --global user.name "Youre_name"
+-to configure git user.name: git --global user.name "Your_name"
 -to configure git user.email; git --global user.email "your.email@something.com"
 
 _________________________________________________________
@@ -65,7 +65,7 @@ When it's done you can build the SDK:
 (variant of build-sdk is: build-sample)
 
 _________________________________________________________________
-Now you have built the SDK, let's build all the samples by using: ./buildsh -p arsdk-native -t build-sample
+Now you have built the SDK, let's build all the samples by using: ./build.sh -p arsdk-native -t build-sample
 
 ____________________________________
 Final step: run the selected sample:
