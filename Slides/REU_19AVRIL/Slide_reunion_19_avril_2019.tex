@@ -1,0 +1,138 @@
+%________________________________________________________________________________________________
+\documentclass{beamer}
+%________________________________________________________________________________________________
+\usepackage[french]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{tabularx,tabulary}
+\usepackage{movie15}
+%________________________________________________________________________________________________
+\title{3I013 Réunion du 19 Avril 2019}
+\author{Nicolas CASTANET\\Maël FRANCESCHETTI\\Daoud KADOCH\\Fabien MANSON\\}
+%________________________________________________________________________________________________
+%ce theme est le plus clean de Beamer le truc a ne pas utiliser c'est 'Warsaw'
+\usetheme{default}
+%suppression de la barre de navigation inutile
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle}[default][center]
+
+%\logo{\includegraphics[height=0.5cm]{logo_sorbonne.png}}
+
+%________________________________________________________________________________________________
+\addtobeamertemplate{footline}{
+	\begin{flushright}
+	\vbox{\insertframenumber/\inserttotalframenumber}
+	
+	\end{flushright}}
+
+%________________________________________________________________________________________________
+\begin{document}
+
+
+	\begin{frame}
+		\begin{center}
+		\date{}
+		\maketitle
+		\includegraphics[scale=0.033]{drone.png}
+		\end{center}
+	\end{frame}
+	
+%________________________________________________________________________________________________	
+	
+	\begin{frame}
+		\section{}
+		\begin{center}
+		\frametitle{Sommaire}
+		\tableofcontents{}
+		\end{center}
+	\end{frame}
+	
+	%________________________________________________________________________________________________
+	
+	\begin{frame}
+		\section{La Demande du Client}
+		\begin{center}
+		\frametitle{La Demande du Client}
+		\begin{itemize}
+		    \item Le client souhaite effectuer des rondes avec un drone Bebop 2\\
+		    \item Le drone doit voler de manière autonome en suivant un plan de vol prédéfini \\
+		    \item Le retour vidéo du drone doit être redirigé à un iPod touch qui sera placé dans un masque FPV pour permettre à l'utilisateur de voir comme s'il était à la place du drone\\
+		\end{itemize}
+		   
+		\end{center}
+	\end{frame}
+%________________________________________________________________________________________________	
+	\begin{frame}
+		\section{Scénario d'Utilisation}
+		\begin{center}
+		\frametitle{Scénario d'utilisation}
+		\begin{enumerate}
+		    \item Démarrage du drone\\
+		    \item Lancement de l'application PC\\
+		    \item Saisie du plan de vol à l'aide du composant dédié (carte interactive)\\
+		    \item Connexion du PC au wifi du drone
+		    \item Connexion de l'iPod au réseau local et démarrage de l'application sur l'iPod
+		    \item Mise en place de l'iPod dans le masque FPV
+		    \item Démarrage de la ronde depuis l'iPod ou le PC
+		    \item Arrêt d'urgence si besoin
+		\end{enumerate}
+		   
+		\end{center}
+	\end{frame}
+	
+%________________________________________________________________________________________________	
+
+%________________________________________________________________________________________________
+
+
+	
+%________________________________________________________________________________________________	
+
+%________________________________________________________________________________________________
+	%________________________________________________________________________________________________
+
+
+
+%________________________________________________________________________________________________
+
+
+	
+%________________________________________________________________________________________________
+	
+
+%________________________________________________________________________________________________
+
+
+	
+%________________________________________________________________________________________________	
+	
+	\begin{frame}
+		%\section{Avancement}
+		\begin{center}
+		\frametitle{Problèmes rencontrés}
+	    \begin{itemize}
+                 \item Résolus :
+            \end{itemize}
+        \begin{enumerate}
+             
+            \item Calibration du drone après chaque arrêt d'urgence (choc ou inclinaison trop forte du drone)
+             \item Direction du drone durant le trajet
+             \end{enumerate}
+            \begin{itemize}
+                \item En cours :
+            \end{itemize}
+            \begin{enumerate}
+           \item Perte du signal GPS sur campus de l'UPMC
+           \item Encodage du fichier video traité en .avi : conversion en mp4 (ffmpeg) trop lente
+           \item Ré-émission du flux vidéo par le serveur
+           \end{enumerate}
+		\end{center}
+	\end{frame}
+
+%________________________________________________________________________________________________	
+	
+\end{document}

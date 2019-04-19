@@ -1,0 +1,3 @@
+\babel@toc {french}{}
+\beamer@sectionintoc {2}{La Demande du Client}{3}{0}{1}
+\beamer@sectionintoc {3}{Sc\IeC {\'e}nario d'Utilisation}{4}{0}{2}
