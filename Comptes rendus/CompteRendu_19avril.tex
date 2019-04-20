@@ -1,0 +1,98 @@
+
+\documentclass[]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+
+\begin{document}
+
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{3I013 - Projet }
+\fancyhead[R]{Sorbonne Université}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{Licence Informatique}
+\fancyfoot[R]{Vendredi 19 Avril 2019}
+
+\begin{center}
+\large{\textbf{Compte Rendu de la Réunion du Vendredi 19 Avril 2019 \bigbreak}}
+\end{center}
+
+\section{Concernant la présentation}
+Le plan n'est pas décrit jusqu'au bout dans le sommaire, il faut donc y insérer toutes les parties que nous traitons.\\
+La slide concernant la demande du client est trop triste, nous pouvons la remplacer par une photo, ou tout simplement la retirer et démarrer par les scénarios d'utilisation.\\
+Il faut penser à présenter l'architecture logicielle dans le même ordre que le scénario d'utilisation.\\
+En ce qui concerne le diagramme de Gantt, il faut dévoiler les éléments dans l'ordre en précisant leurs interdépendances, et ne pas oublier la case de la recherche et du pilotage du drone. Il faut aussi préciser l'état de chaque partie (en plus du pourcentage de complétion) : fonctionnel, fonctionnel et testé, etc...\\
+Attention aux fautes d'orthographe déploiement prend un 'e'.\\
+Les compte-rendus et slides sont des éléments moins importants, il faut donc réduire leurs tailles sur le schéma de répartition des tâches. Dans ce même schéma il manque toute la partie recherche.\\
+Le contraste entre la couleur du texte et la couleur de la slide n'est pas toujours très élevé ce qui gène la lisibilité surtout avec un projecteur.
+Il faut donc garder une cohérence des couleurs dans toutes la présentation, éviter de passer du bleu fluorescent au vert pâle.\\
+Il ne faut évidemment pas oublier d'ajouter une slide de conclusion.
+
+\section{Concernant l'iPod et le retour vidéo}
+Un time-out de 30 secondes ou un démarrage par gestes est à préconiser à la place d'un deuxième acteur qui s'occupe du démarrage de la ronde.\\
+Nous devons étudier le framework AVKIT pour la gestion du flux vidéo.\\
+Les contraintes de temps réel devront être gérées au niveau du flux, nous ne devrons donc pas laisser s'accumuler un trop grand décalage sur la vidéo, et revenir au direct lors d'une latence en faisant sauter certaines frames.\\
+
+\section{Concernant le déploiement}
+L'ensemble du projet doit être régulièrement mis à jour sur GitHub.\\
+La premier élément que nous devons établir est, sur quelle configuration nous souhaitons installer notre "application". Sous quelle architecture ? Ici nous choisirons le système Linux.\\
+En ce qui concerne le déploiement, il se déroulera en partant d'une machine de développement jusqu'à une machine de production.\\
+La machine de développement produira des artefacts binaires, c'est-à-dire un package de distribution comme une archive .tar.\\
+Le SDK de Parrot fait parti des packages de distribution que l'on peut pré-compiler, afin de limiter les artefacts sur la machine de production.\\
+Nous pourrons produire un package RPM ou réaliser des scripts bash qui sera appelé dans un Makefile plus propre.\\
+Pour tester le déploiement on pourra installer une machine virtuelle.\\ 
+La prochaine réunion se tiendra le vendredi 3 mai à 17h et sera une présentation à blanc de la soutenance du 6 mai.\\
+
+
+
+\end{document}
+
+\documentclass[]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+
+\begin{document}
+
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{3I013 - Projet }
+\fancyhead[R]{Sorbonne Université}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{Licence Informatique}
+\fancyfoot[R]{Vendredi 19 Avril 2019}
+
+\begin{center}
+\large{\textbf{Compte Rendu de la Réunion du Vendredi 19 Avril 2019 \bigbreak}}
+\end{center}
+
+\section{Concernant la présentation}
+Le plan n'est pas décrit jusqu'au bout dans le sommaire, il faut donc y insérer toutes les parties que nous traitons.\\
+La slide concernant la demande du client est trop triste, nous pouvons la remplacer par une photo, ou tout simplement la retirer et démarrer par les scénarios d'utilisation.\\
+Il faut penser à présenter l'architecture logicielle dans le même ordre que le scénario d'utilisation.\\
+En ce qui concerne le diagramme de Gant, il faut dévoiler les éléments dans l'ordre en précisant leurs interdépendances, et ne pas oublier la case de la recherche et du pilotage du drone.\\
+Les compte-rendus et slides sont des éléments moins importants, il faut donc réduire leurs tailles sur le schéma de répartition des tâches.\\
+Les couleurs sont parfois trop vives et en trop grand contraste avec les autres slides, il faut donc penser à garder une cohérence des couleurs.\\
+Il ne faut évidemment pas oublier d'ajouter une slide de conclusion.
+
+\section{Concernant l'iPod et le retour vidéo}
+Un time-out de 30 secondes ou un démarrage par gestes est à préconiser à la place d'un deuxième acteur qui s'occupe du démarrage de la ronde.\\
+Nous devons étudier le framework AVKIT pour la gestion du flux vidéo.\\
+Les contraintes de temps réel devront être gérées au niveau du flux, nous ne devrons donc pas laisser s'accumuler un trop grand décalage sur la vidéo, et revenir au direct lors d'une latence.\\
+
+\section{Concernant le déploiement}
+L'ensemble du projet doit être régulièrement mis à jour sur GitHub.\\
+La premier élément que nous devons établir est, dans quelle configuration nous souhaitons installer notre "application", ici nous choisirons le système Linux.\\
+En ce qui concerne le déploiement, il se déroulera en partant d'une machine de développement jusqu'à une machine de production.\\
+La machine de développement produira des artefacts binaires, c'est-à-dire un package de distribution comme une archive .tar.\\
+Le SDK de Parrot fait parti des packages de distribution que l'on peut pré-compiler, afin de limiter les artefacts sur la machine de production.\\
+Nous pourrons produire un package RPM ou réaliser des scripts bash (un Makefile est préférable).\\
+
+La prochaine réunion se tiendra le vendredi 3 mai à 17h.
+
+
+
+\end{document}
