@@ -14,20 +14,22 @@
 			// On initialise la latitude et la longitude de Paris (centre de la carte)
 			var defautAltitude = 1;
 			var defaultOutputName = "outPut";
-			var lat = 48.847229;	//centrage d'origine
-			var lon = 2.356632;
+			var lat = 48.852969//centrage d'origine
+			var lon = 2.349903;
 			var modeDelete = false;
 			var macarte = null;
 			var traceTrajet = null;
 			var listeEtapes = new Array();//la future liste des points de plan de vol
 			var listeAltitudes = new Array();//les altitudes correspondantes
+
+			
 			// Fonction d'initialisation de la carte
 			function initMap() {
 				var screenHeigh = document.body.clientHeight;//screen.availHeight;
 				var divMap = document.getElementById("map");
 				divMap.style.height = (screenHeigh-10)+"px";
 				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-                macarte = L.map('map').setView([lat, lon], 17);
+                macarte = L.map('map').setView([lat, lon], 11);
                 // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
                 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
                     // Il est toujours bien de laisser le lien vers la source des données
@@ -40,6 +42,17 @@
 				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 				initMap(); 
 				macarte.on('click',placerEtape);
+				document.getElementById("setDefaultAlt").value = defautAltitude;
+				document.getElementById("setDefaultAlt").onchange= function(){
+					strAltitude = document.getElementById("setDefaultAlt").value;
+					altitude = parseFloat(strAltitude.replace(',','.'));
+					if(!isNaN(altitude)){
+						defautAltitude = altitude;//on enregistre la nouvelle altitude par défault
+					}
+					else{
+						alert("Saisie incompatible (float attendu)");
+					} 
+				}
 			};
 
 			function placerEtape(e){
@@ -101,6 +114,17 @@
 				this.closePopup();
 			}
 			
+			function changeDefautAltitude(){
+				strAltitude = document.getElementById("setDefaultAlt").value;
+				altitude = parseFloat(strAltitude.replace(',','.'));
+				if(!isNaN(altitude)){
+					defaultAlt = altitude;//on enregistre la nouvelle altitude par défault
+				}
+				else{
+					alert("Saisie incompatible (float attendu)");
+				} 
+			}
+			
 			function actionClickMarker(e){
 				if(modeDelete){
 					var markerNumber = this.getPopup().getContent();//on récupère le numéro du marker
@@ -138,9 +162,31 @@
 				var coord = listeEtapes[i-1].getLatLng();
 				values+= ""+(i)+"\t0\t3\t"+ "21\t"+"0.000000\t"+"0.000000\t"+ "0.000000\t0.000000\t"+coord.lat.toFixed(6)+"\t"+coord.lng.toFixed(6)+"\t"+listeAltitudes[i-1].toFixed(6)+"\t1\r\n";
 				download(name+".mavlink",values);
+				//saveOnServer(name+".mavlink",values);
 			}
 			
-			function download(filename, text) {
+			function saveOnServer(name, dataText){//enregistre sur le serveur apache pour envoi au SDK parrot
+				$.ajax({
+				   url : 'plan_de_vol.php',
+				   type : 'POST',
+				   dataType : 'text',
+				   data: 'name='+name+'&content='+dataText,
+				   success : function(code_html, statut){
+					   alert("Plan de vol enregistré sur le serveur");
+				   },
+
+				   error : function(resultat, statut, erreur){
+						alert("Une erreur est apparue lors de l'enregistrement sur le serveur");
+				   },
+
+				   complete : function(resultat, statut){
+
+				   }
+
+				});		
+			}
+			
+			function download(filename, text) {//téléchargement dans le navigateur
 				var element = document.createElement('a');
 				element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
 				element.setAttribute('download', filename);
@@ -181,13 +227,17 @@
 				margin-bottom:0px;
 			}
 			#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-				height:100vh;
+				height:700px;
+			}
+			
+			.leaflet-marker-icon{
+				width:15px;
+				height:15px;
 			}
 			/* The switch - the box around the slider */
 			.switch {
 			  margin-top: auto;
 			  margin-bottom: auto;
-			  margin-left:5px;
 			  position: relative;
 			  display: inline-block;
 			  min-width: 60px;
@@ -284,14 +334,12 @@
 			
 			#control {
 				min-width: 220px;
-				margin-left:5px;
 				box-shadow:none;
-				display: flex;
-				height: 40px;
+				height: 80px;
 				width: 20%;
-				position: absolute;
+				position: relative;
 				z-index: 900;
-				bottom: 10px;
+				bottom: 100px;
 				border: 2px solid #ccc;
 				border-radius: 3px;
 				background-clip: padding-box;
@@ -300,17 +348,41 @@
 				font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 			}
 			
+			#params{
+				height: 40px;
+				display: flex;
+			}
+			
+			#setDefaultAlt{
+				margin:auto;
+				width: 20%;
+			}
+			
+			#tools{
+				height: 40px;
+				display: flex;
+			}
+			
 			#mode{
 				min-width: 50px;
 				width: 20%;
-				font-family: Arial;
-				font-size: 14px;
-				text-align: center;
 				margin-top: auto;
 				margin-bottom: auto;
 				margin-left: 10%;
+			}
+			
+			#labMinAlt{
+				height: 50%;
+				margin: auto;
+			}
+			
+			.labelStyle{
+				font-family: Arial;
+				font-size: 14px;
+				text-align: center;
 				color: black;
 			}
+			
 		</style>
 		<title>Carte</title>
 	</head>
@@ -319,13 +391,18 @@
 			<!-- Ici s'affichera la carte -->
 		</div>
 		<div id="control">
-			<label class="switch"><!-- supprimer les markers cliqués quand activé, géré dans le JS -->
-			  <input type="checkbox" id="delete">
-			  <span class="slider round"></span>
-			</label>
-			<span id="mode">Mode</span>
-			<button type="button" id="save">Export</button>
-			<!-- Ici  on fera les éventuelles saisies et les paramétrages -->
+			<div id="params">
+				<span id="labMinAlt" class="labelStyle">Altitude par défault :</span>
+				<input type="text" name="defaultAlt" id="setDefaultAlt" />
+			</div>
+			<div id="tools">
+				<label class="switch"><!-- supprimer les markers cliqués quand activé, géré dans le JS -->
+				  <input type="checkbox" id="delete">
+				  <span class="slider round"></span>
+				</label>
+				<span id="mode" class="labelStyle">Mode</span>
+				<button type="button" id="save">Export</button>
+			</div>
 		</div>
 	
 	</body>
