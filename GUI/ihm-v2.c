@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <gtk/gtk.h>
+#include <stdio.h>
+#include <dirent.h>
 
 //USEFULL LINK
 // http://gtk.developpez.com/cours/gtk2/?page=page_22
