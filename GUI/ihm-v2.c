@@ -2,75 +2,224 @@
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <dirent.h>
+#include <string.h>
+#include <gmodule.h>
+
+#define MAVLINK_DIR "./Mavlinks"
 
 //USEFULL LINK
 // http://gtk.developpez.com/cours/gtk2/?page=page_22
+// compile : gcc ihm.c -o ihm `pkg-config --cflags --libs gtk+-3.0`
 
 //_________________________________________________________________________________
+
+//GLOBAL VAR AND STRUC MAYBE?
+GtkBuilder *builder;
+
+GtkWidget *window_main;
+GtkWidget *flightplanbutton;
+GtkWidget *openfilebutton;
+GtkWidget *startbutton;
+GtkWidget *helpbutton;
+
+
+GtkWidget *window_combo_box;
+GtkWidget *combobox;
+GtkWidget *selectbutton;
+GtkWidget *deletebutton;
+
+char path[32];
+int isSelectSelected = 0;
+int validate = 0;
+char file_table[32][32];
+int nb_file = 0;
+
+//_________________________________________________________________________________
+
+void print_file_table(){
+	int i;
+	for(i = 0; i < 32; i++){
+		printf("file_table[%d] (%s)\n", i, file_table[i]);
+	}	
+}
+
+void init_file_table(){
+	int i;
+	for(i = 0; i < 32; i++){
+		strcpy(file_table[i], "");
+	}
+	strcpy(file_table[0], "Selectionnez un plan de vol");
+}
+
+//_________________________________________________________________________________
+
+void info_data(){
+	printf("__________________\npath : %s\nselected : %d\n__________________\n", path, isSelectSelected);
+}
+
+//_________________________________________________________________________________
+
+//CREATION DIALOG ERROR WINDOW
+void create_error_window(GtkWidget *parent, char *message){
+	GtkWidget *dialogError;
+  		dialogError = gtk_message_dialog_new(
+  			GTK_WINDOW(parent),
+            GTK_DIALOG_DESTROY_WITH_PARENT,
+            GTK_MESSAGE_ERROR,
+            GTK_BUTTONS_OK,
+            message);
+  		gtk_window_set_title(GTK_WINDOW(dialogError), "Erreur");
+  		gtk_dialog_run(GTK_DIALOG(dialogError));
+  		gtk_widget_destroy(dialogError);
+}
+
+//CREATION DIALOG VALIDATION WINDOW
+int create_validate_window(GtkWidget *parent){
+	GtkWidget *dialogValidate;
+	dialogValidate = gtk_message_dialog_new(
+		GTK_WINDOW(window_combo_box),
+	    GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+        GTK_MESSAGE_QUESTION,
+        GTK_BUTTONS_YES_NO,
+        "Voulez vous vraiment supprimer ce fichier?");
+	gtk_window_set_title(GTK_WINDOW(dialogValidate), "Alerte");
+	int res = gtk_dialog_run(GTK_DIALOG(dialogValidate));
+	if(res == GTK_RESPONSE_YES){
+		validate = 1;
+	}
+	else{
+		if(res == GTK_RESPONSE_NO){
+		  	validate = -1;
+		}
+	}
+	gtk_widget_destroy(dialogValidate);
+}
+
+//REMOVE THE ACTIVE TEXT TO UPDATE THE COMBO LIST
+void update_combo_list(){
+	gtk_combo_box_text_remove(GTK_COMBO_BOX_TEXT(combobox), gtk_combo_box_get_active(GTK_COMBO_BOX(combobox)));
+}
+
+//_________________________________________________________________________________
+
 //CALLBACKS
-
-//FONCTION QUI AFFICHE LA SECTION D'AIDE
-void cb_open_help(){
-    GtkWidget   *window_help;
-
-    window_help = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(window_help), "A propos");
-    gtk_window_set_default_size(GTK_WINDOW(window_help), 640, 400);
-
-    gtk_widget_show_all(window_help);
+void on_widget_deleted(GtkWidget *widget){
+	gtk_widget_hide(widget);
 }
 
-//FONCTION QUI AFFICHE LE A PROPOS DE L'APPLICATION
-void cb_open_about(){
-    GtkWidget   *window_about;
-
-    window_about = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_title(GTK_WINDOW(window_about), "Aide");
-    gtk_window_set_default_size(GTK_WINDOW(window_about), 320, 200);
-
-    gtk_widget_show_all(window_about);
-}
-
-//FONCTION QUI OUVRE L'APPLICATION DE SAISIE DU PLAN DE VOL DANS UN ONGLET DU NAVIGATEUR INTERNET PAR DEFAUT
-void cb_open_plan(){
-    if(fork() == 0){
-        printf("Ouverture de l'application de création de plan de vol dans un nouvel onglet de votre moteur de recherche !\n\n");
+//CALLBACKS MAIN WINDOW
+void on_flightplanbutton_clicked(){
+	if(fork() == 0){
         execlp("xdg-open","xdg-open","plan_de_vol.html", NULL);
         perror("execlp");
     }
 }
 
-//FONCTION QUI OUVRE UN FILE CHOOSER DASN UNE NOUVELLE FENETRE ET RECUPERE LE PATH DU FICHIER SELECTIONNE
-void cb_open_file(GtkWidget* button, gpointer window){
-    GtkWidget *dialog;
-    dialog = gtk_file_chooser_dialog_new("Coisissez un plan de vol", GTK_WINDOW(window), GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_OK, GTK_RESPONSE_OK, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
-    gtk_widget_show_all(dialog);
-    //  gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(dialog),"/");
-    gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(dialog), g_get_home_dir());
-    gint resp = gtk_dialog_run(GTK_DIALOG(dialog));
-    if(resp == GTK_RESPONSE_OK){
-        g_print("%s\n", gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog)));
-    }
-    else{
-        g_print("Vous avez annulé la sélection de fichier\n");
-    }
-    gtk_widget_destroy(dialog);
+void on_openfilebutton_clicked(){
+	gtk_widget_show(window_combo_box);
+}
+
+void on_startbutton_clicked(){
+	if(isSelectSelected && strlen(path) != 0){
+		printf("Fichier sélectionné : %s, paré au decollage !\n", path);
+		//fork + exec en passant le path du plan de vol en parametre de l'executable
+		printf("Partie incomplète, il manque le fork+exec du code C du drone\n");
+	}
+
+	if(!isSelectSelected || strlen(path) == 0){
+		GtkWidget *dialog;
+  		dialog = gtk_message_dialog_new(
+  			GTK_WINDOW(window_main),
+            GTK_DIALOG_DESTROY_WITH_PARENT,
+            GTK_MESSAGE_ERROR,
+            GTK_BUTTONS_OK,
+            "Aucun fichier sélectionné !\nVous devez sélectionner un fichier !\n\nPour plus d'aide reportez-vous à la section 'Aide'.");
+  		gtk_window_set_title(GTK_WINDOW(dialog), "Erreur");
+  		gtk_dialog_run(GTK_DIALOG(dialog));
+  		gtk_widget_destroy(dialog);
+	}
+}
+
+void on_helpbutton_clicked(){
+	GtkWidget *window_help;
+    window_help = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_title(GTK_WINDOW(window_help), "A propos");
+    gtk_window_set_default_size(GTK_WINDOW(window_help), 640, 400);
+    gtk_widget_show_all(window_help);
+}
+
+//_________________________________________
+
+//CALLBACKS COMBO BOX WINDOW
+/*
+void on_combobox_changed(){
+}
+*/
+
+void on_selectbutton_clicked(){
+	if(strcmp(gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(combobox)),"Selectionnez un plan de vol") != 0){
+		sprintf(path, "%s", gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(combobox)));
+	}
+	if(strlen(path) != 0){
+		isSelectSelected = 1;
+		gtk_widget_hide(window_combo_box);
+	}
+	else{
+		create_error_window(window_combo_box, "Auncun fichier sélectionné !");
+	}
+}
+
+void on_deletebutton_clicked(){
+
+	if(strcmp(gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(combobox)),"Selectionnez un plan de vol") != 0){
+		sprintf(path, "%s", gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(combobox)));
+		create_validate_window(window_combo_box);
+		switch(validate){
+			case 0:
+				printf("ERROR UNKNOW VALUE OF VALIDATE\n");
+				break;
+			
+			case 1:
+				//delete the file in an other process
+				if(fork() == 0){
+					char buff[64];
+					sprintf(buff, "");
+					strcat(buff, MAVLINK_DIR);
+					strcat(buff, "/");
+					strcat(buff, path);
+			        execlp("rm","rm", "-f", buff, NULL);
+			        perror("execlp");
+			    }
+			    //reset the vars on main process
+			    gtk_combo_box_text_remove(GTK_COMBO_BOX_TEXT(combobox), gtk_combo_box_get_active(GTK_COMBO_BOX(combobox)));
+			    sprintf(path, "%s", "");
+				isSelectSelected = 0;
+				break;
+			
+			case -1:
+				break;
+		}
+	}
+	else{
+		create_error_window(window_combo_box, "Auncun fichier sélectionné !");
+	}
+}
+
+//_________________________________________________________________________________
+
+//CLEAN EXIT?
+gint CloseAppWindow (GtkWidget *widget, gpointer *data){
+    gtk_main_quit ();
+    return (FALSE);
 }
 
 //_________________________________________________________________________________
 
 int main(int argc, char ** argv){
 
-	//___________________________________________________________________
-	
-	GtkBuilder      *builder; 
-    GtkWidget       *window;
-    GtkWidget 		*flightplanbutton;
-    GtkWidget 		*openfilebutton;
-    GtkWidget 		*helpbutton;
-    GtkWidget 		*infobutton;
- 	
- 	//___________________________________________________________________
+    init_file_table();
+
+    //___________________________________________________________________
 
     gtk_init(&argc, &argv);
  
@@ -80,40 +229,73 @@ int main(int argc, char ** argv){
  	//___________________________________________________________________
 
  	//GETTING OBJECTS FROM BUILDER
-    window = GTK_WIDGET(gtk_builder_get_object(builder, "window_main"));
+    window_main = GTK_WIDGET(gtk_builder_get_object(builder, "window_main"));
     flightplanbutton = GTK_WIDGET(gtk_builder_get_object(builder, "flightplanbutton"));
     openfilebutton = GTK_WIDGET(gtk_builder_get_object(builder, "openfilebutton"));
+    startbutton = GTK_WIDGET(gtk_builder_get_object(builder, "startbutton"));
     helpbutton = GTK_WIDGET(gtk_builder_get_object(builder, "helpbutton"));
-    infobutton = GTK_WIDGET(gtk_builder_get_object(builder, "infobutton"));    
+
+    window_combo_box = GTK_WIDGET(gtk_builder_get_object(builder, "window_combo_box"));
+    combobox = GTK_WIDGET(gtk_builder_get_object(builder, "combobox"));
+    selectbutton = GTK_WIDGET(gtk_builder_get_object(builder, "selectbutton"));
+    deletebutton = GTK_WIDGET(gtk_builder_get_object(builder, "deletebutton"));
+    //___________________________________________________________________
+
+	//FILLING COMBOBOX TEXT
+    DIR *rep;
+    char *file_name = NULL;
+    
+    // path du répertoire à changer
+    rep = opendir(MAVLINK_DIR);
+    if( rep != NULL){
+        struct dirent *lecture;
+        //remplissage du tableau avec les noms des fichiers trouvés
+        while(lecture = readdir(rep)){
+            if(strlen(lecture->d_name) > 8){
+                strcpy(file_table[nb_file+1], lecture->d_name);
+                nb_file++;
+            }
+        }
+        closedir(rep);
+
+        int i;
+        //on suppose que le nom du fichier ne dépasse pas 32 characteres sinon on est mort
+        char str[32] = "";
+        for(i = 0; i < nb_file+1; i++){
+            if(g_locale_to_utf8(file_table[i], -1, NULL, NULL, NULL)){
+            	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(combobox), g_locale_to_utf8(file_table[i], -1, NULL, NULL, NULL));
+            }
+        }
+        gtk_combo_box_set_active(GTK_COMBO_BOX(combobox), 0);
+    }
+	
 
     //___________________________________________________________________
 
     //CONNECTION WITH CALLBACKS
-    g_signal_connect(G_OBJECT(flightplanbutton), "clicked",G_CALLBACK(cb_open_plan), NULL);
-    g_signal_connect(G_OBJECT(openfilebutton), "clicked",G_CALLBACK(cb_open_file), NULL);
-    g_signal_connect(G_OBJECT(infobutton), "clicked",G_CALLBACK(cb_open_about), NULL);
-    g_signal_connect(G_OBJECT(helpbutton), "clicked",G_CALLBACK(cb_open_help), NULL);
+    g_signal_connect(G_OBJECT(flightplanbutton), "clicked",G_CALLBACK(on_flightplanbutton_clicked), NULL);
+    g_signal_connect(G_OBJECT(openfilebutton), "clicked",G_CALLBACK(on_openfilebutton_clicked), NULL);
+    g_signal_connect(G_OBJECT(startbutton), "clicked",G_CALLBACK(on_startbutton_clicked), NULL);
+    g_signal_connect(G_OBJECT(helpbutton), "clicked",G_CALLBACK(on_helpbutton_clicked), NULL);
 
+    g_signal_connect(G_OBJECT(window_combo_box), "delete-event", G_CALLBACK(on_widget_deleted), NULL);
+    g_signal_connect(G_OBJECT(selectbutton), "clicked", G_CALLBACK(on_selectbutton_clicked), NULL);
+    g_signal_connect(G_OBJECT(deletebutton), "clicked", G_CALLBACK(on_deletebutton_clicked), NULL);
+	
     //___________________________________________________________________
 
-    //UNKNOWN ??
+    //CONNECT DELETE EVENT WITH PROPER DESTROY
+    g_signal_connect (G_OBJECT(window_main), "delete_event",G_CALLBACK(CloseAppWindow), NULL);
+
     gtk_builder_connect_signals(builder, NULL);
- 	
     g_object_unref(builder);
- 
-    gtk_widget_show(window);
+
+    gtk_widget_show(window_main);
     gtk_main();
 
     //___________________________________________________________________
 
 	return 0;
-}
-
-//_________________________________________________________________________________
-
-//CLEAN EXIT?
-void on_window_main_destroy(){
-    gtk_main_quit();
 }
 
 //_________________________________________________________________________________
