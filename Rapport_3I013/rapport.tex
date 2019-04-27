@@ -154,12 +154,61 @@
 	    
 	    
 	\newpage
-	\subsection{Cahier des charges}
+	\subsection{Rappel du cahier des charges}
+    Nous rappelons ici les princpaux points du cahier des charges dans cette section.
+    Les besoins fonctionnels et le diagramme des fonctionnalités se trouvent dans le cahier des charges.
+    
+    \subsubsection{Périmètre}
+    \textbf{À qui s'adresse le produit ?}
+    \newline
+	Ce projet est destiné à un public désirant effectuer une ronde d'une durée de 20 à 25 minutes maximum avec son drone.\\
+		La portée maximale du drone est de 200 mètres pour une altitude de 100 mètres tout au plus.\\
+	\newline
+	\textbf{Les Limites}
+	\newline
+		Le drone ne sera pas capable d'éviter les obstacles durant sa ronde, c'est à l'utilisateur d'établir un trajet cohérent avec son environnement.\\
+		De plus, dans le cas où le trajet proposé est trop long par rapport à l'autonomie du drone, un simple message d'avertissement sera affiché pour prévenir l'utilisateur, l'application ne sera pas en mesure d'empêcher cette ronde.
+	
+
+    
+    \subsubsection{Ressources}
+    \textbf{Nous rappelons ici le matériel à notre disposition pour la réalisation du projet :}
+
+	\begin{enumerate}
+        \item Un drone Bebop 2.
+        \item Un iPod Touch de 6ème génération sous iOS 12.
+        \item Un accès aux salles machines SAR équipées de machines sous OSX.
+        \item Un accès aux salles informatiques équipées de machines sous Linux.
+    \end{enumerate}
+    \vspace{0.1cm}
+        L'équipe est composée de quatre étudiants en troisième année de licence d'informatique.\\
+        Nos connaissances en programmation sous Linux sont bonnes mais le langage Objective-C et l'univers iOS nous sont pour le moment encore inconnus.
+        
+    \subsubsection{Objectifs négociés}
+    Après avoir éxaminé la demande du client et retenue une solution matérielle, les objectifs suivants ont été formulés dans le cahier des charges :
+		\vspace{0.1cm}
+	\begin{enumerate}
+        	\item Permettre à l'utilisateur de saisir un plan de vol étape par étape sur une carte interactive et de spécifier les altitudes du drone à chaque point de passage.
+        	\item Permettre à l'utilisateur de sauvegarder son plan de vol pour le réutiliser plus tard.
+			\item Permettre à l'utilisateur de lancer l'exécution du plan de vol réalisé au préalable.
+		 	\item Rediriger le flux vidéo du drone vers l'iPod Touch. 
+		 	\item Minimiser les latences vidéo (de l'ordre de la seconde).
+		 	\item Permettre d'arrêter le vol en cours en cas d'urgence.
+    \end{enumerate}
+        
+    
+        
+	
 
 		
 	\newpage
 \section{Architecture Logicielle}
     \subsection{Interface utilisateur}
+    L'interface utilisateur est une interface GTK permettant d'intéragir avec le SDK Parrot afin d'enregistrer des trajets sur le drone et de les exécuter.
+    \newline
+    Elle permet également d'intéragir avec le Serveur local afin de saisir intéractivement le plan de vol à l'aide de l'application javascript et de créer les fichiers Mavlink.
+    \newline
+    Voici l'architecture d'intéraction de l'interface utilisateur:
         \vspace*{0.5cm}
         \begin{center}
 		\begin{figure}[!h]
@@ -172,6 +221,20 @@
 \newpage
         
 	 \subsection{Controle du drone}
+	 Le controle du drone est axé autour de la génération du fichiers mavlink à l'aide de l'application JS sur le serveur local et du SDK Parrot qui permet d'envoyer des commandes au drone et de connaitre son état.
+	 \newline
+	 Apres voir saisie intéractivement un trajet à l'aide de l'application javascript, le fichier Mavlink généré et envoyé au SDK Parrot. 
+	 \vspace{0.1cm}
+	 \newline
+	 
+	 Le SDK permet ensuite le controle du drone à savoir:
+	 \begin{enumerate}
+        	\item Connexion au drone.
+        	\item Exécution d'un plan de vol.
+			\item Arrêt d'urgence.
+    \end{enumerate}
+    Il permet égaement la réception du flux vidéo et de l'état du drone.
+    
 	    \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
@@ -182,6 +245,13 @@
 		
      \newpage
      \subsection{Application IOS}
+     L'application IOS permet dans un permier temps de scanner le réseau afin de se connecté au réseau du serveur local.
+     (VLC ??)
+     \newline
+     dans un second temps elle permet de visualiser le retour video du drone en direct.
+     Le flux video est envoyé au SDK Parrot et est ensuite diffusé en streaming sur le serveur local.
+     \newline
+     L'application affiche à l'aide d'une WK Webview le retour vidéo.
         \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
