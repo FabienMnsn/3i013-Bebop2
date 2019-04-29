@@ -14,8 +14,8 @@
 			// On initialise la latitude et la longitude de Paris (centre de la carte)
 			var defautAltitude = 1;
 			var defaultOutputName = "outPut";
-			var lat = 48.852969//centrage d'origine
-			var lon = 2.349903;
+			var lat = 48.846855//48.852969 centrage d'origine
+			var lon = 2.355489; //2.349903;
 			var modeDelete = false;
 			var macarte = null;
 			var traceTrajet = null;
@@ -29,7 +29,7 @@
 				var divMap = document.getElementById("map");
 				divMap.style.height = (screenHeigh-10)+"px";
 				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-                macarte = L.map('map').setView([lat, lon], 11);
+                macarte = L.map('map').setView([lat, lon], 17);
                 // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
                 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
                     // Il est toujours bien de laisser le lien vers la source des données
@@ -177,7 +177,7 @@
 				values+= ""+(i)+"\t0\t3\t"+ "21\t"+"0.000000\t"+"0.000000\t"+ "0.000000\t0.000000\t"+coord.lat.toFixed(6)+"\t"+coord.lng.toFixed(6)+"\t"+listeAltitudes[i-1].toFixed(6)+"\t1\r\n";
 				var outputName = prompt("nom du fichier :", defaultName);
 				//download(outputName+".mavlink",values);
-				saveOnServer(outputName+".mavlink",values);
+				saveOnServer("Mavlinks/"+outputName+".mavlink",values);
 			}
 			
 			function saveOnServer(outputName, dataText){//enregistre sur le serveur apache pour envoi au SDK parrot
@@ -439,7 +439,7 @@
 		</div>
 		<div id="control">
 			<div id="params">
-				<span id="labMinAlt" class="labelStyle">Altitude par défault :</span>
+				<span id="labMinAlt" class="labelStyle">Altitude par défault (mètres):</span>
 				<input type="text" name="defaultAlt" id="setDefaultAlt" />
 			</div>
 			<div id="tools">
