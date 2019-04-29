@@ -207,12 +207,13 @@
     L'interface utilisateur est une interface GTK permettant d'intéragir avec le SDK Parrot afin d'enregistrer des trajets sur le drone et de les exécuter.
     \newline
     Elle permet également d'intéragir avec le Serveur local afin de saisir intéractivement le plan de vol à l'aide de l'application javascript et de créer les fichiers Mavlink.
+    \vspace{0.2cm}
     \newline
     Voici l'architecture d'intéraction de l'interface utilisateur:
         \vspace*{0.5cm}
         \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.7]{Rapport/Interface_utilisateur.jpg}\\
+		\includegraphics[scale=0.5]{Rapport/new_HIM.png}\\
 		 \vspace*{0.3cm}
 		\caption{Interface utilisateur}
 		\end{figure}
@@ -233,29 +234,33 @@
         	\item Exécution d'un plan de vol.
 			\item Arrêt d'urgence.
     \end{enumerate}
-    Il permet égaement la réception du flux vidéo et de l'état du drone.
+    Le décolage et l'arrêt d'urgence du drone sont des commandes envoyés directement par le serveurs, ses commandes seront envoyés au serveur par l'IPod afin de permettre un décolage et un arrêt ergonomique.
+    \vspace{0.2cm}
+    \newline
+    Il permet égaement la réception de l'état du drone et du flux vidéo qui sera par la suite traité avec FFMPEG et envoyé en RTP à l'Ipod.
     
 	    \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.7]{Rapport/archi_controle_drone.png}\\
+		\includegraphics[scale=0.4]{Rapport/new_controle_drone.png}\\
 		\caption{Controle du drone}
 		\end{figure}
         \end{center}
 		
      \newpage
      \subsection{Application IOS}
-     L'application IOS permet dans un permier temps de scanner le réseau afin de se connecté au réseau du serveur local.
-     (VLC ??)
+     L'application IOS permet d'afficher le flux vidéo du drone et d'envoyés des requetes au serveur en effectuant des gestes simples avec l'Ipod afin de démarrage du drone et d'effectuer l'arrêt d'urgence.
+     \vspace{0.2cm}
      \newline
-     dans un second temps elle permet de visualiser le retour video du drone en direct.
-     Le flux video est envoyé au SDK Parrot et est ensuite diffusé en streaming sur le serveur local.
+     Dans un premier temps, l'application scanne le réseau afin de se connecter au serveur local.
+     Apres la connection une requete de demande de description du flux vidéo au format SDP est automatiquement envoyé au serveur.
+     \vspace{0.2cm}
      \newline
-     L'application affiche à l'aide d'une WK Webview le retour vidéo.
+     Le descripteur de flux est alors retourné par le serveur à l'application IOS, en parrallèle, elle reçoit également le flux video grâce au protocol RTP, le SDK VLC permet ensuite l'affichage vidéo.
         \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.5]{Rapport/3_Architecture_logicielle_iPod.png}\\
+		\includegraphics[scale=0.4]{Rapport/new_archi_logicielle.png}\\
 		\caption{Application IOS}
 		\end{figure}
         \end{center}
