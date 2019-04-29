@@ -6,6 +6,7 @@
 #include <gmodule.h>
 
 #define MAVLINK_DIR "./Mavlinks"
+#define CREATE_FLIGHT_PLAN_PHP_PATH ""
 
 //USEFULL LINK
 // http://gtk.developpez.com/cours/gtk2/?page=page_22

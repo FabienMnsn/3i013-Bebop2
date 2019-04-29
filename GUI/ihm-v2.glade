@@ -133,7 +133,7 @@ un plan de vol</property>
           <object class="GtkImage" id="bebop">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="pixbuf">IMG_1156downscale780.JPG</property>
+            <property name="pixbuf">background.JPG</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -162,7 +162,7 @@ un plan de vol</property>
                   <object class="GtkImage">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="pixbuf">icons8-waypoint-map-48_NOSHADOW.png</property>
+                    <property name="pixbuf">map.png</property>
                   </object>
                 </child>
               </object>
@@ -185,8 +185,7 @@ un plan de vol</property>
                   <object class="GtkImage">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Pour sélectionner ou supprimer un plan de vol cliquez ici !</property>
-                    <property name="pixbuf">icons8-folder-48.png</property>
+                    <property name="pixbuf">folder.png</property>
                   </object>
                 </child>
               </object>
@@ -209,7 +208,7 @@ un plan de vol</property>
                   <object class="GtkImage">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="pixbuf">icons8-next-48.png</property>
+                    <property name="pixbuf">start.png</property>
                   </object>
                 </child>
               </object>
@@ -232,7 +231,7 @@ un plan de vol</property>
                   <object class="GtkImage">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="pixbuf">icons8-help-48.png</property>
+                    <property name="pixbuf">help.png</property>
                   </object>
                 </child>
               </object>
