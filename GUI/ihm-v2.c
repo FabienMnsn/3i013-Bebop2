@@ -5,8 +5,8 @@
 #include <string.h>
 #include <gmodule.h>
 
-#define MAVLINK_DIR "./Mavlinks"
-#define CREATE_FLIGHT_PLAN_PHP_PATH ""
+#define MAVLINK_DIR "/opt/lampp/htdocs/plan_de_vol_drone/Mavlinks"
+#define CREATE_FLIGHT_PLAN_PHP_PATH "http://localhost:4200/plan_de_vol_drone/plan_de_vol.php"
 
 //USEFULL LINK
 // http://gtk.developpez.com/cours/gtk2/?page=page_22
@@ -97,9 +97,46 @@ int create_validate_window(GtkWidget *parent){
 }
 
 //REMOVE THE ACTIVE TEXT TO UPDATE THE COMBO LIST
+
 void update_combo_list(){
-	gtk_combo_box_text_remove(GTK_COMBO_BOX_TEXT(combobox), gtk_combo_box_get_active(GTK_COMBO_BOX(combobox)));
+	//gtk_combo_box_text_remove(GTK_COMBO_BOX_TEXT(combobox), gtk_combo_box_get_active(GTK_COMBO_BOX(combobox)));
+	gtk_combo_box_text_remove_all(GTK_COMBO_BOX_TEXT(combobox));
+	DIR *rep;
+    char *file_name = NULL;
+    
+    if(nb_file > 0){
+        	int j;
+        	for(j = 0; j < nb_file+1; j++){
+        		gtk_combo_box_text_remove(GTK_COMBO_BOX_TEXT(combobox),j);
+        	}
+    }
+    //reset nb_files before recalculating
+    nb_file	= 0;
+    // path du répertoire à changer
+    rep = opendir(MAVLINK_DIR);
+    if( rep != NULL){
+        struct dirent *lecture;
+        //remplissage du tableau avec les noms des fichiers trouvés
+        while(lecture = readdir(rep)){
+            if(strlen(lecture->d_name) > 8){
+                strcpy(file_table[nb_file+1], lecture->d_name);
+                nb_file++;
+            }
+        }
+        closedir(rep);
+
+
+        int i;
+        //on suppose que le nom du fichier ne dépasse pas 32 characteres sinon on est mort
+        for(i = 0; i < nb_file+1; i++){
+            if(g_locale_to_utf8(file_table[i], -1, NULL, NULL, NULL)){
+            	gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(combobox), g_locale_to_utf8(file_table[i], -1, NULL, NULL, NULL));
+            }
+        }
+        gtk_combo_box_set_active(GTK_COMBO_BOX(combobox), 0);
+	}
 }
+
 
 //_________________________________________________________________________________
 
@@ -111,13 +148,15 @@ void on_widget_deleted(GtkWidget *widget){
 //CALLBACKS MAIN WINDOW
 void on_flightplanbutton_clicked(){
 	if(fork() == 0){
-        execlp("xdg-open","xdg-open","plan_de_vol.html", NULL);
+		execlp("xdg-open","xdg-open", CREATE_FLIGHT_PLAN_PHP_PATH, NULL);
+        //execlp("xdg-open","xdg-open", CREATE_FLIGHT_PLAN_PHP_PATH, NULL);
         perror("execlp");
     }
 }
 
 void on_openfilebutton_clicked(){
 	gtk_widget_show(window_combo_box);
+	update_combo_list();
 }
 
 void on_startbutton_clicked(){
@@ -195,6 +234,7 @@ void on_deletebutton_clicked(){
 			    gtk_combo_box_text_remove(GTK_COMBO_BOX_TEXT(combobox), gtk_combo_box_get_active(GTK_COMBO_BOX(combobox)));
 			    sprintf(path, "%s", "");
 				isSelectSelected = 0;
+				update_combo_list();
 				break;
 			
 			case -1:
@@ -242,6 +282,7 @@ int main(int argc, char ** argv){
     deletebutton = GTK_WIDGET(gtk_builder_get_object(builder, "deletebutton"));
     //___________________________________________________________________
 
+    /*
 	//FILLING COMBOBOX TEXT
     DIR *rep;
     char *file_name = NULL;
@@ -269,6 +310,7 @@ int main(int argc, char ** argv){
         }
         gtk_combo_box_set_active(GTK_COMBO_BOX(combobox), 0);
     }
+    */
 	
 
     //___________________________________________________________________
