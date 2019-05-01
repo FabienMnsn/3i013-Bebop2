@@ -182,9 +182,95 @@ void on_startbutton_clicked(){
 
 void on_helpbutton_clicked(){
 	GtkWidget *window_help;
+    GtkWidget *notebook;
+    GtkWidget *pageContent;
+    GtkWidget *pageNumber;
+
+    int i = 1;
+
+    gchar *pagecontent;
+    gchar *pagenumber;
+
+
     window_help = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(window_help), "A propos");
     gtk_window_set_default_size(GTK_WINDOW(window_help), 640, 400);
+
+    notebook = gtk_notebook_new();
+    gtk_notebook_set_tab_pos(GTK_NOTEBOOK(notebook), GTK_POS_TOP);
+    gtk_notebook_set_scrollable(GTK_NOTEBOOK(notebook), TRUE);
+    gtk_container_add(GTK_CONTAINER(window_help), notebook);
+
+    //page 1
+
+    pagecontent = "Bienvenue dans la section d'aide.\n\nVous trouverez, dans l'ordre, de l'aide concernant :\n\n\tPrérequis au bon fonctionnement de l'application\n\tLa création d'un plan de vol sur votre navigateur web ainsi que la sauvegarde de ce dernier.\n\tLa sélection d'un plan de vol parmis ceux déja enregistrés sur votre machine.\n\tLa suppression d'un plan de vol enregistré sur votre machine.\n\tL'execution du plan de vol sélectionné.\n\tL'installation et la désinstallation de l'application";
+    pagenumber = g_strdup_printf("Page %d", i);
+    pageContent = gtk_label_new(pagecontent);
+    pageNumber = gtk_label_new(pagenumber);
+    gtk_label_set_justify(GTK_LABEL(pageContent), GTK_JUSTIFY_LEFT);
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), pageContent, pageNumber);
+    i++;    
+
+    //page 2
+
+    pagecontent = "PREREQUIS POUR L'APPLICATION :\n\nPour assurer un installation sans erreur de l'application vous devez avoir installé :\nFFmpeg\nLa librairie graphique gtk3 (sous Ubuntu 18.04 gtk3 est déjà installé)\nUn serveur local lampp (tutoriel facilement trouvable sur le net) que vous devez démarrer avant de lancer l'application principale.\nVous devez vous assurer que votre navigateur web est bien l'application par défaut pour ouvrir des fichiers html et php.\n\nSi vous avez réuni ces points vous pouvez installer l'application.\n(reportez-vous à la section 'INSTALLER ET SUPPRIMER L'APPLICATION' pour plus d'informations)";
+    pagenumber = g_strdup_printf("Page %d", i);
+    pageContent = gtk_label_new(pagecontent);
+    pageNumber = gtk_label_new(pagenumber);
+    gtk_label_set_justify(GTK_LABEL(pageContent), GTK_JUSTIFY_LEFT);
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), pageContent, pageNumber);
+    i++;
+
+    //page 3
+
+    pagecontent = "CREATION D'UN PLAN DE VOL :\n\nPour créer un plan de vol il faut, dans un premier temps, lancer l'application principale puis cliquer sur le premier des quatres boutons en commençant par la gauche.\nUne fois que vous aurez cliqué dessus, une page web s'ouvrira dans votre navigateur web.\nLa fenetre principale affiche une carte géographique que vous pouvez manipuler avec la souris (zoom avant, zoom arrière, déplacement, etc) comme on pourrai le faire sur google maps.\nAvec un clic gauche de la souris vous ajoutez un point de passage.\nPour supprimer ce point de passage, cliquer sur le bouton portant le libelé 'adding', situé en bas à gauche de votre écran.\nCe bouton permet de passer en mode ajout ou suppression de point de passage.\nChaque point de passage possède une altitude propre que vous pouvez définir en cliquant sur le point de passage.\nUne boite de dialogue s'ouvrira vous demandant de saisir une altitude pour ce point.\nConcernant l'altitude, vous trouverez, en bas à gauche de votre écran, un champ de saisie vous permettant de choisir une altitude par défaut pour tous les points de passage.\nCela vous évite de rentrer chaque altitude manuellement.\nUne fois le plan de vol tracé, il vous faudra cliquer sur le bouton 'export' situé en bas à gauche de votre écran pour sauvegarder votre plan de vol sur votre machine.\nUne boite de dialogue demandant un nom de fichier vous sera alors affichée.\nRemplissez le champ ou laissez le par défaut et cliquez sur 'ok' pour sauvegarder le fichier.\n\nVoila votre plan de vol est maintenant bien sauvegardé sur votre machine !";
+    pagenumber = g_strdup_printf("Page %d", i);
+    pageContent = gtk_label_new(pagecontent);
+    pageNumber = gtk_label_new(pagenumber);
+    gtk_label_set_justify(GTK_LABEL(pageContent), GTK_JUSTIFY_LEFT);
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), pageContent, pageNumber);
+    i++;
+
+    //page 4
+
+    pagecontent = "SELECTION D'UN PLAN DE VOL :\n\nEn cliquant sur le deuxième bouton en partant de la gauche (icone de dossier) une boite de dialogue vous sera affichée.\nCette boite possède une liste déroulante vous permettant de parcourir tous les plan de vols enregistrés sur votre machine.\nUne fois le plan de vol sélectionné dans la liste déroulante vous devez cliquer sur le bouton 'Sélectionner' sinon la sélection ne sera pas prise en compte.\n\nVoila vous avez maintenant sélectionné un plan de vol vous êtes paré au décollage !";
+    pagenumber = g_strdup_printf("Page %d", i);
+    pageContent = gtk_label_new(pagecontent);
+    pageNumber = gtk_label_new(pagenumber);
+    gtk_label_set_justify(GTK_LABEL(pageContent), GTK_JUSTIFY_LEFT);
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), pageContent, pageNumber);
+    i++;
+
+    //page 5
+
+    pagecontent = "SUPRESSION D'UN PLAN DE VOL :\n\nEn cliquant sur le même bouton (icone de dossier) vous avez la possibilité de supprimer un plan de vol.\nPour cela, il faut dans un premier temps le sélectionner grâce à la liste déroulant puis cliquer sur le bouton 'Supprimer' situé en bas à droite de la fenêtre de dialogue.\n\nATTENTION une suppression est définitive et irréversible !";
+    pagenumber = g_strdup_printf("Page %d", i);
+    pageContent = gtk_label_new(pagecontent);
+    pageNumber = gtk_label_new(pagenumber);
+    gtk_label_set_justify(GTK_LABEL(pageContent), GTK_JUSTIFY_LEFT);
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), pageContent, pageNumber);
+    i++;
+
+    //page 6
+
+    pagecontent = "EXECUTION DU PLAN DE VOL :\n\nPour executer un plan de vol il vous faudra au préalable avoir sélectionner ce dernier (pour plus d'informations reportez-vous à la section 'SELECTION D'UN PLAN DE VOL').\nUne fois votre plan de vol sélectionné, vous pouvez cliquer sur le troisième bouton en partant de la gauche (icone 'start' vert).\nL'execution du plan de vol est alors lancée et votre drone décolle !\n\nVous n'avez alors plus qu'a chausser le casque FPV (first person view) pour voir en direct (moyenant un léger délais) ce que voit le drone !";
+    pagenumber = g_strdup_printf("Page %d", i);
+    pageContent = gtk_label_new(pagecontent);
+    pageNumber = gtk_label_new(pagenumber);
+    gtk_label_set_justify(GTK_LABEL(pageContent), GTK_JUSTIFY_LEFT);
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), pageContent, pageNumber);
+    i++;
+
+    //page 7
+
+    pagecontent = "INSTALLATION ET SUPPRESSION DE L'APPLICATION :\n\nL'installation et la suppression de l'application ce fait via un makefile.\nPour installer l'application tapez 'make install' dans le dossier principal de l'application.\nPour supprimer l'application tapez 'make uninstall' dans le dossier principal de l'application.\nLes fichiers de l'application sont installés dans /usr/Bebop2App ainsi que dans /var/www/public";
+    pagenumber = g_strdup_printf("Page %d", i);
+    pageContent = gtk_label_new(pagecontent);
+    pageNumber = gtk_label_new(pagenumber);
+    gtk_label_set_justify(GTK_LABEL(pageContent), GTK_JUSTIFY_LEFT);
+    gtk_notebook_append_page(GTK_NOTEBOOK(notebook), pageContent, pageNumber);
+    i++;
+
     gtk_widget_show_all(window_help);
 }
 
