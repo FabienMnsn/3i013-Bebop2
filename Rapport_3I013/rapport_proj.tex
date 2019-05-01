@@ -603,6 +603,33 @@
 
 \newpage
 \section{Comparatif aux objectifs fixés}
+
+\begin{center}
+	    \vspace*{0.7cm}
+        \begin{tabularx}{15cm}{|c|p{3cm}|p{5cm}||X|}
+            \hline
+            N° & Titre de l'objectif & détail (cahier des charges) & réalisation de l'objectif\\
+            \hline
+            1 & Saisie du plan de vol & L'utilisateur doit pouvoir saisir un plan de vol sur une carte à travers une interface intuitive. L'utilisateur doit pouvoir spécifier l'altitude du drone à chaque waypoint (point de passage).& L'utilisateur peut saisir un plan de vol sur une carte, et peut spécifier l'altitude pour chaque waypoint.\\
+            \hline
+            2 & Traduction du plan de vol au format Mavlink & Le plan de vol saisi graphiquement par l'utilisateur doit être converti au format Mavlink pour être ensuite envoyé au drone.& Le plan de vol est exporté au format Mavlink et stocké sur le serveur avec un nom choisi par l'utilisateur.\\
+            \hline
+            3 & Envoi du plan de vol au drone & La solution doit prendre en charge la récupération du plan de vol réalisé au préalable et son envoi au drone. & Le plan de vol choisi dans la fonctionnalité d'exécution de plan de vol est automatiquement transféré au drone.\\
+            \hline
+            4 & Choix du plan de vol  & L'utilisateur doit pouvoir choisir le plan de vol enregistré sur le drone qu'il souhaite exécuter. & L'utilisateur choisit dans un navigateur de fichier le plan de vol qu'il souhaite exécuter. Les plans de vol sont stockés sur le serveur, et seul le plan de vol choisi est envoyé au drone (pour ne pas surcharger la mémoire du drone). \\
+            \hline
+            5 & Exécution du plan de vol  & Une fois le plan de vol choisi, l'utilisateur doit pouvoir en lancer l'exécution. & Le bouton d'exécution du plan de vol permet de choisir le plan de vol et en lance l'exécution.\\
+            \hline
+            6 & Retour vidéo  & Tout au long du vol du drone, le retour vidéo de ce dernier doit être envoyé sur un iPod touch en temps réel et avec une latence minimale. & Une fois l'application iPod lancée et l'exécution du plan de vol demandée, la vidéo prise par le drone en temps réel est transférée à l'iPod avec une vue FPV (une image pour chaque oeil), avec une latence d'environ 6 secondes. \\
+            \hline
+            7 & Arrêt d'urgence  & À tout moment un deuxième utilisateur doit pouvoir enclencher un arrêt d'urgence depuis le PC. & Pour des raisons pratiques et après discussion avec le client, cette fonctionnalité est remplacée par l'arrêt d'urgence par un mouvement de tête.\\
+            \hline
+            8 & Démarrage de la ronde à l'aide de gestes & L'utilisateur pourra éventuellement engager le démarrage du vol en effectuant un certain mouvement de la tête. & Une fois l'exécution du plan de vol lancé, le drone attend l'autorisation de décoler qui est donnée par un hochement de tête avec l'iPod Touch.	\\
+			\hline
+			9 & Arrêt d'urgence & L'utilisateur pourra éventuellement engager un arrêt d'urgence en effectuant par exemple un certain mouvement de la tête. & Une fois le drone en vol, l'arrêt d'urgence peut être activé par un hochement de tête avec l'iPod Touch.	\\
+			\hline
+        \end{tabularx}
+        \end{center}
 	
 \newpage
 \section{Améliorations possibles}
