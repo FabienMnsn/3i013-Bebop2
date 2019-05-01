@@ -14,9 +14,8 @@
 #---------------------------------
 
 APPLICATION_FOLDER="Bebop2App"
-TMP_BIN_PATH="/home/fm/Documents/ROOT/usr/bin/"
-PATH_APPLICATION_FOLDER="/home/fm/Documents/ROOT/usr/"${APPLICATION_FOLDER}""
-PATH_SERVER_FOLDER="/home/fm/Documents/ROOT/var/www/"
+PATH_APPLICATION_FOLDER="/usr/"${APPLICATION_FOLDER}""
+PATH_SERVER_FOLDER="/var/www/"
 
 #---------------------------------
 

@@ -6,8 +6,8 @@
 
 #---------------------------------
 
-PATH_APPLICATION_FOLDER="/home/fm/Documents/ROOT/usr/Bebop2App"
-PATH_SERVER_FOLDER="/home/fm/Documents/ROOT/var/www/"
+PATH_APPLICATION_FOLDER="/usr/Bebop2App"
+PATH_SERVER_FOLDER="/var/www/"
 
 #---------------------------------
 
