@@ -136,7 +136,7 @@
             \hline
             8 & L'utilisateur sélectionne parmi les plans de vols présents sur le drone celui qu'il souhaite réaliser. \\
             \hline
-            9 & L'utilisateur place l'iPod dans le masque FPV, le met sur sa tête, puis lance l'exécution du plan de vol. Le drone décolle. \\
+            9 & L'utilisateur place l'iPod dans le masque FPV, l'enfile, puis lance l'exécution du plan de vol d'un mouvement de tête. Le drone décolle. \\
             \hline
             10 & Le drone effectue le plan de vol choisi, l'utilisateur voit en temps réel ce que le drone filme et peut constater l'état d'enneigement de son jardin. \\
             \hline
@@ -502,22 +502,22 @@
 \newpage
         
 	 \subsection{Controle du drone}
-	 Le controle du drone est axé autour de la génération du fichiers mavlink à l'aide de l'application JS sur le serveur local et du SDK Parrot qui permet d'envoyer des commandes au drone et de connaitre son état.
+	 Le contrôle du drone est axé autour de la génération du fichiers mavlink à l'aide de l'application JS sur le serveur local et du SDK Parrot qui permet d'envoyer des commandes au drone et de connaître son état.
 	 \newline
-	 Apres voir saisie intéractivement un trajet à l'aide de l'application javascript, le fichier Mavlink généré et envoyé au SDK Parrot. 
+	 Après avoir saisi interactivement un trajet à l'aide de l'application javascript, le fichier Mavlink généré et envoyé au SDK Parrot. 
 	 \vspace{0.1cm}
 	 \newline
 	 
-	 Le SDK permet ensuite le controle du drone à savoir:
+	 Le SDK permet ensuite le contrôle du drone à savoir:
 	 \begin{enumerate}
         	\item Connexion au drone.
         	\item Exécution d'un plan de vol.
 			\item Arrêt d'urgence.
     \end{enumerate}
-    Le décolage et l'arrêt d'urgence du drone sont des commandes envoyés directement par le serveurs, ses commandes seront envoyés au serveur par l'IPod afin de permettre un décolage et un arrêt ergonomique.
+    Le décollage et l'arrêt d'urgence du drone sont des commandes envoyées directement par le serveur, ses commandes seront envoyées au serveur par l'iPod afin de permettre un décollage et un arrêt ergonomique.
     \vspace{0.2cm}
     \newline
-    Il permet égaement la réception de l'état du drone et du flux vidéo qui sera par la suite traité avec FFMPEG et envoyé en RTP à l'Ipod.
+    Il permet également la réception de l'état du drone et du flux vidéo qui sera par la suite traité avec FFMPEG et envoyé en RTP à l'iPod.
     
 	    \vspace*{0.3cm}
 	    \begin{center}
@@ -529,11 +529,11 @@
 		
      \newpage
      \subsection{Application IOS}
-     L'application IOS permet d'afficher le flux vidéo du drone et d'envoyés des requetes au serveur en effectuant des gestes simples avec l'Ipod afin de démarrage du drone et d'effectuer l'arrêt d'urgence.
+     L'application IOS permet d'afficher le flux vidéo du drone et d'envoyer des requêtes au serveur en effectuant des gestes simples avec l'iPod afin de démarrage du drone et d'effectuer l'arrêt d'urgence.
      \vspace{0.2cm}
      \newline
      Dans un premier temps, l'application scanne le réseau afin de se connecter au serveur local.
-     Apres la connection une requete de demande de description du flux vidéo au format SDP est automatiquement envoyé au serveur.
+     Après la connexion, une requête de demande de description du flux vidéo au format SDP est automatiquement envoyée au serveur.
      \vspace{0.2cm}
      \newline
      Le descripteur de flux est alors retourné par le serveur à l'application IOS, en parrallèle, elle reçoit également le flux video grâce au protocol RTP, le SDK VLC permet ensuite l'affichage vidéo.
@@ -558,14 +558,18 @@
 		
 \newpage
 \section{Problèmes rencontrés}
+	\subsection{Problèmes matériels}
 	
 	Nous avons rencontré plusieurs difficultés d'ordre matérielles lors de ce projet.
 	\medbreak
-	Tout d'abord nous avons été confrontés à un problème de GPS sur le campus de Sorbonne Université, en effet la couverture GPS était très mauvaise et les vols d'essai n'étaient donc possibles que très rarement. Nous avons eu l'occasion, avec l'accord de policiers en service présents sur les lieux, de faire des vols d'essai aux arènes de Lutèces à Jussieu. La couverture GPS y était très bonne et nous avons pu mener à bien nos tests. Malheureusement, nous n'avons pas eu d'autres occasions de faire voler le drone dans un environnement adapté et n'avons donc pas pu effectuer tous les tests voulus. Le fait que le vol d'un drone dans un lieu publique soit interdit en région parisienne nous a compliqué la tâche, surtout avec les mesures actuelles de Vigipirate.
+	Tout d'abord nous avons été confrontés à un problème de GPS sur le campus de Sorbonne Université, en effet la couverture GPS était très mauvaise et les vols d'essai n'étaient donc possibles que très rarement. Nous avons eu l'occasion, avec l'accord de policiers en service présents sur les lieux, de faire des vols d'essai aux arènes de Lutèces à Jussieu. La couverture GPS y était très bonne et nous avons pu mener à bien nos tests. Malheureusement, nous n'avons pas eu d'autres occasions de faire voler le drone dans un environnement adapté et n'avons donc pas pu effectuer tous les tests voulus.
 	\medbreak
-	Ensuite, nous avons rencontré une difficulté lors du développement de l'application de l'iPod : nous avions besoin des composants VLC compatibles avec le logiciel de développement xCode, afin de faire fonctionner la récupération et l'affichage du flux vidéo par l'iPod. Nous ne disposions pas des droits nécessaires pour installer ces composants logiciels à la PPTI. Le logiciel de développement xCode ne fonctionnant que sur les appareils Apple, nous avons dû nous procurer un ordinateur Mac et installer dessus les outils requis pour pouvoir continuer le projet.
+	Ensuite, nous avons rencontré une difficulté lors du développement de l'application de l'iPod : nous avions besoin des composants VLC compatibles avec le logiciel de développement xCode, afin de faire fonctionner la récupération et l'affichage du flux vidéo par l'iPod. Nous ne disposions pas des droits nécessaires pour installer ces composants logiciels à la PPTI. Le logiciel de développement xCode ne fonctionnant que sur les appareils Apple, nous avons du nous procurer un ordinateur Mac et installer dessus les outils requis pour pouvoir continuer le projet.
 	\medbreak
 	Concernant le déploiement, nous avons du utiliser une machine virtuelle afin de procéder aux installations de test car nous ne disposions pas des droits nécessaires sur les machines de la PPTI.
+	
+	
+	\subsection{Solutions}
 	
 	
 
@@ -631,7 +635,7 @@
 \section{Améliorations possibles}
 Tout d'abord, une amélioration de l'application de saisie du plan de vol serait possible afin de permettre à l'utilisateur de choisir dans quelle direction le drone doit regarder au fur-et-à-mesure du vol.
 \medbreak
-Ensuite, l'application utilisée pour la lecture de la vidéo est conçue pour un iPod Touch. Compte tenu de la nature universelle du protocole utilisé pour envoyer le flux vidéo (protocole RTP) à l'iPod, il est tout à fait possible de développer des applications similaires compatibles à d'autres systèmes. Il est d'ailleurs d'ores et déjà possible de lire la vidéo depuis un appareil androide à l'aide de la fonctionnalité de lecture de flux de l'application VLC.
+Ensuite, l'application utilisée pour la lecture de la vidéo est conçue pour un iPod Touch. Compte tenu de la nature universelle du protocole utilisé pour envoyer le flux vidéo (protocole RTP), il est tout à fait possible de développer des applications similaires compatibles à d'autres systèmes. Il est d'ailleurs d'ores et déjà possible de lire la vidéo depuis un appareil androide à l'aide de la fonctionnalité de lecture de flux de l'application VLC, ce qui est plus contraingant à paramétrer que s'il existait une application dédiée bien évidemment.
 \medbreak
 Concernant la latence du retour vidéo qui est d'environ 6 secondes sur les appareils que nous avons utilisés, nous pensons qu'il est possible de diminuer ce délai en utilisant une connexion wifi directe entre l'iPod et le PC linux, plutôt que de passer par un réseau local servant d'intermédiaire.
 
