@@ -533,10 +533,12 @@
      \vspace{0.2cm}
      \newline
      Dans un premier temps, l'application scanne le réseau afin de se connecter au serveur local.
-     Après la connexion, une requête de demande de description du flux vidéo au format SDP est automatiquement envoyée au serveur.
+     Pour déterminer quel appareil du réseau est le serveur, l'application effectue une requête spécifique à laquelle seul notre serveur répondra.\\
+     Une fois le serveur trouvé, une demande de connexion sera effectuée.\\
+     Après la connexion, une requête de demande de générer un fichier de description du flux vidéo au format SDP est automatiquement envoyée au serveur.
      \vspace{0.2cm}
      \newline
-     Le descripteur de flux est alors retourné par le serveur à l'application IOS, en parrallèle, elle reçoit également le flux video grâce au protocol RTP, le SDK VLC permet ensuite l'affichage vidéo.
+     Le descripteur de flux est alors créé par le serveur et l'application IOS y a accès, en parrallèle on reçoit également le flux video grâce au protocol RTP, le SDK VLC permet ensuite l'affichage vidéo.
         \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
@@ -608,7 +610,7 @@ Le script de désinstallation supprime l'application et tous ces composants en p
 
 	\begin{center}
 	\begin{figure}[!h]
-	\includegraphics[scale=0.4]{deploiement.png}
+	\includegraphics[scale=0.6]{deploiement.png}
 	\caption{Schéma d'organisation du déploiement de l'application}
 	\end{figure}
     \end{center}
