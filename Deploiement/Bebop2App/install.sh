@@ -55,6 +55,7 @@ mkdir $PATH_APPLICATION_FOLDER
 echo "Installation de l'interface graphique (GUI)"	
 cp "./GUI.zip" $PATH_APPLICATION_FOLDER
 unzip -q $PATH_APPLICATION_FOLDER"/GUI.zip" -d $PATH_APPLICATION_FOLDER
+rm -f $PATH_APPLICATION_FOLDER"/GUI.zip"
 echo "Fait"
 
 #---------------------------------
@@ -62,6 +63,7 @@ echo "Fait"
 echo "Installation du controleur de drone (SDK)"
 cp "./staging.zip" $PATH_APPLICATION_FOLDER
 unzip -q $PATH_APPLICATION_FOLDER"/staging.zip" -d $PATH_APPLICATION_FOLDER
+rm -f $PATH_APPLICATION_FOLDER"/staging.zip"
 echo "Fait"
 
 #---------------------------------
@@ -69,6 +71,7 @@ echo "Fait"
 echo "Installation des composant sur le serveur local (lampp)"
 cp "./public.zip" $PATH_SERVER_FOLDER
 unzip -q $PATH_SERVER_FOLDER"public.zip" -d $PATH_SERVER_FOLDER
+rm -f $PATH_SERVER_FOLDER"public.zip"
 echo "Fait"
 
 #---------------------------------
