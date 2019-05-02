@@ -92,9 +92,7 @@
 		%Le client souhaite faire effectuer des vols autonomes à un drone Bebop 2, avec un retour vidéo en temps réel sur un iPod Touch. Ce dernier pourra être placé dans un masque de vue à la première personne.\\
 		La solution devra permettre à l'utilisateur de saisir un plan de vol sur une carte interactive et de le faire exécuter par le drone tout en ayant un retour vidéo sur l'iPod.\\
 		
-        
 
-	\newpage
 	\subsection{Use Case}	
 	    \subsubsection{Création d'un plan de vol}
 	    Dans le premier cas d'utilisation, l'utilisateur souhaite créer un nouveau plan de vol afin de le faire suivre à son drone dans le futur, voici les étapes qu'il va suivre:
@@ -236,6 +234,7 @@
 		 	\item Permettre d'arrêter le vol en cours en cas d'urgence.
 		\end{enumerate}
 		
+	\newpage
 \subsubsection{Besoins fonctionnels}
     \subsubsubsection{Fonctionnalités requises}
 	    \begin{center}
@@ -262,10 +261,10 @@
 			\hline
         \end{tabularx}
         \end{center}
-        
-     \newpage
-	 \subsubsubsection{Diagramme des fonctionnalités}
-	    Voici le diagramme des fonctionnalités (Figure 1) composé de l'utilisateur, du PC et du drone. L'iPod est ici considéré comme une extension de l'utilisateur, étant placé dans un masque FPV. On considère ici que le PC est déjà connecté au drone en Wifi et que l'iPos et le PC sont connecté tous les deux à un même réseau local.\\
+
+	\subsubsubsubsection{Diagramme des fonctionnalités \\}
+	
+	    Voici le diagramme des fonctionnalités (Figure 1) composé de l'utilisateur, du PC et du drone. L'iPod est ici considéré comme une extension de l'utilisateur, étant placé dans un masque FPV. On considère ici que le PC est déjà connecté au drone en Wifi et que l'iPod et le PC sont connecté tous les deux à un même réseau local.\\
 	    
 		\begin{center}
 		\begin{figure}[!h]
@@ -276,6 +275,7 @@
 		\end{figure}
 		\end{center}
 		
+		\newpage
 			
 \subsubsection{Périmètre}
 	\subsubsubsection{À qui s'adresse le produit ?}
@@ -459,7 +459,7 @@
  	%________________
  	\begin{figure}[!h]
  	\begin{center}
- 	\includegraphics[scale=0.42]{capt7.PNG}
+ 	\includegraphics[scale=0.42]{capt7.png}
  	\caption{déplacer les marqueurs}
  	\end{center}
  	\end{figure}
@@ -493,7 +493,7 @@
         \vspace*{0.5cm}
         \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.5]{Rapport/new_HIM.png}\\
+		\includegraphics[scale=0.5]{new_HIM.png}\\
 		 \vspace*{0.3cm}
 		\caption{Interface utilisateur}
 		\end{figure}
@@ -522,7 +522,7 @@
 	    \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.4]{Rapport/new_controle_drone.png}\\
+		\includegraphics[scale=0.4]{02_archi_logicielle_controle_drone.png}}\\
 		\caption{Controle du drone}
 		\end{figure}
         \end{center}
@@ -540,7 +540,7 @@
         \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.4]{Rapport/new_archi_logicielle.png}\\
+		\includegraphics[scale=0.4]{03_archi_logicielle_iPod.png}\\
 		\caption{Application IOS}
 		\end{figure}
         \end{center}
@@ -551,7 +551,7 @@
 	    \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.47]{Rapport/Architecture_logicielle_v2.jpg}\\
+		\includegraphics[scale=0.4]{04_archi_logicielle_complete.png}}\\
 		\caption{Architecture logicielle}
 		\end{figure}
         \end{center}
@@ -569,11 +569,6 @@
 	Concernant le déploiement, nous avons du utiliser une machine virtuelle afin de procéder aux installations de test car nous ne disposions pas des droits nécessaires sur les machines de la PPTI.
 	
 	
-	\subsection{Solutions}
-	
-	
-
-\newpage
 \section{Organisation du travail}
 	\subsection{Diagramme de Gantt}
     Les différentes étapes du projet sont visibles sur ce diagramme de Gantt, qui représente les tâches effectuées chaque semaine:
@@ -586,6 +581,7 @@
     
     On y distingue les deux phases principales du projet : dans un premier temps la phase de recherche et de construction du cahier des charges, et dans un second temps la phase de développement et de mise en fonctionnement de l'application.
     
+    \newpage
 	\subsection{Répartition des taches}
 	La répartition du travail durant ce projet est visible sur ce diagramme :
 	
@@ -600,15 +596,6 @@
 	
 \section{Déploiement}
 
-Concernant le déploiement nous avons décidé de fournir une archive .zip au client avec deux scripts permettant l'installation et la désinstallation de l'application au travers d'un makefile. Le client n'utilisera pas directement les script mais interagira avec le makefile qui appellera les scripts bash. Nous n'avons pas pris en charge l'installation des composants annexes nécessaires à l'installation de l'application par manque de temps. Ces composants sont, par ordre d'importance, le serveur local lampp qui permet de gérer la partie création et sauvegarde des plan de vols (fichiers mavlink) ainsi que la redirection du flux vidéo provenant du drone et ayant pour destination l'iPod touch. L'installation et la configuration d'un serveur local lampp n'est pas compliqué mais demande beaucoup de temps. Il existe beaucoup de tutoriels sur le net pour installer un serveur lampp. Le second composant le plus important et FFmpeg. Ce logiciel permet de décoder, traiter, encoder et diffuser un flux vidéo. Il s'installe facilement avec un simple 'apt-get install ffmpeg'. Le dernier composant essentiel pour le client est la bibliothèque graphique GTK3.0 (ou version suppérieur). Notre application peut très bien tourner sans aucune interface graphique mais c'est beaucoup moins pratique. L'installation de cette bibliothèque peut être très compliqué si le client ne possède pas ubuntu 18.04 ou une version supérieur (GTK3 est préinstallé sur cette distribution).
-
-Principe de fonctionnement de notre solution de déploiement :
-Le client interagit avec un makefile qui affiche une page d'aide comme règle par défaut et lance deux scripts 'install.sh' et 'uninstall.sh'. Pour lancer l'installation le client saisira dans un terminal ouvert dans le répertoire de l'application 'make install' et pour supprimer l'application 'make uninstall'.
-L'application est séparée en 3 archives à savoir la partie serveur, la partie contrôleur de drone et la partie interface graphique. La première action du script d'installation et de s'assurer que l'application n'est pas déjà installée sur le PC du client. Si elle l'est on laisse le choix au client de réinstaller ou de garder la version déjà installée.
-Ces archives sont ensuite copiées et décompressées dans les bons répertoires par le script d'installation. Ces répertoires sont /var/www/public pour l'archive serveur, /usr/Bebop2App pour le contrôleur de drone et l'interface graphique.
-Enfin le script termine par ajouter à la variable PATH du client le chemin d'accès vers le dossier contenant le main() principal de l'Application.
-
-Le script de désinstallation supprime l'application et tous ces composants en parcourant les différents répertoires où les archives on été précédemment copiées et décompressées par le script d'installation. Après désinstallation il ne reste aucun fichier de l'application.
 
 \newpage
 \section{Comparatif aux objectifs fixés}
@@ -648,8 +635,17 @@ Ensuite, l'application utilisée pour la lecture de la vidéo est conçue pour u
 \medbreak
 Concernant la latence du retour vidéo qui est d'environ 6 secondes sur les appareils que nous avons utilisés, nous pensons qu'il est possible de diminuer ce délai en utilisant une connexion wifi directe entre l'iPod et le PC linux, plutôt que de passer par un réseau local servant d'intermédiaire.
 
-\newpage
 \section{Conclusion}
+
+Nous avons mis en œuvre une solution utilisant le PC Linux ainsi que l'iPod Touch afin de répondre aux enjeux imposés par ce projet, et nous avons rencontré des obstacles auxquels nous n'avons malheureusement pas pu trouver de solutions.\\
+En effet, en ce qui concerne le déploiement, celui-ci n'est pas automatique dans son intégralité, et permet simplement l'installation des fichiers sources que nous avons réalisés. Les utilitaires comme FFMPEG, le serveur LAMP ou la bibliothèque GTK ne seront pas installées par le biais de notre déploiement, mais devront être préalablement configurées sur la machine du client.\\
+La couverture GPS étant très mauvaise à Jussieu, nous n'avons pas eu l'occasion d'effectuer nos tests de vols dans de bonne conditions.\\
+Effectivement, le suivi du trajet et le changement d'angle de la direction du drone (yaw) lorsque celui-ci tourne n'était pas effectif à tous les essais, et nous soupsçonnons donc le GPS d'être à l'origine de cette erreur.\\
+Malgré ces inconvenus, le projet est un succès sur de nombreux points.\\
+En effet, l'interface utilisateur permet une saisie de plan de vol ergonomique et celui-ci est parfaitement communiqué au drone.\\
+Au niveau du retour vidéo, celui est également très bien retranscrit en directe sur l'iPod Touch, et est adapté à la vision par masque FPV grâce à un dédoublement de l'image.\\
+D'un point de vue ergonomique, le démarrage de la ronde ainsi que l'arrêt d'urgence du drone s'effectue grâce à un mouvement de la tête, et évite donc à l'utilisateur de retirer son masque FPV.
+
 	
  
 \end{document}
