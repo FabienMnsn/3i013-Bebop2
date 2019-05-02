@@ -104,7 +104,7 @@
             \hline
             1 & L'utilisateur lance l'application et arrive sur la page d'accueil.\\
             \hline
-            2 & L'utilisateur lance la fonctionnalité de saisie du plan de vol sur une machine connectée au réseau local.\\
+            2 & L'utilisateur lance la fonctionnalité de saisie du plan de vol sur sa machine connectée au réseau local.\\
             \hline
             3 & L'utilisateur saisit le plan de vol sur la carte en spécifiant les points de passage du drone ainsi que les altitudes que le drone doit adopter au cours du vol. \\
             \hline
@@ -116,8 +116,8 @@
 	    \vspace{0.8cm}
 	    
 	    \subsubsection{Exécution d'un plan de vol}
-	    Dans le deuxième cas d’utilisation, l'utilisateur possède déjà un ou plusieurs plan de vol enregistrés sur sa machine, par exemple le tour de son énorme jardin qu'il souhaite surveiller sans avoir à ce déplacer. Il fais désormais exécuter au drone l'un de ces plan de vol et observe le retour vidéo sur son Ipod.
-	    Voici les étapes suivient :
+	    Dans le deuxième cas d’utilisation, l'utilisateur possède déjà un ou plusieurs plan de vol enregistrés sur sa machine, par exemple le tour de son énorme jardin qu'il souhaite surveiller sans avoir à se déplacer. Il fait désormais exécuter au drone l'un de ces plan de vol et observe le retour vidéo sur son Ipod.
+	    Voici les étapes suivies :
 	    
 	    \vspace{0.7cm}	     
 	    \begin{center}
@@ -168,7 +168,7 @@
             \hline
             1 & L'utilisateur lance l'application et arrive sur la page d'accueil.\\
             \hline
-            2 & L'utilisateur lance la fonctionnalité de saisie du plan de vol sur une machine connectée au réseau local.\\
+            2 & L'utilisateur lance la fonctionnalité de saisie du plan de vol sur sa machine connectée au réseau local.\\
             \hline
             3 & L'utilisateur saisit le plan de vol sur la carte en spécifiant les points de passage du drone ainsi que les altitudes que le drone doit adopter au cours du vol. \\
             \hline
@@ -484,12 +484,12 @@
 	\newpage
 \section{Architecture Logicielle}
     \subsection{Interface utilisateur}
-    L'interface utilisateur est une interface GTK permettant d'intéragir avec le SDK Parrot afin d'enregistrer des trajets sur le drone et de les exécuter.
+    L'interface utilisateur est une interface GTK3.0 permettant d’interagir avec le SDK Parrot afin d'enregistrer des trajets sur le drone et de les exécuter.
     \newline
-    Elle permet également d'intéragir avec le Serveur local afin de saisir intéractivement le plan de vol à l'aide de l'application javascript et de créer les fichiers Mavlink.
+    Elle permet également d’interagir avec le Serveur local afin de saisir interactivement le plan de vol à l'aide de l'application javascript et de créer les fichiers Mavlink.
     \vspace{0.2cm}
     \newline
-    Voici l'architecture d'intéraction de l'interface utilisateur:
+    Voici l'architecture d’interaction de l'interface utilisateur:
         \vspace*{0.5cm}
         \begin{center}
 		\begin{figure}[!h]
@@ -523,22 +523,22 @@
 	    \begin{center}
 		\begin{figure}[!h]
 		\includegraphics[scale=0.4]{02_archi_logicielle_controle_drone.png}\\
-		\caption{Controle du drone}
+		\caption{Contrôle du drone}
 		\end{figure}
         \end{center}
 		
      \newpage
      \subsection{Application IOS}
-     L'application IOS permet d'afficher le flux vidéo du drone et d'envoyer des requêtes au serveur en effectuant des gestes simples avec l'iPod afin de démarrage du drone et d'effectuer l'arrêt d'urgence.
+     L'application IOS permet d'afficher le flux vidéo du drone et d'envoyer des requêtes au serveur en effectuant des gestes simples avec l'iPod pour démarrer le drone et l’arrêter en cas d'urgence.
      \vspace{0.2cm}
      \newline
      Dans un premier temps, l'application scanne le réseau afin de se connecter au serveur local.
      Pour déterminer quel appareil du réseau est le serveur, l'application effectue une requête spécifique à laquelle seul notre serveur répondra.\\
      Une fois le serveur trouvé, une demande de connexion sera effectuée.\\
-     Après la connexion, une requête de demande de générer un fichier de description du flux vidéo au format SDP est automatiquement envoyée au serveur.
+     Après la connexion, une requête de création d'un fichier de description du flux vidéo au format SDP est automatiquement envoyée au serveur.
      \vspace{0.2cm}
      \newline
-     Le descripteur de flux est alors créé par le serveur et l'application IOS y a accès, en parrallèle on reçoit également le flux video grâce au protocol RTP, le SDK VLC permet ensuite l'affichage vidéo.
+     Le descripteur de flux est alors créé par le serveur et l'application IOS y a accès, en parallèle on reçoit également le flux vidéo grâce au protocole RTP, VLC permet ensuite le décodage et l'affichage du flux vidéo.
         \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
@@ -564,7 +564,7 @@
 	
 	Nous avons rencontré plusieurs difficultés d'ordre matérielles lors de ce projet.
 	\medbreak
-	Tout d'abord nous avons été confrontés à un problème de GPS sur le campus de Sorbonne Université, en effet la couverture GPS était très mauvaise et les vols d'essai n'étaient donc possibles que très rarement. Nous avons eu l'occasion, avec l'accord de policiers en service présents sur les lieux, de faire des vols d'essai aux arènes de Lutèces à Jussieu. La couverture GPS y était très bonne et nous avons pu mener à bien nos tests. Malheureusement, nous n'avons pas eu d'autres occasions de faire voler le drone dans un environnement adapté et n'avons donc pas pu effectuer tous les tests voulus.
+	Tout d'abord nous avons été confrontés à un problème de GPS sur le campus de Sorbonne Université, en effet la couverture GPS était très mauvaise et les vols d'essai n'étaient donc possibles que très rarement. Nous avons eu l'occasion, avec l'accord de policiers en service présents sur les lieux, de faire des vols d'essai aux arènes de Lutèce à Jussieu. La couverture GPS y était très bonne et nous avons pu mener à bien nos tests. Malheureusement, nous n'avons pas eu d'autres occasions de faire voler le drone dans un environnement adapté et n'avons donc pas pu effectuer tous les tests voulus.
 	\medbreak
 	Ensuite, nous avons rencontré une difficulté lors du développement de l'application de l'iPod : nous avions besoin des composants VLC compatibles avec le logiciel de développement xCode, afin de faire fonctionner la récupération et l'affichage du flux vidéo par l'iPod. Nous ne disposions pas des droits nécessaires pour installer ces composants logiciels à la PPTI. Le logiciel de développement xCode ne fonctionnant que sur les appareils Apple, nous avons du nous procurer un ordinateur Mac et installer dessus les outils requis pour pouvoir continuer le projet.
 	\medbreak
@@ -603,8 +603,8 @@
 Principe de fonctionnement de notre solution de déploiement :
 Le client interagit avec un makefile qui affiche une page d'aide comme règle par défaut et lance deux scripts 'install.sh' et 'uninstall.sh'. Pour lancer l'installation le client saisira dans un terminal ouvert dans le répertoire de l'application 'make install' et pour supprimer l'application 'make uninstall'.\\
 L'application est séparée en 3 archives à savoir la partie serveur, la partie contrôleur de drone et la partie interface graphique. La première action du script d'installation et de s'assurer que l'application n'est pas déjà installée sur le PC du client. Si elle l'est on laisse le choix au client de réinstaller ou de garder la version déjà installée.\\
-Ces archives sont ensuite copiées et décompressées dans les bons répertoires par le script d'installation. Ces répertoires sont /var/www/public pour l'archive serveur, /usr/Bebop2App pour le contrôleur de drone et l'interface graphique.
-Enfin le script termine par ajouter à la variable PATH du client le chemin d'accès vers le dossier contenant le main() principal de l'Application.\\
+Ces trois archives sont ensuite copiées et décompressées dans les bons répertoires par le script d'installation. Ces répertoires sont /var/www/public pour l'archive serveur, /usr/Bebop2App pour le contrôleur de drone et l'interface graphique.
+Enfin le script termine par ajouter à la variable d'environnement PATH du client le chemin d'accès vers le dossier contenant le main() principal de l'Application.\\
 
 Le script de désinstallation supprime l'application et tous ces composants en parcourant les différents répertoires où les archives on été précédemment copiées et décompressées par le script d'installation. Après désinstallation il ne reste aucun fichier de l'application.\\
 
@@ -639,9 +639,9 @@ Le script de désinstallation supprime l'application et tous ces composants en p
             \hline
             7 & Arrêt d'urgence  & À tout moment un deuxième utilisateur doit pouvoir enclencher un arrêt d'urgence depuis le PC. & Pour des raisons pratiques et après discussion avec le client, cette fonctionnalité est remplacée par l'arrêt d'urgence par un mouvement de tête.\\
             \hline
-            8 & Démarrage de la ronde à l'aide de gestes & L'utilisateur pourra éventuellement engager le démarrage du vol en effectuant un certain mouvement de la tête. & Une fois l'exécution du plan de vol lancé, le drone attend l'autorisation de décoler qui est donnée par un hochement de tête avec l'iPod Touch.	\\
+            8 & Démarrage de la ronde à l'aide de gestes & L'utilisateur pourra éventuellement engager le démarrage du vol en effectuant un certain mouvement de la tête. & Une fois l'exécution du plan de vol lancé, le drone attend l'autorisation de décoller qui est donnée par un mouvement de tête avec l'iPod Touch.	\\
 			\hline
-			9 & Arrêt d'urgence & L'utilisateur pourra éventuellement engager un arrêt d'urgence en effectuant par exemple un certain mouvement de la tête. & Une fois le drone en vol, l'arrêt d'urgence peut être activé par un hochement de tête avec l'iPod Touch.	\\
+			9 & Arrêt d'urgence & L'utilisateur pourra éventuellement engager un arrêt d'urgence en effectuant par exemple un certain mouvement de la tête. & Une fois le drone en vol, l'arrêt d'urgence peut être activé par un mouvement de tête avec l'iPod Touch.	\\
 			\hline
         \end{tabularx}
         \end{center}
@@ -650,17 +650,18 @@ Le script de désinstallation supprime l'application et tous ces composants en p
 \section{Améliorations possibles}
 Tout d'abord, une amélioration de l'application de saisie du plan de vol serait possible afin de permettre à l'utilisateur de choisir dans quelle direction le drone doit regarder au fur-et-à-mesure du vol.
 \medbreak
-Ensuite, l'application utilisée pour la lecture de la vidéo est conçue pour un iPod Touch. Compte tenu de la nature universelle du protocole utilisé pour envoyer le flux vidéo (protocole RTP), il est tout à fait possible de développer des applications similaires compatibles à d'autres systèmes. Il est d'ailleurs d'ores et déjà possible de lire la vidéo depuis un appareil androide à l'aide de la fonctionnalité de lecture de flux de l'application VLC, ce qui est plus contraingant à paramétrer que s'il existait une application dédiée bien évidemment.
+Ensuite, l'application utilisée pour la lecture de la vidéo est conçue pour un iPod Touch. Compte tenu de la nature universelle du protocole utilisé pour envoyer le flux vidéo (protocole RTP), il est tout à fait possible de développer des applications similaires compatibles à d'autres systèmes. Il est d'ailleurs d'ores et déjà possible de lire la vidéo depuis un appareil android à l'aide de la fonctionnalité de lecture de flux de l'application VLC, ce qui est plus contraignant à paramétrer que s'il existait une application dédiée bien évidemment.
 \medbreak
 Concernant la latence du retour vidéo qui est d'environ 6 secondes sur les appareils que nous avons utilisés, nous pensons qu'il est possible de diminuer ce délai en utilisant une connexion wifi directe entre l'iPod et le PC linux, plutôt que de passer par un réseau local servant d'intermédiaire.
-
+\medbreak
+Le déploiement de l'application effectue le strict minimum a savoir installer les fichiers nécessaires à l'application. Nous n'avons pas pris en charge l'installation des bibliothèques et outils requis pour installer l'application. Cela pourrait être amélioré.
 \section{Conclusion}
 
 Nous avons mis en œuvre une solution utilisant le PC Linux ainsi que l'iPod Touch afin de répondre aux besoins du client, et nous avons rencontré des obstacles auxquels nous n'avons malheureusement pas pu trouver de solutions pour certains.\\
 En effet, en ce qui concerne le déploiement, celui-ci n'est pas automatique dans son intégralité, et permet simplement l'installation des fichiers sources que nous avons réalisés. Les utilitaires comme FFMPEG, le serveur LAMP ou la bibliothèque GTK ne seront pas installées par le biais de notre déploiement, mais devront être préalablement configurés sur la machine du client.\\
 La couverture GPS étant très mauvaise à Jussieu, nous n'avons pas eu l'occasion d'effectuer nos tests de vols dans de bonne conditions.\\
 Effectivement, le changement d'angle de la caméra du drone (yaw) lorsque celui-ci tourne n'était pas fonctionnel à tous les essais, et nous soupçonnons la mauvaise couverture GPS d'être à l'origine de cette erreur.\\
-Malgré ces inconvenues, le projet est un succès sur de nombreux points.\\
+Malgré ces problèmes, le projet est un succès sur de nombreux points.\\
 En effet, l'interface utilisateur permet de saisir de façon simple des plan de vol utilisables par le drone, et ils peuvent être gérés et sélectionnés par l'utilisateur de manière intuitive. Le plan de vol choisi est ensuite transmis au drone.\\
 La vidéo de la caméra du drone est correctement retransmise à l'iPod Touch en temps réel, et est adaptée au visionnage dans un masque FPV grâce à un dédoublement de l'image. La latence du retour vidéo est d'environ 6 secondes, ce qui est convenable dans ce contexte d'utilisation.\\
 D'un point de vue ergonomique, le démarrage de la ronde ainsi que l'arrêt d'urgence du drone s'effectuent grâce à un mouvement de la tête, ce qui permet à l'utilisateur de garder le masque FPV durant tout le vol sans avoir à effectuer de manipulation complexe.
