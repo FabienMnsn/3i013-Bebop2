@@ -26,7 +26,7 @@
 %	HEADING SECTIONS
 %----------------------------------------------------------------------------------------
 
-\textsc{\LARGE Université Pierre-et-Marie-Curie}\\[3cm] % Name of your university/college
+\textsc{\LARGE Université Sorbonne}\\[3cm] % Name of your university/college
 \textsc{\Large Licence Informatique 3\up{ème} Année}\\[0.5cm] % Major heading such as course name
 \textsc{\large Projet 3i013}\\[2cm] % Minor heading such as course title
 
@@ -63,7 +63,7 @@
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
 
-{\large 3 Avril 2019}\\[3cm] % Date, change the \today to a set date if you want to be precise
+{\large 2 Avril 2019}\\[3cm] % Date, change the \today to a set date if you want to be precise
 
 %----------------------------------------------------------------------------------------
 %	LOGO SECTION
@@ -493,7 +493,7 @@
         \vspace*{0.5cm}
         \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.5]{new_HIM.png}\\
+		\includegraphics[scale=0.4]{01_archi_logicielle_IHM.png}\\
 		 \vspace*{0.3cm}
 		\caption{Interface utilisateur}
 		\end{figure}
@@ -522,7 +522,7 @@
 	    \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.4]{02_archi_logicielle_controle_drone.png}}\\
+		\includegraphics[scale=0.4]{02_archi_logicielle_controle_drone.png}\\
 		\caption{Controle du drone}
 		\end{figure}
         \end{center}
@@ -551,7 +551,7 @@
 	    \vspace*{0.3cm}
 	    \begin{center}
 		\begin{figure}[!h]
-		\includegraphics[scale=0.4]{04_archi_logicielle_complete.png}}\\
+		\includegraphics[scale=0.4]{04_archi_logicielle_complete.png}\\
 		\caption{Architecture logicielle}
 		\end{figure}
         \end{center}
@@ -654,14 +654,14 @@ Concernant la latence du retour vidéo qui est d'environ 6 secondes sur les appa
 
 \section{Conclusion}
 
-Nous avons mis en œuvre une solution utilisant le PC Linux ainsi que l'iPod Touch afin de répondre aux enjeux imposés par ce projet, et nous avons rencontré des obstacles auxquels nous n'avons malheureusement pas pu trouver de solutions.\\
-En effet, en ce qui concerne le déploiement, celui-ci n'est pas automatique dans son intégralité, et permet simplement l'installation des fichiers sources que nous avons réalisés. Les utilitaires comme FFMPEG, le serveur LAMP ou la bibliothèque GTK ne seront pas installées par le biais de notre déploiement, mais devront être préalablement configurées sur la machine du client.\\
+Nous avons mis en œuvre une solution utilisant le PC Linux ainsi que l'iPod Touch afin de répondre aux besoins du client, et nous avons rencontré des obstacles auxquels nous n'avons malheureusement pas pu trouver de solutions pour certains.\\
+En effet, en ce qui concerne le déploiement, celui-ci n'est pas automatique dans son intégralité, et permet simplement l'installation des fichiers sources que nous avons réalisés. Les utilitaires comme FFMPEG, le serveur LAMP ou la bibliothèque GTK ne seront pas installées par le biais de notre déploiement, mais devront être préalablement configurés sur la machine du client.\\
 La couverture GPS étant très mauvaise à Jussieu, nous n'avons pas eu l'occasion d'effectuer nos tests de vols dans de bonne conditions.\\
-Effectivement, le suivi du trajet et le changement d'angle de la direction du drone (yaw) lorsque celui-ci tourne n'était pas effectif à tous les essais, et nous soupsçonnons donc le GPS d'être à l'origine de cette erreur.\\
-Malgré ces inconvenus, le projet est un succès sur de nombreux points.\\
-En effet, l'interface utilisateur permet une saisie de plan de vol ergonomique et celui-ci est parfaitement communiqué au drone.\\
-Au niveau du retour vidéo, celui est également très bien retranscrit en directe sur l'iPod Touch, et est adapté à la vision par masque FPV grâce à un dédoublement de l'image.\\
-D'un point de vue ergonomique, le démarrage de la ronde ainsi que l'arrêt d'urgence du drone s'effectue grâce à un mouvement de la tête, et évite donc à l'utilisateur de retirer son masque FPV.
+Effectivement, le changement d'angle de la caméra du drone (yaw) lorsque celui-ci tourne n'était pas fonctionnel à tous les essais, et nous soupçonnons la mauvaise couverture GPS d'être à l'origine de cette erreur.\\
+Malgré ces inconvenues, le projet est un succès sur de nombreux points.\\
+En effet, l'interface utilisateur permet de saisir de façon simple des plan de vol utilisables par le drone, et ils peuvent être gérés et sélectionnés par l'utilisateur de manière intuitive. Le plan de vol choisi est ensuite transmis au drone.\\
+La vidéo de la caméra du drone est correctement retransmise à l'iPod Touch en temps réel, et est adaptée au visionnage dans un masque FPV grâce à un dédoublement de l'image. La latence du retour vidéo est d'environ 6 secondes, ce qui est convenable dans ce contexte d'utilisation.\\
+D'un point de vue ergonomique, le démarrage de la ronde ainsi que l'arrêt d'urgence du drone s'effectuent grâce à un mouvement de la tête, ce qui permet à l'utilisateur de garder le masque FPV durant tout le vol sans avoir à effectuer de manipulation complexe.
 
 	
  
