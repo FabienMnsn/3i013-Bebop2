@@ -558,18 +558,14 @@
 		
 \newpage
 \section{Problèmes rencontrés}
-	\subsection{Problèmes matériels}
 	
 	Nous avons rencontré plusieurs difficultés d'ordre matérielles lors de ce projet.
 	\medbreak
-	Tout d'abord nous avons été confrontés à un problème de GPS sur le campus de Sorbonne Université, en effet la couverture GPS était très mauvaise et les vols d'essai n'étaient donc possibles que très rarement. Nous avons eu l'occasion, avec l'accord de policiers en service présents sur les lieux, de faire des vols d'essai aux arènes de Lutèces à Jussieu. La couverture GPS y était très bonne et nous avons pu mener à bien nos tests. Malheureusement, nous n'avons pas eu d'autres occasions de faire voler le drone dans un environnement adapté et n'avons donc pas pu effectuer tous les tests voulus.
+	Tout d'abord nous avons été confrontés à un problème de GPS sur le campus de Sorbonne Université, en effet la couverture GPS était très mauvaise et les vols d'essai n'étaient donc possibles que très rarement. Nous avons eu l'occasion, avec l'accord de policiers en service présents sur les lieux, de faire des vols d'essai aux arènes de Lutèces à Jussieu. La couverture GPS y était très bonne et nous avons pu mener à bien nos tests. Malheureusement, nous n'avons pas eu d'autres occasions de faire voler le drone dans un environnement adapté et n'avons donc pas pu effectuer tous les tests voulus. Le fait que le vol d'un drone dans un lieu publique soit interdit en région parisienne nous a compliqué la tâche, surtout avec les mesures actuelles de Vigipirate.
 	\medbreak
-	Ensuite, nous avons rencontré une difficulté lors du développement de l'application de l'iPod : nous avions besoin des composants VLC compatibles avec le logiciel de développement xCode, afin de faire fonctionner la récupération et l'affichage du flux vidéo par l'iPod. Nous ne disposions pas des droits nécessaires pour installer ces composants logiciels à la PPTI. Le logiciel de développement xCode ne fonctionnant que sur les appareils Apple, nous avons du nous procurer un ordinateur Mac et installer dessus les outils requis pour pouvoir continuer le projet.
+	Ensuite, nous avons rencontré une difficulté lors du développement de l'application de l'iPod : nous avions besoin des composants VLC compatibles avec le logiciel de développement xCode, afin de faire fonctionner la récupération et l'affichage du flux vidéo par l'iPod. Nous ne disposions pas des droits nécessaires pour installer ces composants logiciels à la PPTI. Le logiciel de développement xCode ne fonctionnant que sur les appareils Apple, nous avons dû nous procurer un ordinateur Mac et installer dessus les outils requis pour pouvoir continuer le projet.
 	\medbreak
 	Concernant le déploiement, nous avons du utiliser une machine virtuelle afin de procéder aux installations de test car nous ne disposions pas des droits nécessaires sur les machines de la PPTI.
-	
-	
-	\subsection{Solutions}
 	
 	
 
@@ -635,7 +631,7 @@
 \section{Améliorations possibles}
 Tout d'abord, une amélioration de l'application de saisie du plan de vol serait possible afin de permettre à l'utilisateur de choisir dans quelle direction le drone doit regarder au fur-et-à-mesure du vol.
 \medbreak
-Ensuite, l'application utilisée pour la lecture de la vidéo est conçue pour un iPod Touch. Compte tenu de la nature universelle du protocole utilisé pour envoyer le flux vidéo (protocole RTP), il est tout à fait possible de développer des applications similaires compatibles à d'autres systèmes. Il est d'ailleurs d'ores et déjà possible de lire la vidéo depuis un appareil androide à l'aide de la fonctionnalité de lecture de flux de l'application VLC, ce qui est plus contraingant à paramétrer que s'il existait une application dédiée bien évidemment.
+Ensuite, l'application utilisée pour la lecture de la vidéo est conçue pour un iPod Touch. Compte tenu de la nature universelle du protocole utilisé pour envoyer le flux vidéo (protocole RTP) à l'iPod, il est tout à fait possible de développer des applications similaires compatibles à d'autres systèmes. Il est d'ailleurs d'ores et déjà possible de lire la vidéo depuis un appareil androide à l'aide de la fonctionnalité de lecture de flux de l'application VLC.
 \medbreak
 Concernant la latence du retour vidéo qui est d'environ 6 secondes sur les appareils que nous avons utilisés, nous pensons qu'il est possible de diminuer ce délai en utilisant une connexion wifi directe entre l'iPod et le PC linux, plutôt que de passer par un réseau local servant d'intermédiaire.
 
