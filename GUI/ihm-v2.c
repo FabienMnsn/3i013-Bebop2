@@ -161,9 +161,13 @@ void on_openfilebutton_clicked(){
 
 void on_startbutton_clicked(){
 	if(isSelectSelected && strlen(path) != 0){
-		printf("Fichier sélectionné : %s, paré au decollage !\n", path);
-		//fork + exec en passant le path du plan de vol en parametre de l'executable
-		printf("Partie incomplète, il manque le fork+exec du code C du drone\n");
+		if (fork == 0){
+			char mavlink_file_path[100];
+			strcpy(mavlink_file_path, "/var/www/public/plan_de_vol_drone/Mavlinks/");
+			strcat(mavlink_file_path, path);
+			execl("/usr/Bebop2App/staging/native-wrapper.sh", "native-wrapper", "/usr/Bebop2App/staging/usr/bin/BebopSample", mavlink_file_path, NULL);
+			perror("execl");
+		}
 	}
 
 	if(!isSelectSelected || strlen(path) == 0){
