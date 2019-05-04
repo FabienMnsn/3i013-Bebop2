@@ -60,6 +60,19 @@ void info_data(){
 
 //_________________________________________________________________________________
 
+//CREATION DIALOG INFO WINDOW
+void create_info_window(GtkWidget *parent, char *message){
+	GtkWidget *dialogInfo = gtk_message_dialog_new(
+		GTK_WINDOW(parent),
+		GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+        GTK_MESSAGE_INFO,
+        GTK_BUTTONS_OK,
+        message);
+	gtk_window_set_title(GTK_WINDOW(dialogInfo), "Information");
+  	gtk_dialog_run(GTK_DIALOG(dialogInfo));
+  	gtk_widget_destroy(dialogInfo);
+}
+
 //CREATION DIALOG ERROR WINDOW
 void create_error_window(GtkWidget *parent, char *message){
 	GtkWidget *dialogError;
@@ -78,7 +91,7 @@ void create_error_window(GtkWidget *parent, char *message){
 int create_validate_window(GtkWidget *parent){
 	GtkWidget *dialogValidate;
 	dialogValidate = gtk_message_dialog_new(
-		GTK_WINDOW(window_combo_box),
+		GTK_WINDOW(parent),
 	    GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
         GTK_MESSAGE_QUESTION,
         GTK_BUTTONS_YES_NO,
@@ -160,8 +173,8 @@ void on_openfilebutton_clicked(){
 }
 
 void on_startbutton_clicked(){
-	if(isSelectSelected && strlen(path) != 0){
-		if (fork == 0){
+	if(isSelectSelected && strlen(path) != 0){		
+		if (fork() == 0){
 			char mavlink_file_path[100];
 			strcpy(mavlink_file_path, "/var/www/public/plan_de_vol_drone/Mavlinks/");
 			strcat(mavlink_file_path, path);
@@ -169,7 +182,6 @@ void on_startbutton_clicked(){
 			perror("execl");
 		}
 	}
-
 	if(!isSelectSelected || strlen(path) == 0){
 		GtkWidget *dialog;
   		dialog = gtk_message_dialog_new(
