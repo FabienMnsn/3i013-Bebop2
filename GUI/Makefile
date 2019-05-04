@@ -1,7 +1,6 @@
 GUI : 
 	make clean
 	make interface
-	./Bebop2App
 
 interface : 
 	gcc ihm-v2.c -o Bebop2App `pkg-config --cflags --libs gtk+-3.0`

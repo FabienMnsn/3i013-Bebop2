@@ -14,7 +14,7 @@
 
 //_________________________________________________________________________________
 
-//GLOBAL VAR AND STRUC MAYBE?
+//GLOBAL VAR
 GtkBuilder *builder;
 
 GtkWidget *window_main;
@@ -178,8 +178,13 @@ void on_startbutton_clicked(){
 			char mavlink_file_path[100];
 			strcpy(mavlink_file_path, "/var/www/public/plan_de_vol_drone/Mavlinks/");
 			strcat(mavlink_file_path, path);
-			execl("/usr/Bebop2App/staging/native-wrapper.sh", "native-wrapper", "/usr/Bebop2App/staging/usr/bin/BebopSample", mavlink_file_path, NULL);
+			//execl("/usr/Bebop2App/staging/native-wrapper.sh", "native-wrapper", "/usr/Bebop2App/staging/usr/bin/BebopSample", mavlink_file_path, NULL);
+			execl("echo", "echo", "TOTO ####################################################", NULL);
 			perror("execl");
+            exit(0);
+		}
+		else{
+			create_info_window(window_main, "Drone paré au décollage !\n Enfilez votre masque FPV.");
 		}
 	}
 	if(!isSelectSelected || strlen(path) == 0){
@@ -301,12 +306,10 @@ void on_combobox_changed(){
 void on_selectbutton_clicked(){
 	if(strcmp(gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(combobox)),"Selectionnez un plan de vol") != 0){
 		sprintf(path, "%s", gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(combobox)));
-	}
-	if(strlen(path) != 0){
 		isSelectSelected = 1;
 		gtk_widget_hide(window_combo_box);
 	}
-	else{
+	else{	
 		create_error_window(window_combo_box, "Auncun fichier sélectionné !");
 	}
 }
@@ -346,6 +349,7 @@ void on_deletebutton_clicked(){
 	else{
 		create_error_window(window_combo_box, "Auncun fichier sélectionné !");
 	}
+	update_combo_list();
 }
 
 //_________________________________________________________________________________
