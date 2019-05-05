@@ -6,8 +6,11 @@
 
 #---------------------------------
 
-PATH_APPLICATION_FOLDER="/usr/Bebop2App"
-PATH_SERVER_FOLDER="/var/www/"
+PATH_APPLICATION_FOLDER="/home/fm/Documents/ROOT_deploiement_3i013/usr/Bebop2App"
+PATH_SERVER_FOLDER="/home/fm/Documents/ROOT_deploiement_3i013/var/www/"
+
+#PATH_APPLICATION_FOLDER="/usr/Bebop2App"
+#PATH_SERVER_FOLDER="/var/www/"
 
 #---------------------------------
 

@@ -7,15 +7,19 @@
 #---------------------------------
 
 #install order :
+	#GTK		/GUI
 	#SDK		/staging
 	#lampp		/public
-	#GTK		/GUI
 
 #---------------------------------
 
 APPLICATION_FOLDER="Bebop2App"
-PATH_APPLICATION_FOLDER="/usr/"${APPLICATION_FOLDER}""
-PATH_SERVER_FOLDER="/var/www/"
+PATH_APPLICATION_FOLDER="/home/fm/Documents/ROOT_deploiement_3i013/usr/"${APPLICATION_FOLDER}""
+PATH_SERVER_FOLDER="/home/fm/Documents/ROOT_deploiement_3i013/var/www/"
+
+#APPLICATION_FOLDER="Bebop2App"
+#PATH_APPLICATION_FOLDER="/usr/"${APPLICATION_FOLDER}""
+#PATH_SERVER_FOLDER="/var/www/"
 
 #---------------------------------
 
